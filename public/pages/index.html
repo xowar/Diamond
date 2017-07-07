@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <link href="../vendor/bootstrap/css/jquery-ui.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Diamond</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="index.html"><i class="fa fa-home fa-fw"></i> REGISTRO DE PROPIEDAD</a>
+                            <ul class="nav nav-second-level">
+                                <!--<li>
+                                    <a href="index.html">Datos del dueño</a>
+                                </li>
+                                <li>
+                                    <a href="datos_propiedad.html">Datos propiedad</a>
+                                </li>
+                                <li>
+                                    <a href="descripcion_de_la_propiedad.html">Descripción de la Propiedad</a>
+                                </li>
+                                <li>
+                                    <a href="financiamiento.html">Financiamiento</a>
+                                </li>
+                                <li>
+                                    <a href="documentacion.html">Documentación</a>
+                                </li>
+                                <li>
+                                    <a href="asesor_diamond.html">Asesor Diamond</a>
+                                </li>
+                                <li>
+                                    <a href="precio_de_promocion.html">Precio de Promoción</a>
+                                </li>
+                                <li>
+                                    <a href="realización_y_autorizacion.html">Realización y Autorización</a>
+                                </li>-->
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">REGISTRO DE PROPIEDAD</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" id="btnHidde1">
+                                <!-- Title-->
+                                Datos del dueño y responsable
+                            </div>
+                            <div class="panel-body" id="elementHidde1" style="display: none;">
+                                <div class="row">
+                                    <form role="form">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Nombre</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Dirección</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Colonia</label>
+                                                <select class="form-control">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Teléfono Casa</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Teléfono Oficina</label>
+                                                <input class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Celular</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Estado Civil</label>
+                                                <select class="form-control">
+                                                    <option>Casado Bienes Mancomunados</option>
+                                                    <option>Casado Bienes Separados</option>
+                                                    <option>Soltero</option>
+                                                    <option>Divorciado</option>
+                                                    <option>Union Libre</option>
+                                                    <option>Viudo</option>
+                                                </select>
+                                            </div>  
+                                            <div class="form-group">
+                                                <label>Email</label>
+                                                <input class="form-control">
+                                            </div>  
+                                            <div class="form-group">
+                                                <label>Es dueño quien ofrece la propiedad</label>
+                                                <select class="form-control">
+                                                    <option>Si</option>
+                                                    <option>No</option>
+                                                </select>
+                                            </div>    
+                                            <div class="form-group">
+                                                <label>Relación con el dueño de la propiedad</label>
+                                                <input class="form-control">
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- /.col-lg-6 (nested) -->
+                                </div>
+                                <!-- /.row (nested) -->
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" id="btnHidde2">
+                                <!-- Title-->
+                                Datos propiedad
+                            </div>
+                            <div class="panel-body" id="elementHidde2" style="display: none;">
+                                <div class="row">
+                                    <form role="form">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Calle</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Número Exterior</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Número Interior</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Colonia</label>
+                                                <select class="form-control">
+                                                    <option>1</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Ciudad</label>
+                                                <select class="form-control">
+                                                    <option>Mazatlán</option>
+                                                    <option>Rosario</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Estado</label>
+                                                <select class="form-control">
+                                                    <option>Sinaloa</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Codigo Postal</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Uso de Suelo</label>
+                                                <select class="form-control">
+                                                    <option>Habitacional</option>
+                                                    <option>Comercial</option>
+                                                    <option>Mixto</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- /.col-lg-6 (nested) -->
+                                </div>
+                                <!-- /.row (nested) -->
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" id="btnHidde3">
+                                <!-- Title-->
+                                Descripción de la Propiedad
+                            </div>
+                            <div class="panel-body" id="elementHidde3" style="display: none;">
+                                <div class="row">
+                                    <form role="form">
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <label>Frente</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Fondo</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>M2 de Terreno</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>M2 de Construcción</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Recámaras</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>0</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Baños Completos</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>0</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Medios Baños</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>0</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Cochera</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>0</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Niveles</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>0</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Piso Condo</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Conservación</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>En Proyecto</option>
+                                                    <option>Nuevo</option>
+                                                    <option>Excelente</option>
+                                                    <option>Bueno</option>
+                                                    <option>Medio</option>
+                                                    <option>Malo</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Dueños Originales</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Vestidor</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <label>Sala</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Comedor</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Cocina Integral</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Estudio</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Cuarto T.V.</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Patio</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Cuarto de Servicio</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Bodega</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Cisterna</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Aire Acondicionado</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Instalaciones para Minisplit</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Boyler</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Bardeado</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                    <label>Protecciones</label>
+                                                    <select class="form-control">
+                                                        <option>Selecciona una opción</option>
+                                                        <option>No</option>
+                                                        <option>Si</option>
+                                                    </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Terraza</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Balcón</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Cuarto de Lavado</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Jacuzzi</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Casa Club</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Parrilla</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Elevador</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Acceso a Playa</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Muelle</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Urbanizado</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Jardín</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Áreas Verdes</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <label>Alberca Común</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Piscina Privada</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Canchas</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Seguridad 24 Horas</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Sistema de Seguridad</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Amueblado</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Vista al Mar</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Vista a la Marina</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Vista Panoramica</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Vista Campo de Golf</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Agua</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Luz</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Drenaje</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- /.col-lg-6 (nested) -->
+                                </div>
+                                <!-- /.row (nested) -->
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" id="btnHidde4">
+                                <!-- Title-->
+                                Financiamiento
+                            </div>
+                            <div class="panel-body" id="elementHidde4" style="display: none;">
+                                <div class="row">
+                                    <form role="form">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Tiene aduedo</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Si, ¿Cuanto?</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>¿Qué tipo de adeudo?</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Ofrece Financiamiento</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>No</option>
+                                                    <option>Si</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Aplica Credito</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>Todos</option>
+                                                    <option>Ninguno</option>
+                                                    <option>Directo</option>
+                                                    <option>Algunos</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Especifica que tipo de crédito aplica</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Bancario
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Scotiabank
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Infonavit
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Fovissste
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Isfam
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Otra
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- /.col-lg-6 (nested) -->
+                                </div>
+                                <!-- /.row (nested) -->
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" id="btnHidde5">
+                                <!-- Title-->
+                                Documentación
+                            </div>
+                            <div class="panel-body" id="elementHidde5" style="display: none;">
+                                <div class="row">
+                                    <form role="form">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Tipo de Contrato</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>Anual</option>
+                                                    <option>6 Meses</option>
+                                                    <option>3 Meses</option>
+                                                    <option>Indeterminado</option>
+                                                    <option>Otro</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>INE</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Sr
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Sra
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>RFC</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Sr
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Sra
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tipo de Persona</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Sr
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Sra
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">N/A
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Acta de Nacimiento</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Sr
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Sra
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                                <div class="form-group">
+                                                <label>CURP</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Sr
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Sra
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Escrituras de la Propiedad</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Si
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Titulo de Propiedad</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Si
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Registro de Propiedad</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Si
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Clave Castatral</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Valor Castatral</label>
+                                                <input class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Aviso de Privacidad</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Si
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Recibo de la Luz</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Si
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Recibo del Agua</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Si
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Predial</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Si
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Planos</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Si
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Regimen Matrimonial</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Si
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Acta de Matrimonio</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Si
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Regimen de Propiedad de Condominio</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Si
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- /.col-lg-6 (nested) -->
+                                </div>
+                                <!-- /.row (nested) -->
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" id="btnHidde6">
+                                <!-- Title-->
+                                Asesor Diamond
+                            </div>
+                            <div class="panel-body" id="elementHidde6" style="display: none;">
+                                <div class="row">
+                                    <form role="form">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Asesor</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>1</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Prospectador</label>
+                                                    <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>1</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Fecha</label>
+                                                <div class="form-group">
+                                                    <div class='input-group date'>
+                                                        <input type='text' class="form-control" id="date1"/>
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Exclusiva</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>Si</option>
+                                                    <option>No</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tipo de Convenio</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>Venta</option>
+                                                    <option>Renta</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tipo de Propiedad</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>Casa</option>
+                                                    <option>Condominio</option>
+                                                    <option>Terreno</option>
+                                                    <option>Comercial</option>
+                                                    <option>Renta</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Comision</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>5%</option>
+                                                    <option>6%</option>
+                                                    <option>7%</option>
+                                                    <option>Mes</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Referido</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>Si</option>
+                                                    <option>No</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Llaves</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>Si</option>
+                                                    <option>No</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Fotos</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>Si</option>
+                                                    <option>No</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Amueblada a la renta o venta</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>Sin</option>
+                                                    <option>Con</option>
+                                                    <option>Cualquiera</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                    <!-- /.col-lg-6 (nested) -->
+                                </div>
+                                <!-- /.row (nested) -->
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" id="btnHidde7">
+                                <!-- Title-->
+                                Precio de Promoción
+                            </div>
+                            <div class="panel-body" id="elementHidde7" style="display: none;">
+                                <div class="row">
+                                    <form role="form">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Precio Venta</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Precio Renta</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Precio Mínimo</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tipo de Moneda</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>MXN</option>
+                                                    <option>USD</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Cuota de Mantenimiento</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Incluye Cuota de Mantenimiento</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>Si</option>
+                                                    <option>No</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Precio M2</label>
+                                                <input class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Fecha de Inicio</label>
+                                                <div class="form-group">
+                                                    <div class='input-group date'>
+                                                        <input type='text' class="form-control" id="date2" />
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Fecha de Termino</label>
+                                                <div class="form-group">
+                                                    <div class='input-group date'>
+                                                        <input type='text' class="form-control" id="date3"/>
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Restricciones de Renta / Venta</label>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">No niños
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">No animales
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Sólo Familias
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Sólo ejecutivos
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">1 Año
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">6 Meses
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Otra
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Existe algún defecto estructural</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>Si</option>
+                                                    <option>No</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Especifique el defecto</label>
+                                                <input class="form-control">
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                    <!-- /.col-lg-6 (nested) -->
+                                </div>
+                                <!-- /.row (nested) -->
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" id="btnHidde8">
+                                <!-- Title-->
+                                Realización y Autorización
+                            </div>
+                            <div class="panel-body" id="elementHidde8" style="display: none;">
+                                <div class="row">
+                                    <form role="form">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Folio</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Esta completo el expediente</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>Si</option>
+                                                    <option>No</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Responsable de llenado</label>
+                                                <input class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Responsable de revisión</label>
+                                                <input class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Director que aprobó listing y comisión</label>
+                                                <select class="form-control">
+                                                    <option>Selecciona una opción</option>
+                                                    <option>Pedro Juarez</option>
+                                                    <option>Rodolfo Pardo</option>
+                                                    <option>Meliton Osuna</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                    <!-- /.col-lg-6 (nested) -->
+                                </div>
+                                <!-- /.row (nested) -->
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <input type="button" name="hola" value="Guardar" id="save">
+                    </div>
+                </div>
+            <!-- End -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/jquery/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+
+    <script type="text/javascript">
+     $(document).ready(function(){
+        $("#btnHidde1").click(function () {
+            $("#elementHidde1").each(function() {
+                displaying = $(this).css("display");
+                if(displaying == "block") {
+                    $(this).fadeOut('slow',function() {
+                        $(this).css("display","none");
+                    });
+                } else {
+                    $(this).fadeIn('slow',function() {
+                        $(this).css("display","block");
+                    });
+                }
+            });
+        });
+
+        $("#btnHidde2").click(function () {
+            $("#elementHidde2").each(function() {
+                displaying = $(this).css("display");
+                if(displaying == "block") {
+                    $(this).fadeOut('slow',function() {
+                        $(this).css("display","none");
+                    });
+                } else {
+                    $(this).fadeIn('slow',function() {
+                        $(this).css("display","block");
+                    });
+                }
+            });
+        });
+
+        $("#btnHidde3").click(function () {
+            $("#elementHidde3").each(function() {
+                displaying = $(this).css("display");
+                if(displaying == "block") {
+                    $(this).fadeOut('slow',function() {
+                        $(this).css("display","none");
+                    });
+                } else {
+                    $(this).fadeIn('slow',function() {
+                        $(this).css("display","block");
+                    });
+                }
+            });
+        });
+
+        $("#btnHidde4").click(function () {
+            $("#elementHidde4").each(function() {
+                displaying = $(this).css("display");
+                if(displaying == "block") {
+                    $(this).fadeOut('slow',function() {
+                        $(this).css("display","none");
+                    });
+                } else {
+                    $(this).fadeIn('slow',function() {
+                        $(this).css("display","block");
+                    });
+                }
+            });
+        });
+
+        $("#btnHidde5").click(function () {
+            $("#elementHidde5").each(function() {
+                displaying = $(this).css("display");
+                if(displaying == "block") {
+                    $(this).fadeOut('slow',function() {
+                        $(this).css("display","none");
+                    });
+                } else {
+                    $(this).fadeIn('slow',function() {
+                        $(this).css("display","block");
+                    });
+                }
+            });
+        });
+
+        $("#btnHidde6").click(function () {
+            $("#elementHidde6").each(function() {
+                displaying = $(this).css("display");
+                if(displaying == "block") {
+                    $(this).fadeOut('slow',function() {
+                        $(this).css("display","none");
+                    });
+                } else {
+                    $(this).fadeIn('slow',function() {
+                        $(this).css("display","block");
+                    });
+                }
+            });
+        });
+
+        $("#btnHidde7").click(function () {
+            $("#elementHidde7").each(function() {
+                displaying = $(this).css("display");
+                if(displaying == "block") {
+                    $(this).fadeOut('slow',function() {
+                        $(this).css("display","none");
+                    });
+                } else {
+                    $(this).fadeIn('slow',function() {
+                        $(this).css("display","block");
+                    });
+                }
+            });
+        });
+
+        $("#btnHidde8").click(function () {
+            $("#elementHidde8").each(function() {
+                displaying = $(this).css("display");
+                if(displaying == "block") {
+                    $(this).fadeOut('slow',function() {
+                        $(this).css("display","none");
+                    });
+                } else {
+                    $(this).fadeIn('slow',function() {
+                        $(this).css("display","block");
+                    });
+                }
+            });
+        });
+
+        $("#save").click(function () {
+            $("#elementHidde1").each(function() {
+                displaying = $(this).css("display");
+                $(this).fadeIn('slow',function() {
+                    $(this).css("display","block");
+                });
+            });
+            $("#elementHidde2").each(function() {
+                displaying = $(this).css("display");
+                $(this).fadeIn('slow',function() {
+                    $(this).css("display","block");
+                });
+            });
+            $("#elementHidde3").each(function() {
+                displaying = $(this).css("display");
+                $(this).fadeIn('slow',function() {
+                    $(this).css("display","block");
+                });
+            });
+            $("#elementHidde4").each(function() {
+                displaying = $(this).css("display");
+                $(this).fadeIn('slow',function() {
+                    $(this).css("display","block");
+                });
+            });
+            $("#elementHidde5").each(function() {
+                displaying = $(this).css("display");
+                $(this).fadeIn('slow',function() {
+                    $(this).css("display","block");
+                });
+            });
+            $("#elementHidde6").each(function() {
+                displaying = $(this).css("display");
+                $(this).fadeIn('slow',function() {
+                    $(this).css("display","block");
+                });
+            });
+            $("#elementHidde7").each(function() {
+                displaying = $(this).css("display");
+                $(this).fadeIn('slow',function() {
+                    $(this).css("display","block");
+                });
+            });
+            $("#elementHidde8").each(function() {
+                displaying = $(this).css("display");
+                $(this).fadeIn('slow',function() {
+                    $(this).css("display","block");
+                });
+            });
+        });
+    });
+
+    </script>
+    <script>
+        $( function() {
+            $( "#date1" ).datepicker();
+        } );
+        $( function() {
+            $( "#date2" ).datepicker();
+        } );
+        $( function() {
+            $( "#date3" ).datepicker();
+        } );
+    </script>
+
+</body>
+
+</html>
