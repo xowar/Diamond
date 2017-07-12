@@ -22,10 +22,10 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover" >
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>Opciones</th>
+                                        <th style="width: 160px;">Opciones</th>
                                         <th>Nombre del Dueño</th>
                                         <th>Direccion del Dueño</th>
                                         <th>Colonia del Dueño</th>
@@ -162,9 +162,10 @@
                                         <th>Creado por</th>
                                         <th>Editado el</th>
                                         <th>Editado por</th>
+                                        <th>Documentos</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody style="text-align: center;">
                                     <?php 
                                         foreach ($registro_de_propiedad as $propiedad) {?>
                                         <tr class="odd gradeX">
@@ -308,6 +309,7 @@
                                             <td><?php echo $propiedad->create_by; ?></td>
                                             <td><?php echo $propiedad->update_at; ?></td>
                                             <td><?php echo $propiedad->update_by; ?></td>
+                                            <td><a class="btn btn-info" href="{{URL::to('home/table_propiedades/documentos', array($propiedad->id))}}">Mostrar</a></td>
                                         </tr>
                                     <?php } ?>
                                     </tr>                                    
@@ -322,7 +324,7 @@
 
                 <!-- /.col-lg-12 -->
             </div>
-             {!! $registro_de_propiedad->render() !!}
+
             <!-- /.row -->
     </div>
 

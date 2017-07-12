@@ -52,14 +52,15 @@ class RegisterPropertyController extends Controller
             $fileINE1 = $request->file('doc_ine1');
             //obtenemos el nombre del archivo
             $nombreINE1 = $fileINE1->getClientOriginalName();
-            $nombreINE1 = $random.'-INE-'.$fileINE1->getClientOriginalName();
+            $nombreINE1 = 'INE-'.$random.$fileINE1->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreINE1,  \File::get($fileINE1));
             //obtenemos la url
             $public_pathINE1 = public_path();
-            $urlINE1 = $public_pathINE1.'/documents/'.$nombreINE1;
+            $urlINE1 = '/documents/'.$nombreINE1;
         }else{
             $urlINE1 = "";
+            $nombreINE1 = "";
         }
         if (!empty($request->file('doc_rfc1'))) {
             //RFC
@@ -67,14 +68,15 @@ class RegisterPropertyController extends Controller
             $fileRFC1 = $request->file('doc_rfc1');
             //obtenemos el nombre del archivo
             $nombreRFC1 = $fileRFC1->getClientOriginalName();
-            $nombreRFC1 = $random1.'-RFC-'.$fileRFC1->getClientOriginalName();
+            $nombreRFC1 = 'RFC-'.$random.$fileRFC1->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreRFC1,  \File::get($fileRFC1));
             //obtenemos la url
             $public_pathRFC1 = public_path();
-            $urlRFC1 = $public_pathINE1.'/documents/'.$nombreRFC1;
+            $urlRFC1 = '/documents/'.$nombreRFC1;
             }else{
                 $urlRFC1 = "";
+                $nombreRFC1 = "";
             }
         if (!empty($request->file('doc_TipoPersona1'))) {
             //TIPO DE PERSONA
@@ -82,14 +84,15 @@ class RegisterPropertyController extends Controller
             $fileTipoPersona1 = $request->file('doc_TipoPersona1');
             //obtenemos el nombre del archivo
             $nombreTipoPersona1 = $fileTipoPersona1->getClientOriginalName();
-            $nombreTipoPersona1 = $random.'-TipoPersona-'.$fileTipoPersona1->getClientOriginalName();
+            $nombreTipoPersona1 = 'TipoPersona-'.$random.$fileTipoPersona1->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreTipoPersona1,  \File::get($fileTipoPersona1));
             //obtenemos la url
             $public_pathTipoPersona1 = public_path();
-            $urlPersona1 = $public_pathTipoPersona1.'/documents/'.$nombreTipoPersona1;
+            $urlPersona1 = '/documents/'.$nombreTipoPersona1;
         }else{
            $urlPersona1 = "";
+           $nombreTipoPersona1 = "";
         }
         if (!empty($request->file('doc_ActaNacimiento1'))) {
             //ACTA DE NACIMIENTO
@@ -97,14 +100,15 @@ class RegisterPropertyController extends Controller
             $fileActaNacimiento1 = $request->file('doc_ActaNacimiento1');
             //obtenemos el nombre del archivo
             $nombreActaNacimiento1 = $fileActaNacimiento1->getClientOriginalName();
-            $nombreActaNacimiento1 = $random.'-ActaNacimiento-'.$fileActaNacimiento1->getClientOriginalName();
+            $nombreActaNacimiento1 = 'ActaNacimiento-'.$random.$fileActaNacimiento1->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreActaNacimiento1,  \File::get($fileActaNacimiento1));
             //obtenemos la url
             $public_pathActaNacimiento1 = public_path();
-            $urlActaNacimiento1 = $public_pathActaNacimiento1.'/documents/'.$nombreActaNacimiento1;
+            $urlActaNacimiento1 = '/documents/'.$nombreActaNacimiento1;
         }else{
            $urlActaNacimiento1 = "";
+           $nombreActaNacimiento1 = "";
         }
         if (!empty($request->file('doc_curp1'))) {
             //CRUP
@@ -112,14 +116,15 @@ class RegisterPropertyController extends Controller
             $fileCURP1 = $request->file('doc_curp1');
             //obtenemos el nombre del archivo
             $nombreCURP1 = $fileCURP1->getClientOriginalName();
-            $nombreCURP1 = $random.'-CURP-'.$fileCURP1->getClientOriginalName();
+            $nombreCURP1 = 'CURP-'.$random.$fileCURP1->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreCURP1,  \File::get($fileCURP1));
             //obtenemos la url
             $public_pathCURP1 = public_path();
-            $urlCURP1 = $public_pathCURP1.'/documents/'.$nombreCURP1;
+            $urlCURP1 = '/documents/'.$nombreCURP1;
         }else{
            $urlCURP1 = "";
+           $nombreCURP1 = "";
         }
         if (!empty($request->file('doc_ine2'))) {
             //INE
@@ -127,14 +132,15 @@ class RegisterPropertyController extends Controller
             $fileINE2 = $request->file('doc_ine2');
             //obtenemos el nombre del archivo
             $nombreINE2 = $fileINE2->getClientOriginalName();
-            $nombreINE2 = $random.'-INE-'.$fileINE2->getClientOriginalName();
+            $nombreINE2 = 'INE-'.$random.$fileINE2->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreINE2,  \File::get($fileINE2));
             //obtenemos la url
             $public_pathINE2 = public_path();
-            $urlINE2 = $public_pathINE2.'/documents/'.$nombreINE2;
+            $urlINE2 = '/documents/'.$nombreINE2;
         }else{
             $urlINE2 = "";
+            $nombreINE2 = "";
         }
         if (!empty($request->file('doc_rfc2'))) {
             //RFC
@@ -142,14 +148,15 @@ class RegisterPropertyController extends Controller
             $fileRFC2 = $request->file('doc_rfc2');
             //obtenemos el nombre del archivo
             $nombreRFC2 = $fileRFC2->getClientOriginalName();
-            $nombreRFC2 = $random.'-RFC-'.$fileRFC2->getClientOriginalName();
+            $nombreRFC2 = 'RFC-'.$random.$fileRFC2->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreRFC2,  \File::get($fileRFC2));
             //obtenemos la url
             $public_pathRFC2 = public_path();
-            $urlRFC2 = $public_pathINE2.'/documents/'.$nombreRFC2;
+            $urlRFC2 = '/documents/'.$nombreRFC2;
             }else{
                 $urlRFC2 = "";
+                $nombreRFC2 = "";
             }
         if (!empty($request->file('doc_TipoPersona2'))) {
             //TIPO DE PERSONA
@@ -157,14 +164,15 @@ class RegisterPropertyController extends Controller
             $fileTipoPersona2 = $request->file('doc_TipoPersona2');
             //obtenemos el nombre del archivo
             $nombreTipoPersona2 = $fileTipoPersona2->getClientOriginalName();
-            $nombreTipoPersona2 = $random.'-TipoPersona-'.$fileTipoPersona2->getClientOriginalName();
+            $nombreTipoPersona2 = 'TipoPersona-'.$random.$fileTipoPersona2->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreTipoPersona2,  \File::get($fileTipoPersona2));
             //obtenemos la url
             $public_pathTipoPersona2 = public_path();
-            $urlPersona2 = $public_pathTipoPersona2.'/documents/'.$nombreTipoPersona2;
+            $urlPersona2 = '/documents/'.$nombreTipoPersona2;
         }else{
            $urlPersona2 = "";
+           $nombreTipoPersona2 = "";
         }
         if (!empty($request->file('doc_ActaNacimiento2'))) {
             //ACTA DE NACIMIENTO
@@ -172,14 +180,15 @@ class RegisterPropertyController extends Controller
             $fileActaNacimiento2 = $request->file('doc_ActaNacimiento2');
             //obtenemos el nombre del archivo
             $nombreActaNacimiento2 = $fileActaNacimiento2->getClientOriginalName();
-            $nombreActaNacimiento2 = $random.'-ActaNacimiento-'.$fileActaNacimiento2->getClientOriginalName();
+            $nombreActaNacimiento2 = 'ActaNacimiento-'.$random.$fileActaNacimiento2->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreActaNacimiento2,  \File::get($fileActaNacimiento2));
             //obtenemos la url
             $public_pathActaNacimiento2 = public_path();
-            $urlActaNacimiento2 = $public_pathActaNacimiento2.'/documents/'.$nombreActaNacimiento2;
+            $urlActaNacimiento2 = '/documents/'.$nombreActaNacimiento2;
         }else{
            $urlActaNacimiento2 = "";
+           $nombreActaNacimiento2 = "";
         }
         if (!empty($request->file('doc_curp2'))) {
             //CRUP
@@ -187,14 +196,15 @@ class RegisterPropertyController extends Controller
             $fileCURP2 = $request->file('doc_curp2');
             //obtenemos el nombre del archivo
             $nombreCURP2 = $fileCURP2->getClientOriginalName();
-            $nombreCURP2 = $random.'-CURP-'.$fileCURP2->getClientOriginalName();
+            $nombreCURP2 = 'CURP-'.$random.$fileCURP2->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreCURP2,  \File::get($fileCURP2));
             //obtenemos la url
             $public_pathCURP2 = public_path();
-            $urlCURP2 = $public_pathCURP2.'/documents/'.$nombreCURP2;
+            $urlCURP2 = '/documents/'.$nombreCURP2;
         }else{
            $urlCURP2 = "";
+           $nombreCURP2 = "";
         }
         if (!empty($request->file('doc_escritura'))) {
             //ESCRITURA PROPIEDAD
@@ -202,14 +212,15 @@ class RegisterPropertyController extends Controller
             $fileESCRITURA = $request->file('doc_escritura');
             //obtenemos el nombre del archivo
             $nombreESCRITURA = $fileESCRITURA->getClientOriginalName();
-            $nombreESCRITURA = $random.'-ESCRITURA-'.$fileESCRITURA->getClientOriginalName();
+            $nombreESCRITURA = 'ESCRITURA-'.$random.$fileESCRITURA->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreESCRITURA,  \File::get($fileESCRITURA));
             //obtenemos la url
             $public_pathESCRITURA = public_path();
-            $urlESCRITURA = $public_pathESCRITURA.'/documents/'.$nombreESCRITURA;
+            $urlESCRITURA = '/documents/'.$nombreESCRITURA;
         }else{
            $urlESCRITURA = "";
+           $nombreESCRITURA = "";
         }
         if (!empty($request->file('doc_titulo'))) {
             //ESCRITURA TITULO
@@ -217,29 +228,31 @@ class RegisterPropertyController extends Controller
             $fileTITULO = $request->file('doc_titulo');
             //obtenemos el nombre del archivo
             $nombreTITULO = $fileESCRITURA->getClientOriginalName();
-            $nombreTITULO = $random.'-TITULO-'.$fileESCRITURA->getClientOriginalName();
+            $nombreTITULO = 'TITULO-'.$random.$fileESCRITURA->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreTITULO,  \File::get($fileTITULO));
             //obtenemos la url
             $public_pathTITULO = public_path();
-            $urlTITULO = $public_pathTITULO.'/documents/'.$nombreTITULO;
+            $urlTITULO = '/documents/'.$nombreTITULO;
         }else{
            $urlTITULO = "";
+           $nombreTITULO = "";
         }
         if (!empty($request->file('doc_registro'))) {
             //REGISTRO PROPIEDAD
             //obtenemos el campo file definido en el formulario
             $fileREGISTRO = $request->file('doc_registro');
             //obtenemos el nombre del archivo
-            $nombreREGISTRO = $fileActaNacimiento->getClientOriginalName();
-            $nombreREGISTRO = $random.'-REGISTRO-'.$fileREGISTRO->getClientOriginalName();
+            $nombreREGISTRO = $fileREGISTRO->getClientOriginalName();
+            $nombreREGISTRO = 'REGISTRO-'.$random.$fileREGISTRO->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreREGISTRO,  \File::get($fileREGISTRO));
             //obtenemos la url
             $public_pathREGISTRO = public_path();
-            $urlREGISTRO = $public_pathREGISTRO.'/documents/'.$nombreREGISTRO;
+            $urlREGISTRO = '/documents/'.$nombreREGISTRO;
         }else{
            $urlREGISTRO = "";
+           $nombreREGISTRO = "";
         }
         if (!empty($request->file('doc_aviso'))) {
             //AVISO PRIVACIDAD
@@ -247,14 +260,15 @@ class RegisterPropertyController extends Controller
             $fileAVISO = $request->file('doc_aviso');
             //obtenemos el nombre del archivo
             $nombreAVISO = $fileAVISO->getClientOriginalName();
-            $nombreAVISO = $random.'-AVISO-'.$fileAVISO->getClientOriginalName();
+            $nombreAVISO = 'AVISO-'.$random.$fileAVISO->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreAVISO,  \File::get($fileAVISO));
             //obtenemos la url
             $public_pathAVISO = public_path();
-            $urlAVISO = $public_pathAVISO.'/documents/'.$nombreAVISO;
+            $urlAVISO = '/documents/'.$nombreAVISO;
         }else{
            $urlAVISO = "";
+           $nombreAVISO = "";
         }
         if (!empty($request->file('doc_recibo_agua'))) {
             //RECIBO AGUA
@@ -262,14 +276,15 @@ class RegisterPropertyController extends Controller
             $fileReciboAgua = $request->file('doc_recibo_agua');
             //obtenemos el nombre del archivo
             $nombreReciboAgua = $fileReciboAgua->getClientOriginalName();
-            $nombreReciboAgua = $random.'-ReciboAgua-'.$fileReciboAgua->getClientOriginalName();
+            $nombreReciboAgua = 'ReciboAgua-'.$random.$fileReciboAgua->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreReciboAgua,  \File::get($fileReciboAgua));
             //obtenemos la url
             $public_pathReciboAgua = public_path();
-            $urlReciboAgua = $public_pathReciboAgua.'/documents/'.$nombreReciboAgua;
+            $urlReciboAgua = '/documents/'.$nombreReciboAgua;
         }else{
            $urlReciboAgua = "";
+           $nombreReciboAgua = "";
         }
         if (!empty($request->file('doc_recibo_luz'))) {
             //RECIBO LUZ
@@ -277,14 +292,15 @@ class RegisterPropertyController extends Controller
             $fileReciboLuz = $request->file('doc_recibo_luz');
             //obtenemos el nombre del archivo
             $nombreReciboLuz = $fileReciboLuz->getClientOriginalName();
-            $nombreReciboLuz = $random.'-ReciboLuz-'.$fileReciboLuz->getClientOriginalName();
+            $nombreReciboLuz = 'ReciboLuz-'.$random.$fileReciboLuz->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreReciboLuz,  \File::get($fileReciboLuz));
             //obtenemos la url
             $public_pathReciboLuz = public_path();
-            $urlReciboLuz = $public_pathReciboLuz.'/documents/'.$nombreReciboLuz;
+            $urlReciboLuz = '/documents/'.$nombreReciboLuz;
         }else{
            $urlReciboLuz = "";
+           $nombreReciboLuz = "";
         }
         if (!empty($request->file('doc_predial'))) {
             //PREDIAL
@@ -292,14 +308,15 @@ class RegisterPropertyController extends Controller
             $filePREDIAL = $request->file('doc_predial');
             //obtenemos el nombre del archivo
             $nombrePREDIAL = $filePREDIAL->getClientOriginalName();
-            $nombrePREDIAL = $random.'-PREDIAL-'.$filePREDIAL->getClientOriginalName();
+            $nombrePREDIAL = 'PREDIAL-'.$random.$filePREDIAL->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombrePREDIAL,  \File::get($filePREDIAL));
             //obtenemos la url
             $public_pathPREDIAL = public_path();
-            $urlPREDIAL = $public_pathPREDIAL.'/documents/'.$nombrePREDIAL;
+            $urlPREDIAL = '/documents/'.$nombrePREDIAL;
         }else{
            $urlPREDIAL = "";
+           $nombrePREDIAL = "";
         }
         if (!empty($request->file('doc_planos'))) {
             //PLANOS
@@ -307,14 +324,15 @@ class RegisterPropertyController extends Controller
             $filePLANOS = $request->file('doc_planos');
             //obtenemos el nombre del archivo
             $nombrePLANOS = $filePLANOS->getClientOriginalName();
-            $nombrePLANOS = $random.'-PLANOS-'.$fileReciboLuz->getClientOriginalName();
+            $nombrePLANOS = 'PLANOS-'.$random.$fileReciboLuz->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombrePLANOS,  \File::get($filePLANOS));
             //obtenemos la url
             $public_pathPLANOS = public_path();
-            $urlPLANOS = $public_pathPLANOS.'/documents/'.$nombrePLANOS;
+            $urlPLANOS = '/documents/'.$nombrePLANOS;
         }else{
            $urlPLANOS = "";
+           $nombrePLANOS = "";
         }
         if (!empty($request->file('doc_regimen_matrimonial'))) {
             //REGIMEN MATRIMONIAL
@@ -322,14 +340,15 @@ class RegisterPropertyController extends Controller
             $fileRegimenMatrimonial = $request->file('doc_regimen_matrimonial');
             //obtenemos el nombre del archivo
             $nombreRegimenMatrimonial = $fileRegimenMatrimonial->getClientOriginalName();
-            $nombreRegimenMatrimonial = $random.'-RegimenMatrimonial-'.$fileRegimenMatrimonial->getClientOriginalName();
+            $nombreRegimenMatrimonial = 'RegimenMatrimonial-'.$random.$fileRegimenMatrimonial->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombrePLANOS,  \File::get($fileRegimenMatrimonial));
             //obtenemos la url
             $public_pathRegimenMatrimonial = public_path();
-            $urlRegimenMatrimonial = $public_pathRegimenMatrimonial.'/documents/'.$nombreRegimenMatrimonial;
+            $urlRegimenMatrimonial = '/documents/'.$nombreRegimenMatrimonial;
         }else{
            $urlRegimenMatrimonial = "";
+           $nombreRegimenMatrimonial = "";
         }
         if (!empty($request->file('doc_acta_matrimonio'))) {
             //ACTA MATRIMONIO
@@ -337,14 +356,15 @@ class RegisterPropertyController extends Controller
             $fileActaMatrimono = $request->file('doc_acta_matrimonio');
             //obtenemos el nombre del archivo
             $nombreActaMatrimono = $fileActaMatrimono->getClientOriginalName();
-            $nombreActaMatrimono = $random.'-ActaMatrimono-'.$fileActaMatrimono->getClientOriginalName();
+            $nombreActaMatrimono = 'ActaMatrimono-'.$random.$fileActaMatrimono->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreActaMatrimono,  \File::get($fileActaMatrimono));
             //obtenemos la url
             $public_pathActaMatrimono = public_path();
-            $urlActaMatrimonio = $public_pathActaMatrimono.'/documents/'.$nombreActaMatrimono;
+            $urlActaMatrimonio = '/documents/'.$nombreActaMatrimono;
         }else{
            $urlActaMatrimonio = "";
+           $nombreActaMatrimono = "";
         }
         if (!empty($request->file('doc_regimen_propiedad_condo'))) {
             //REGIMEN PROPIEDAD CONDO
@@ -352,14 +372,15 @@ class RegisterPropertyController extends Controller
             $fileRegimenCondo = $request->file('doc_regimen_propiedad_condo');
             //obtenemos el nombre del archivo
             $nombreRegimenCondo = $fileRegimenCondo->getClientOriginalName();
-            $nombreRegimenCondo = $random.'-RegimenCondo-'.$fileRegimenCondo->getClientOriginalName();
+            $nombreRegimenCondo = 'RegimenCondo-'.$random.$fileRegimenCondo->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreRegimenCondo,  \File::get($fileRegimenCondo));
             //obtenemos la url
             $public_pathRegimenCondo = public_path();
-            $urlRegimenCondo = $public_pathRegimenCondo.'/documents/'.$nombreRegimenCondo;
+            $urlRegimenCondo = '/documents/'.$nombreRegimenCondo;
         }else{
            $urlRegimenCondo = "";
+           $nombreRegimenCondo = "";
         }
 
         $id_doc_propertys = DB::table('documents_property')
@@ -610,32 +631,53 @@ class RegisterPropertyController extends Controller
 
             'id_doc_propertys'                  => $id_doc_propertys['id'],
 
-            'create_by'                 => $request['create_by'],
+            'create_by'                         => $request['create_by'],
         ]);
 
         DB::table('documents_property')->insert(
         [
-            'doc_ine1'                      => $urlINE2,
-            'doc_rfc1'                      => $urlRFC2,
-            'doc_TipoPersona1'              => $urlPersona2,
-            'doc_ActaNacimiento1'           => $urlActaNacimiento2,
-            'doc_curp1'                     => $urlCURP2,
-            'doc_ine2'                      => $urlINE2,
-            'doc_rfc2'                      => $urlRFC2,
-            'doc_TipoPersona2'              => $urlPersona2,
-            'doc_ActaNacimiento2'           => $urlActaNacimiento2,
-            'doc_curp2'                     => $urlCURP2,
-            'doc_escritura'                 => $urlESCRITURA,
-            'doc_titulo'                    => $urlTITULO,
-            'doc_registro'                  => $urlREGISTRO,
-            'doc_aviso'                     => $urlAVISO,
-            'doc_recibo_luz'                => $urlReciboLuz,
-            'doc_recibo_agua'               => $urlReciboAgua,
-            'doc_predial'                   => $urlPREDIAL,
-            'doc_planos'                    => $urlPLANOS,
-            'doc_regimen_matrimonial'       => $urlRegimenMatrimonial,
-            'doc_acta_matrimonio'           => $urlActaMatrimonio,
-            'doc_regimen_propiedad_condo'   => $urlRegimenCondo,
+            'doc_ine1'                             => $urlINE1,
+            'doc_rfc1'                             => $urlRFC1,
+            'doc_TipoPersona1'                     => $urlPersona1,
+            'doc_ActaNacimiento1'                  => $urlActaNacimiento1,
+            'doc_curp1'                            => $urlCURP1,
+            'doc_ine2'                             => $urlINE2,
+            'doc_rfc2'                             => $urlRFC2,
+            'doc_TipoPersona2'                     => $urlPersona2,
+            'doc_ActaNacimiento2'                  => $urlActaNacimiento2,
+            'doc_curp2'                            => $urlCURP2,
+            'doc_escritura'                        => $urlESCRITURA,
+            'doc_titulo'                           => $urlTITULO,
+            'doc_registro'                         => $urlREGISTRO,
+            'doc_aviso'                            => $urlAVISO,
+            'doc_recibo_luz'                       => $urlReciboLuz,
+            'doc_recibo_agua'                      => $urlReciboAgua,
+            'doc_predial'                          => $urlPREDIAL,
+            'doc_planos'                           => $urlPLANOS,
+            'doc_regimen_matrimonial'              => $urlRegimenMatrimonial,
+            'doc_acta_matrimonio'                  => $urlActaMatrimonio,
+            'doc_regimen_propiedad_condo'          => $urlRegimenCondo,     
+            'nombre_doc_ine1'                      => $nombreINE1,
+            'nombre_doc_rfc1'                      => $nombreRFC1,
+            'nombre_doc_TipoPersona1'              => $nombreTipoPersona1,
+            'nombre_doc_ActaNacimiento1'           => $nombreActaNacimiento1,
+            'nombre_doc_curp1'                     => $nombreCURP1,
+            'nombre_doc_ine2'                      => $nombreINE2,
+            'nombre_doc_rfc2'                      => $nombreRFC2,
+            'nombre_doc_TipoPersona2'              => $nombreTipoPersona2,
+            'nombre_doc_ActaNacimiento2'           => $nombreActaNacimiento2,
+            'nombre_doc_curp2'                     => $nombreCURP2,
+            'nombre_doc_escritura'                 => $nombreESCRITURA,
+            'nombre_doc_titulo'                    => $nombreTITULO,
+            'nombre_doc_registro'                  => $nombreREGISTRO,
+            'nombre_doc_aviso'                     => $nombreAVISO,
+            'nombre_doc_recibo_luz'                => $nombreReciboLuz,
+            'nombre_doc_recibo_agua'               => $nombreReciboAgua,
+            'nombre_doc_predial'                   => $nombrePREDIAL,
+            'nombre_doc_planos'                    => $nombrePLANOS,
+            'nombre_doc_regimen_matrimonial'       => $nombreRegimenMatrimonial,
+            'nombre_doc_acta_matrimonio'           => $nombreActaMatrimono,
+            'nombre_doc_regimen_propiedad_condo'   => $nombreRegimenCondo,
         ]);
 
         return redirect('home'); 
@@ -661,6 +703,7 @@ class RegisterPropertyController extends Controller
             ->leftJoin('states', 'registro_de_propiedad.id_estado_propiedad', '=', 'states.id_state')
             ->leftJoin('prospector', 'registro_de_propiedad.id_prospectores', '=', 'prospector.id_prospectador')
             ->leftJoin('adviser', 'registro_de_propiedad.id_asesores', '=', 'adviser.id_asesor')
+            ->leftJoin('documents_property', 'registro_de_propiedad.id_doc_propertys', '=', 'documents_property.id_doc_property')
             ->where('registro_de_propiedad.status', '=', 1)
             ->paginate(15);
 
@@ -678,9 +721,12 @@ class RegisterPropertyController extends Controller
                     ->leftJoin('states', 'registro_de_propiedad.id_estado_propiedad', '=', 'states.id_state')
                     ->leftJoin('prospector', 'registro_de_propiedad.id_prospectores', '=', 'prospector.id_prospectador')
                     ->leftJoin('adviser', 'registro_de_propiedad.id_asesores', '=', 'adviser.id_asesor')
+                    ->leftJoin('documents_property', 'registro_de_propiedad.id_doc_propertys', '=', 'documents_property.id_doc_property')
                     ->select('*')
                     ->where('id', '=', $id)
                     ->get();
+
+
 
         $colonies           = DB::table('colonies')->get();
         $cities             = DB::table('cities')->get();
@@ -690,8 +736,20 @@ class RegisterPropertyController extends Controller
         $type_propertys     = DB::table('type_propertys')->get();
         $prospector         = DB::table('prospector')->get();
         $adviser            = DB::table('adviser')->get();
+        $documents_property            = DB::table('documents_property')->get();
 
-        return view('editar_propiedad', ['editPropiedades' => $editPropiedades, 'colonies' => $colonies, 'cities' => $cities, 'states' => $states, 'credits' => $credits, 'commissions' => $commissions, 'type_propertys' => $type_propertys, 'prospector' => $prospector, 'adviser' => $adviser]);  
+        return view('editar_propiedad', ['editPropiedades' => $editPropiedades, 'colonies' => $colonies, 'cities' => $cities, 'states' => $states, 'credits' => $credits, 'commissions' => $commissions, 'type_propertys' => $type_propertys, 'prospector' => $prospector, 'adviser' => $adviser, 'documents_property' => $documents_property]);  
+    }
+
+    public function documentos($id)
+    {
+        $documents = DB::table('registro_de_propiedad')
+                    ->leftJoin('documents_property', 'registro_de_propiedad.id_doc_propertys', '=', 'documents_property.id_doc_property')
+                    ->select('*')
+                    ->where('id', '=', $id)
+                    ->get();
+
+        return view('documents_property', ['documents' => $documents]);  
     }
 
     /**
@@ -724,6 +782,346 @@ class RegisterPropertyController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $random = str_random(7);
+
+        if (!empty($request->file('doc_ine1'))) {
+            //INE
+            //obtenemos el campo file definido en el formulario
+            $fileINE1 = $request->file('doc_ine1');
+            //obtenemos el nombre del archivo
+            $nombreINE1 = $fileINE1->getClientOriginalName();
+            $nombreINE1 = 'INE-'.$random.$fileINE1->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreINE1,  \File::get($fileINE1));
+            //obtenemos la url
+            $public_pathINE1 = public_path();
+            $urlINE1 = '/documents/'.$nombreINE1;
+        }else{
+            $urlINE1 = $request['urlINE1'];
+            $nombreINE1 = $request['nombreINE1'];
+        }
+        if (!empty($request->file('doc_rfc1'))) {
+            //RFC
+            //obtenemos el campo file definido en el formulario
+            $fileRFC1 = $request->file('doc_rfc1');
+            //obtenemos el nombre del archivo
+            $nombreRFC1 = $fileRFC1->getClientOriginalName();
+            $nombreRFC1 = 'RFC-'.$random.$fileRFC1->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreRFC1,  \File::get($fileRFC1));
+            //obtenemos la url
+            $public_pathRFC1 = public_path();
+            $urlRFC1 = '/documents/'.$nombreRFC1;
+            }else{
+                $urlRFC1 = $request['urlRFC1'];
+                $nombreRFC1 = $request['nombreRFC1'];
+            }
+        if (!empty($request->file('doc_TipoPersona1'))) {
+            //TIPO DE PERSONA
+            //obtenemos el campo file definido en el formulario
+            $fileTipoPersona1 = $request->file('doc_TipoPersona1');
+            //obtenemos el nombre del archivo
+            $nombreTipoPersona1 = $fileTipoPersona1->getClientOriginalName();
+            $nombreTipoPersona1 = 'TipoPersona-'.$random.$fileTipoPersona1->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreTipoPersona1,  \File::get($fileTipoPersona1));
+            //obtenemos la url
+            $public_pathTipoPersona1 = public_path();
+            $urlPersona1 = '/documents/'.$nombreTipoPersona1;
+        }else{
+           $urlPersona1 = $request['urlPersona1'];
+           $nombreTipoPersona1 = $request['nombreTipoPersona1'];
+        }
+        if (!empty($request->file('doc_ActaNacimiento1'))) {
+            //ACTA DE NACIMIENTO
+            //obtenemos el campo file definido en el formulario
+            $fileActaNacimiento1 = $request->file('doc_ActaNacimiento1');
+            //obtenemos el nombre del archivo
+            $nombreActaNacimiento1 = $fileActaNacimiento1->getClientOriginalName();
+            $nombreActaNacimiento1 = 'ActaNacimiento-'.$random.$fileActaNacimiento1->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreActaNacimiento1,  \File::get($fileActaNacimiento1));
+            //obtenemos la url
+            $public_pathActaNacimiento1 = public_path();
+            $urlActaNacimiento1 = '/documents/'.$nombreActaNacimiento1;
+        }else{
+           $urlActaNacimiento1 = $request['urlActaNacimiento1'];
+           $nombreActaNacimiento1 = $request['nombreActaNacimiento1'];
+        }
+        if (!empty($request->file('doc_curp1'))) {
+            //CRUP
+            //obtenemos el campo file definido en el formulario
+            $fileCURP1 = $request->file('doc_curp1');
+            //obtenemos el nombre del archivo
+            $nombreCURP1 = $fileCURP1->getClientOriginalName();
+            $nombreCURP1 = 'CURP-'.$random.$fileCURP1->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreCURP1,  \File::get($fileCURP1));
+            //obtenemos la url
+            $public_pathCURP1 = public_path();
+            $urlCURP1 = '/documents/'.$nombreCURP1;
+        }else{
+           $urlCURP1 = $request['urlCURP1'];
+           $nombreCURP1 = $request['nombreCURP1'];
+        }
+        if (!empty($request->file('doc_ine2'))) {
+            //INE
+            //obtenemos el campo file definido en el formulario
+            $fileINE2 = $request->file('doc_ine2');
+            //obtenemos el nombre del archivo
+            $nombreINE2 = $fileINE2->getClientOriginalName();
+            $nombreINE2 = 'INE-'.$random.$fileINE2->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreINE2,  \File::get($fileINE2));
+            //obtenemos la url
+            $public_pathINE2 = public_path();
+            $urlINE2 = '/documents/'.$nombreINE2;
+        }else{
+            $urlINE2 = $request['urlINE2'];
+            $nombreINE2 = $request['nombreINE2'];
+        }
+        if (!empty($request->file('doc_rfc2'))) {
+            //RFC
+            //obtenemos el campo file definido en el formulario
+            $fileRFC2 = $request->file('doc_rfc2');
+            //obtenemos el nombre del archivo
+            $nombreRFC2 = $fileRFC2->getClientOriginalName();
+            $nombreRFC2 = 'RFC-'.$random.$fileRFC2->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreRFC2,  \File::get($fileRFC2));
+            //obtenemos la url
+            $public_pathRFC2 = public_path();
+            $urlRFC2 = '/documents/'.$nombreRFC2;
+            }else{
+                $urlRFC2 = $request['urlRFC2'];
+                $nombreRFC2 = $request['nombreRFC2'];
+            }
+        if (!empty($request->file('doc_TipoPersona2'))) {
+            //TIPO DE PERSONA
+            //obtenemos el campo file definido en el formulario
+            $fileTipoPersona2 = $request->file('doc_TipoPersona2');
+            //obtenemos el nombre del archivo
+            $nombreTipoPersona2 = $fileTipoPersona2->getClientOriginalName();
+            $nombreTipoPersona2 = 'TipoPersona-'.$random.$fileTipoPersona2->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreTipoPersona2,  \File::get($fileTipoPersona2));
+            //obtenemos la url
+            $public_pathTipoPersona2 = public_path();
+            $urlPersona2 = '/documents/'.$nombreTipoPersona2;
+        }else{
+            $nombreTipoPersona2 = $request['nombreTipoPersona2'];
+            $urlPersona2 = $request['urlPersona2'];
+        }
+        if (!empty($request->file('doc_ActaNacimiento2'))) {
+            //ACTA DE NACIMIENTO
+            //obtenemos el campo file definido en el formulario
+            $fileActaNacimiento2 = $request->file('doc_ActaNacimiento2');
+            //obtenemos el nombre del archivo
+            $nombreActaNacimiento2 = $fileActaNacimiento2->getClientOriginalName();
+            $nombreActaNacimiento2 = 'ActaNacimiento-'.$random.$fileActaNacimiento2->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreActaNacimiento2,  \File::get($fileActaNacimiento2));
+            //obtenemos la url
+            $public_pathActaNacimiento2 = public_path();
+            $urlActaNacimiento2 = '/documents/'.$nombreActaNacimiento2;
+        }else{
+            $urlActaNacimiento2 = $request['urlActaNacimiento2'];
+            $nombreActaNacimiento2 = $request['nombreActaNacimiento2'];
+        }
+        if (!empty($request->file('doc_curp2'))) {
+            //CRUP
+            //obtenemos el campo file definido en el formulario
+            $fileCURP2 = $request->file('doc_curp2');
+            //obtenemos el nombre del archivo
+            $nombreCURP2 = $fileCURP2->getClientOriginalName();
+            $nombreCURP2 = 'CURP-'.$random.$fileCURP2->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreCURP2,  \File::get($fileCURP2));
+            //obtenemos la url
+            $public_pathCURP2 = public_path();
+            $urlCURP2 = '/documents/'.$nombreCURP2;
+        }else{
+            $urlCURP2 = $request['urlCURP2'];
+            $nombreCURP2 = $request['nombreCURP2'];
+        }
+        if (!empty($request->file('doc_escritura'))) {
+            //ESCRITURA PROPIEDAD
+            //obtenemos el campo file definido en el formulario
+            $fileESCRITURA = $request->file('doc_escritura');
+            //obtenemos el nombre del archivo
+            $nombreESCRITURA = $fileESCRITURA->getClientOriginalName();
+            $nombreESCRITURA = 'ESCRITURA-'.$random.$fileESCRITURA->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreESCRITURA,  \File::get($fileESCRITURA));
+            //obtenemos la url
+            $public_pathESCRITURA = public_path();
+            $urlESCRITURA = '/documents/'.$nombreESCRITURA;
+        }else{
+            $urlESCRITURA = $request['urlESCRITURA'];
+            $nombreESCRITURA = $request['nombreESCRITURA'];
+        }
+        if (!empty($request->file('doc_titulo'))) {
+            //ESCRITURA TITULO
+            //obtenemos el campo file definido en el formulario
+            $fileTITULO = $request->file('doc_titulo');
+            //obtenemos el nombre del archivo
+            $nombreTITULO = $fileESCRITURA->getClientOriginalName();
+            $nombreTITULO = 'TITULO-'.$random.$fileESCRITURA->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreTITULO,  \File::get($fileTITULO));
+            //obtenemos la url
+            $public_pathTITULO = public_path();
+            $urlTITULO = '/documents/'.$nombreTITULO;
+        }else{
+            $urlTITULO = $request['urlTITULO'];
+            $nombreTITULO = $request['nombreTITULO'];
+        }
+        if (!empty($request->file('doc_registro'))) {
+            //REGISTRO PROPIEDAD
+            //obtenemos el campo file definido en el formulario
+            $fileREGISTRO = $request->file('doc_registro');
+            //obtenemos el nombre del archivo
+            $nombreREGISTRO = $fileREGISTRO->getClientOriginalName();
+            $nombreREGISTRO = 'REGISTRO-'.$random.$fileREGISTRO->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreREGISTRO,  \File::get($fileREGISTRO));
+            //obtenemos la url
+            $public_pathREGISTRO = public_path();
+            $urlREGISTRO = '/documents/'.$nombreREGISTRO;
+        }else{
+            $urlREGISTRO = $request['urlREGISTRO'];
+            $nombreREGISTRO = $request['nombreREGISTRO'];
+        }
+        if (!empty($request->file('doc_aviso'))) {
+            //AVISO PRIVACIDAD
+            //obtenemos el campo file definido en el formulario
+            $fileAVISO = $request->file('doc_aviso');
+            //obtenemos el nombre del archivo
+            $nombreAVISO = $fileAVISO->getClientOriginalName();
+            $nombreAVISO = 'AVISO-'.$random.$fileAVISO->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreAVISO,  \File::get($fileAVISO));
+            //obtenemos la url
+            $public_pathAVISO = public_path();
+            $urlAVISO = '/documents/'.$nombreAVISO;
+        }else{
+            $urlAVISO = $request['urlAVISO'];
+            $nombreAVISO = $request['nombreAVISO'];
+        }
+        if (!empty($request->file('doc_recibo_agua'))) {
+            //RECIBO AGUA
+            //obtenemos el campo file definido en el formulario
+            $fileReciboAgua = $request->file('doc_recibo_agua');
+            //obtenemos el nombre del archivo
+            $nombreReciboAgua = $fileReciboAgua->getClientOriginalName();
+            $nombreReciboAgua = 'ReciboAgua-'.$random.$fileReciboAgua->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreReciboAgua,  \File::get($fileReciboAgua));
+            //obtenemos la url
+            $public_pathReciboAgua = public_path();
+            $urlReciboAgua = '/documents/'.$nombreReciboAgua;
+        }else{
+            $urlReciboAgua = $request['urlReciboAgua'];
+            $nombreReciboAgua = $request['nombreReciboAgua'];
+        }
+        if (!empty($request->file('doc_recibo_luz'))) {
+            //RECIBO LUZ
+            //obtenemos el campo file definido en el formulario
+            $fileReciboLuz = $request->file('doc_recibo_luz');
+            //obtenemos el nombre del archivo
+            $nombreReciboLuz = $fileReciboLuz->getClientOriginalName();
+            $nombreReciboLuz = 'ReciboLuz-'.$random.$fileReciboLuz->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreReciboLuz,  \File::get($fileReciboLuz));
+            //obtenemos la url
+            $public_pathReciboLuz = public_path();
+            $urlReciboLuz = '/documents/'.$nombreReciboLuz;
+        }else{
+            $urlReciboLuz = $request['urlReciboLuz'];
+            $nombreReciboLuz = $request['nombreReciboLuz'];
+        }
+        if (!empty($request->file('doc_predial'))) {
+            //PREDIAL
+            //obtenemos el campo file definido en el formulario
+            $filePREDIAL = $request->file('doc_predial');
+            //obtenemos el nombre del archivo
+            $nombrePREDIAL = $filePREDIAL->getClientOriginalName();
+            $nombrePREDIAL = 'PREDIAL-'.$random.$filePREDIAL->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombrePREDIAL,  \File::get($filePREDIAL));
+            //obtenemos la url
+            $public_pathPREDIAL = public_path();
+            $urlPREDIAL = '/documents/'.$nombrePREDIAL;
+        }else{
+            $urlPREDIAL = $request['urlPREDIAL'];
+            $nombrePREDIAL = $request['nombrePREDIAL'];
+        }
+        if (!empty($request->file('doc_planos'))) {
+            //PLANOS
+            //obtenemos el campo file definido en el formulario
+            $filePLANOS = $request->file('doc_planos');
+            //obtenemos el nombre del archivo
+            $nombrePLANOS = $filePLANOS->getClientOriginalName();
+            $nombrePLANOS = 'PLANOS-'.$random.$fileReciboLuz->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombrePLANOS,  \File::get($filePLANOS));
+            //obtenemos la url
+            $public_pathPLANOS = public_path();
+            $urlPLANOS = '/documents/'.$nombrePLANOS;
+        }else{
+            $nombrePLANOS = $request['nombrePLANOS'];
+            $urlPLANOS = $request['urlPLANOS'];
+        }
+        if (!empty($request->file('doc_regimen_matrimonial'))) {
+            //REGIMEN MATRIMONIAL
+            //obtenemos el campo file definido en el formulario
+            $fileRegimenMatrimonial = $request->file('doc_regimen_matrimonial');
+            //obtenemos el nombre del archivo
+            $nombreRegimenMatrimonial = $fileRegimenMatrimonial->getClientOriginalName();
+            $nombreRegimenMatrimonial = 'RegimenMatrimonial-'.$random.$fileRegimenMatrimonial->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombrePLANOS,  \File::get($fileRegimenMatrimonial));
+            //obtenemos la url
+            $public_pathRegimenMatrimonial = public_path();
+            $urlRegimenMatrimonial = '/documents/'.$nombreRegimenMatrimonial;
+        }else{
+            $nombreRegimenMatrimonial = $request['nombreRegimenMatrimonial'];
+            $urlRegimenMatrimonial = $request['urlRegimenMatrimonial'];
+        }
+        if (!empty($request->file('doc_acta_matrimonio'))) {
+            //ACTA MATRIMONIO
+            //obtenemos el campo file definido en el formulario
+            $fileActaMatrimono = $request->file('doc_acta_matrimonio');
+            //obtenemos el nombre del archivo
+            $nombreActaMatrimono = $fileActaMatrimono->getClientOriginalName();
+            $nombreActaMatrimono = 'ActaMatrimono-'.$random.$fileActaMatrimono->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreActaMatrimono,  \File::get($fileActaMatrimono));
+            //obtenemos la url
+            $public_pathActaMatrimono = public_path();
+            $urlActaMatrimonio = '/documents/'.$nombreActaMatrimono;
+        }else{
+            $urlActaMatrimonio = $request['urlActaMatrimonio'];
+            $nombreActaMatrimono = $request['nombreActaMatrimono'];
+        }
+        if (!empty($request->file('doc_regimen_propiedad_condo'))) {
+            //REGIMEN PROPIEDAD CONDO
+            //obtenemos el campo file definido en el formulario
+            $fileRegimenCondo = $request->file('doc_regimen_propiedad_condo');
+            //obtenemos el nombre del archivo
+            $nombreRegimenCondo = $fileRegimenCondo->getClientOriginalName();
+            $nombreRegimenCondo = 'RegimenCondo-'.$random.$fileRegimenCondo->getClientOriginalName();
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombreRegimenCondo,  \File::get($fileRegimenCondo));
+            //obtenemos la url
+            $public_pathRegimenCondo = public_path();
+            $urlRegimenCondo = '/documents/'.$nombreRegimenCondo;
+        }else{
+            $urlRegimenCondo = $request['urlRegimenCondo'];
+            $nombreRegimenCondo = $request['nombreRegimenCondo'];
+        }
+
+    //Crea el codigo para guardarlo
             $year = date("y");
 
             $tipo = DB::table('type_propertys')
@@ -736,7 +1134,11 @@ class RegisterPropertyController extends Controller
              ->select(DB::raw('MAX(id)+1 as id'))
              ->get();
              $idPropiedad = (array)$idPropiedad[0];
-
+            if (!is_null($idPropiedad)) {
+                $idPropiedad;
+             }else{
+                $idPropiedad['id'] = 1;
+             }
 
              if ($request['tiene_adeudo'] == 'Si'){
                 $expediente = "1G";
@@ -771,6 +1173,7 @@ class RegisterPropertyController extends Controller
              }
              $codigo = $year.$tipo['iden_propiedad'].$idPropiedad['id'].'-'.$expediente.$exclusiva.$codComision.'-'.$idProspector;
 
+        //end
 
         if (!empty($request['tipo_credito'])) {
             $array_tipo_credito = $request['tipo_credito'];
@@ -808,7 +1211,7 @@ class RegisterPropertyController extends Controller
         }else{
             $curp = "";
         }
-        
+       
         if (!empty($request['restricciones_renta_venta'])) {
             $array_restricciones_renta_venta = $request['restricciones_renta_venta'];
             $restricciones_renta_venta = implode(", ", $array_restricciones_renta_venta);
@@ -953,10 +1356,57 @@ class RegisterPropertyController extends Controller
                 'director_aprobo_listing_comision'  => $request['director_aprobo_listing_comision'],
                 'codigo'                            => $codigo,
 
-                'update_at'                 => $update_at,
-                'update_by'         => $request['update_by'],
+                'update_at'                         => $update_at,
+                'update_by'                         => $request['update_by'],
             ]);
 
+
+            DB::table('documents_property')
+            ->where('id_doc_property', $request['id_doc_property'])
+            ->update([
+                'doc_ine1'                             => $urlINE1,
+                'doc_rfc1'                             => $urlRFC1,
+                'doc_TipoPersona1'                     => $urlPersona1,
+                'doc_ActaNacimiento1'                  => $urlActaNacimiento1,
+                'doc_curp1'                            => $urlCURP1,
+                'doc_ine2'                             => $urlINE2,
+                'doc_rfc2'                             => $urlRFC2,
+                'doc_TipoPersona2'                     => $urlPersona2,
+                'doc_ActaNacimiento2'                  => $urlActaNacimiento2,
+                'doc_curp2'                            => $urlCURP2,
+                'doc_escritura'                        => $urlESCRITURA,
+                'doc_titulo'                           => $urlTITULO,
+                'doc_registro'                         => $urlREGISTRO,
+                'doc_aviso'                            => $urlAVISO,
+                'doc_recibo_luz'                       => $urlReciboLuz,
+                'doc_recibo_agua'                      => $urlReciboAgua,
+                'doc_predial'                          => $urlPREDIAL,
+                'doc_planos'                           => $urlPLANOS,
+                'doc_regimen_matrimonial'              => $urlRegimenMatrimonial,
+                'doc_acta_matrimonio'                  => $urlActaMatrimonio,
+                'doc_regimen_propiedad_condo'          => $urlRegimenCondo,     
+                'nombre_doc_ine1'                      => $nombreINE1,
+                'nombre_doc_rfc1'                      => $nombreRFC1,
+                'nombre_doc_TipoPersona1'              => $nombreTipoPersona1,
+                'nombre_doc_ActaNacimiento1'           => $nombreActaNacimiento1,
+                'nombre_doc_curp1'                     => $nombreCURP1,
+                'nombre_doc_ine2'                      => $nombreINE2,
+                'nombre_doc_rfc2'                      => $nombreRFC2,
+                'nombre_doc_TipoPersona2'              => $nombreTipoPersona2,
+                'nombre_doc_ActaNacimiento2'           => $nombreActaNacimiento2,
+                'nombre_doc_curp2'                     => $nombreCURP2,
+                'nombre_doc_escritura'                 => $nombreESCRITURA,
+                'nombre_doc_titulo'                    => $nombreTITULO,
+                'nombre_doc_registro'                  => $nombreREGISTRO,
+                'nombre_doc_aviso'                     => $nombreAVISO,
+                'nombre_doc_recibo_luz'                => $nombreReciboLuz,
+                'nombre_doc_recibo_agua'               => $nombreReciboAgua,
+                'nombre_doc_predial'                   => $nombrePREDIAL,
+                'nombre_doc_planos'                    => $nombrePLANOS,
+                'nombre_doc_regimen_matrimonial'       => $nombreRegimenMatrimonial,
+                'nombre_doc_acta_matrimonio'           => $nombreActaMatrimono,
+                'nombre_doc_regimen_propiedad_condo'   => $nombreRegimenCondo,
+            ]);
             
             return redirect('home'); 
     }
@@ -1023,6 +1473,7 @@ class RegisterPropertyController extends Controller
      */
     public function destroy(Request $request, $id)
     {
+
         $delete_at = date("Y-m-d H:i:s"); 
 
         DB::table('registro_de_propiedad')

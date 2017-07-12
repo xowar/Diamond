@@ -56,7 +56,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Estado Civil *</label>
-                                            <select name="estado_civil" class="form-control" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required>
+                                            <select name="estado_civil" class="form-control">
                                                 <option value="">Selecciona una opcion</option>
                                                 <option value="Casado Bienes Mancomunados">Casado Bienes Mancomunados</option>
                                                 <option value="Casado Bienes Separados">Casado Bienes Separados</option>
@@ -68,7 +68,7 @@
                                         </div>  
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input name="email" class="form-control" type="email">
+                                            <input name="email" class="form-control" type="email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required>
                                         </div>  
                                         <div class="form-group">
                                             <label>Es dueño quien ofrece la propiedad *</label>
@@ -203,7 +203,7 @@
                                         <div class="form-group">
                                             <label>Recámaras *</label>
                                             <select name="recamaras" class="form-control" required>
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="0">0</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -218,7 +218,7 @@
                                         <div class="form-group">
                                             <label>Baños Completos *</label>
                                             <select name="banos_completos" class="form-control" required>
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="0">0</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -231,7 +231,7 @@
                                         <div class="form-group">
                                             <label>Medios Baños *</label>
                                             <select name="medios_banos" class="form-control" required>
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="0">0</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -241,7 +241,7 @@
                                         <div class="form-group">
                                             <label>Cochera *</label>
                                             <select name="cochera" class="form-control" required>
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="0">0</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -254,7 +254,7 @@
                                         <div class="form-group">
                                             <label>Niveles *</label>
                                             <select name="niveles" class="form-control" required>
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="0">0</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -275,7 +275,7 @@
                                         <div class="form-group">
                                             <label>Conservación</label>
                                             <select name="conservacion" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="En Proyecto">En Proyecto</option>
                                                 <option value="Nuevo">Nuevo</option>
                                                 <option value="Excelente">Excelente</option>
@@ -287,7 +287,7 @@
                                         <div class="form-group">
                                             <label>Dueños Originales *</label>
                                             <select name="duenos_originales" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -295,7 +295,7 @@
                                         <div class="form-group">
                                             <label>Vestidor</label>
                                             <select name="vestidor" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -305,7 +305,7 @@
                                         <div class="form-group">
                                             <label>Sala</label>
                                             <select name="sala" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -313,7 +313,7 @@
                                         <div class="form-group">
                                             <label>Comedor</label>
                                             <select name="comedor" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -321,7 +321,7 @@
                                         <div class="form-group">
                                             <label>Cocina Integral</label>
                                             <select name="cocina_integral" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -329,7 +329,7 @@
                                         <div class="form-group">
                                             <label>Estudio</label>
                                             <select name="estudio" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -337,7 +337,7 @@
                                         <div class="form-group">
                                             <label>Cuarto T.V.</label>
                                             <select name="cuarto_tv" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -345,7 +345,7 @@
                                         <div class="form-group">
                                             <label>Patio</label>
                                             <select name="patio" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -353,7 +353,7 @@
                                         <div class="form-group">
                                             <label>Cuarto de Servicio</label>
                                             <select name="cuarto_servicio" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -361,7 +361,7 @@
                                         <div class="form-group">
                                             <label>Bodega</label>
                                             <select name="bodega" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -369,7 +369,7 @@
                                         <div class="form-group">
                                             <label>Cisterna</label>
                                             <select name="cisterna" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -377,7 +377,7 @@
                                         <div class="form-group">
                                             <label>Aire Acondicionado</label>
                                             <select name="aire_acondicionado" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -385,7 +385,7 @@
                                         <div class="form-group">
                                             <label>Instalaciones para Minisplit</label>
                                             <select name="instalaciones_minisplit" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -393,7 +393,7 @@
                                         <div class="form-group">
                                             <label>Boyler</label>
                                             <select name="boyler" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -401,7 +401,7 @@
                                         <div class="form-group">
                                             <label>Bardeado</label>
                                             <select name="bardeado" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -411,7 +411,7 @@
                                         <div class="form-group">
                                             <label>Protecciones</label>
                                             <select name="protecciones" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -419,7 +419,7 @@
                                         <div class="form-group">
                                             <label>Terraza</label>
                                             <select name="terraza" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -427,7 +427,7 @@
                                         <div class="form-group">
                                             <label>Balcón</label>
                                             <select name="balcon" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -435,7 +435,7 @@
                                         <div class="form-group">
                                             <label>Cuarto de Lavado</label>
                                             <select name="cuarto_lavado" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -443,7 +443,7 @@
                                         <div class="form-group">
                                             <label>Jacuzzi</label>
                                             <select name="jacuzzi" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -451,7 +451,7 @@
                                         <div class="form-group">
                                             <label>Casa Club</label>
                                             <select name="casa_club" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -459,7 +459,7 @@
                                         <div class="form-group">
                                             <label>Parrilla</label>
                                             <select name="parrilla" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -467,7 +467,7 @@
                                         <div class="form-group">
                                             <label>Elevador</label>
                                             <select name="elevador" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -475,7 +475,7 @@
                                         <div class="form-group">
                                             <label>Acceso a Playa</label>
                                             <select name="acceso_playa" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -483,7 +483,7 @@
                                         <div class="form-group">
                                             <label>Muelle</label>
                                             <select name="muelle" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -491,7 +491,7 @@
                                         <div class="form-group">
                                             <label>Urbanizado</label>
                                             <select name="urbanizado" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -499,7 +499,7 @@
                                         <div class="form-group">
                                             <label>Jardín</label>
                                             <select name="jardin" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -507,7 +507,7 @@
                                         <div class="form-group">
                                             <label>Áreas Verdes</label>
                                             <select name="areas_verdes" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -517,7 +517,7 @@
                                         <div class="form-group">
                                             <label>Alberca Común</label>
                                             <select name="alberca_comun" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -533,7 +533,7 @@
                                         <div class="form-group">
                                             <label>Canchas</label>
                                             <select name="canchas" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -541,7 +541,7 @@
                                         <div class="form-group">
                                             <label>Seguridad 24 Horas</label>
                                             <select name="seguridad_todo_dia" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -549,7 +549,7 @@
                                         <div class="form-group">
                                             <label>Sistema de Seguridad</label>
                                             <select name="sistema_seguridad" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -557,7 +557,7 @@
                                         <div class="form-group">
                                             <label>Amueblado</label>
                                             <select name="amueblado" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -565,7 +565,7 @@
                                         <div class="form-group">
                                             <label>Vista al Mar</label>
                                             <select name="vista_mar" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -573,7 +573,7 @@
                                         <div class="form-group">
                                             <label>Vista a la Marina</label>
                                             <select name="vista_marina" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -581,7 +581,7 @@
                                         <div class="form-group">
                                             <label>Vista Panoramica</label>
                                             <select name="vista_panoramica" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -589,15 +589,15 @@
                                         <div class="form-group">
                                             <label>Vista Campo de Golf</label>
                                             <select name="vista_campo_golf" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label>Agua</label>
+                                            <label>Agua *</label>
                                             <select name="agua" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -613,7 +613,7 @@
                                         <div class="form-group">
                                             <label>Drenaje *</label>
                                             <select name="drenaje" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -643,7 +643,7 @@
                                         <div class="form-group">
                                             <label>Tiene aduedo *</label>
                                             <select name="tiene_adeudo" class="form-control" required>
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -659,7 +659,7 @@
                                         <div class="form-group">
                                             <label>Ofrece Financiamiento *</label>
                                             <select name="ofrece_financiamiento" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -667,7 +667,7 @@
                                         <div class="form-group">
                                             <label>Aplica Credito *</label>
                                             <select name="aplica_credito" class="form-control" required>
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="Todos">Todos</option>
                                                 <option value="Ninguno">Ninguno</option>
                                                 <option value="Directo">Directo</option>
@@ -734,7 +734,7 @@
                                         <div class="form-group">
                                             <label>Tipo de Contrato *</label>
                                             <select name="tipo_contrato" class="form-control" required>
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="Anual">Anual</option>
                                                 <option value="6 Meses">6 Meses</option>
                                                 <option value="3 Meses">3 Meses</option>
@@ -919,7 +919,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Recibo del Agua *</label>
-                                            <select id="recibo_agua" name="recibo_agua" class="form-control" required>
+                                            <select name="recibo_agua" id="recibo_agua" name="recibo_agua" class="form-control" required>
                                                 <option value="">Selecciona una opcion</option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
@@ -968,7 +968,7 @@
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
-                                            <div id="acta_matrimonio" style="display: none;">
+                                            <div id="acta_matrimonio1" style="display: none;">
                                                 <input name="doc_acta_matrimonio" type="file" accept="application/pdf">
                                             </div>
                                         </div>
@@ -979,7 +979,7 @@
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
-                                            <div id="regimen_propiedad_condo" style="display: none;">
+                                            <div id="regimen_propiedad_condo1" style="display: none;">
                                                 <input name="doc_regimen_propiedad_condo" type="file" accept="application/pdf">
                                             </div>
                                         </div>
@@ -1039,7 +1039,7 @@
                                         <div class="form-group">
                                             <label>Exclusiva *</label>
                                             <select name="exclusiva" class="form-control" required>
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
@@ -1047,7 +1047,7 @@
                                         <div class="form-group">
                                             <label>Tipo de Convenio *</label>
                                             <select name="tipo_convenio" class="form-control" required>
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="Venta">Venta</option>
                                                 <option value="Renta">Renta</option>
                                             </select>
@@ -1077,7 +1077,7 @@
                                         <div class="form-group">
                                             <label>Referido *</label>
                                             <select name="referido" class="form-control" required>
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
@@ -1085,7 +1085,7 @@
                                         <div class="form-group">
                                             <label>Llaves *</label>
                                             <select name="llaves" class="form-control" required>
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
@@ -1101,7 +1101,7 @@
                                         <div class="form-group">
                                             <label>Amueblada a la renta o venta *</label>
                                             <select name="amueblada_renta_venta" class="form-control" required>
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="Sin">Sin</option>
                                                 <option value="Con">Con</option>
                                                 <option value="Cualquiera">Cualquiera</option>
@@ -1145,7 +1145,7 @@
                                         <div class="form-group">
                                             <label>Tipo de Moneda *</label>
                                             <select name="tipo_moneda" class="form-control" required>
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="MXN">MXN</option>
                                                 <option value="USD">USD</option>
                                             </select>
@@ -1157,7 +1157,7 @@
                                         <div class="form-group">
                                             <label>Incluye Cuota de Mantenimiento</label>
                                             <select name="inclu_cuota_mantenimiento" class="form-control">
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
@@ -1231,7 +1231,7 @@
                                         <div class="form-group">
                                             <label>Existe algún defecto estructural *</label>
                                             <select name="defecto_estructural" class="form-control" required>
-                                                <option>Selecciona una opción</option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>

@@ -762,8 +762,11 @@
                                             <?php  } ?> 
                                             <div class="checkbox">
                                                 <label>
-                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="ine[]" type="checkbox" value="Sr">Sr
+                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="ine[]" type="checkbox" value="Sr" id="ineSr" onchange="javascript:showContent1()">Sr
                                                 </label>
+                                            </div>
+                                            <div id="ineSr1" style="display: none;">
+                                                <input name="doc_ine1" type="file" accept="application/pdf">
                                             </div>
                                             <?php $checked = ""; ?>
                                             <?php for ($i=0; $i < count($ine); $i++) { ?>
@@ -773,8 +776,11 @@
                                             <?php  } ?> 
                                             <div class="checkbox">
                                                 <label>
-                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="ine[]" type="checkbox" value="Sra">Sra
+                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="ine[]" type="checkbox" value="Sra" id="ineSra" onchange="javascript:showContent2()">Sra
                                                 </label>
+                                            </div>
+                                            <div id="ineSra1" style="display: none;">
+                                                <input name="doc_ine2" type="file" accept="application/pdf">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -787,8 +793,11 @@
                                             <?php  } ?>    
                                             <div class="checkbox">
                                                 <label>
-                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="rfc[]" type="checkbox" value="Sr">Sr
+                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="rfc[]" type="checkbox" value="Sr" id="rfcSr" onchange="javascript:showContent3()">Sr
                                                 </label>
+                                            </div>
+                                            <div id="rfcSr1" style="display: none;">
+                                                <input name="doc_rfc1" type="file" accept="application/pdf">
                                             </div>
                                             <?php $checked = ""; ?>
                                             <?php for ($i=0; $i < count($rfc); $i++) { ?>
@@ -798,8 +807,11 @@
                                             <?php  } ?> 
                                             <div class="checkbox">
                                                 <label>
-                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="rfc[]" type="checkbox" value="Sra">Sra
+                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="rfc[]" type="checkbox" value="Sra" id="rfcSra" onchange="javascript:showContent4()">Sra
                                                 </label>
+                                            </div>
+                                            <div id="rfcSra1" style="display: none;">
+                                                <input name="doc_rfc2" type="file" accept="application/pdf">
                                             </div>
                                             <?php $checked = ""; ?>
                                             <?php for ($i=0; $i < count($rfc); $i++) { ?>
@@ -823,8 +835,11 @@
                                             <?php  } ?> 
                                             <div class="checkbox">
                                                 <label>
-                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="tipo_persona[]" type="checkbox" value="Sr">Sr
+                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="tipo_persona[]" type="checkbox" value="Sr" id="tipoSr" onchange="javascript:showContent5()">Sr
                                                 </label>
+                                            </div>
+                                            <div id="tipoSr1" style="display: none;">
+                                                <input name="doc_TipoPersona1" type="file" accept="application/pdf">
                                             </div>
                                             <?php $checked = ""; ?>
                                             <?php for ($i=0; $i < count($tipo_persona); $i++) { ?>
@@ -834,8 +849,11 @@
                                             <?php  } ?> 
                                             <div class="checkbox">
                                                 <label>
-                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="tipo_persona[]" type="checkbox" value="Sra">Sra
+                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="tipo_persona[]" type="checkbox" value="Sra" id="tipoSra" onchange="javascript:showContent6()">Sra
                                                 </label>
+                                            </div>
+                                            <div id="tipoSra1" style="display: none;">
+                                                <input name="doc_TipoPersona2" type="file" accept="application/pdf">
                                             </div>
                                             <?php $checked = ""; ?>
                                             <?php for ($i=0; $i < count($tipo_persona); $i++) { ?>
@@ -859,8 +877,11 @@
                                             <?php  } ?> 
                                             <div class="checkbox">
                                                 <label>
-                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="acta_nacimiento[]" type="checkbox" value="Sr">Sr
+                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="acta_nacimiento[]" type="checkbox" value="Sr" id="actaSr" onchange="javascript:showContent7()">Sr
                                                 </label>
+                                            </div>
+                                            <div id="actaSr1" style="display: none;">
+                                                <input name="doc_ActaNacimiento1" type="file" accept="application/pdf">
                                             </div>
                                             <?php $checked = ""; ?>
                                             <?php for ($i=0; $i < count($acta_nacimiento); $i++) { ?>
@@ -870,9 +891,12 @@
                                             <?php  } ?> 
                                             <div class="checkbox">
                                                 <label>
-                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="acta_nacimiento[]" type="checkbox" value="Sra">Sra
+                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="acta_nacimiento[]" type="checkbox" value="Sra" id="actaSra" onchange="javascript:showContent8()">Sra
                                                 </label>
                                             </div>
+                                            <div id="actaSra1" style="display: none;">
+                                                <input name="doc_ActaNacimiento2" type="file" accept="application/pdf">
+                                            </div>  
                                             <?php $checked = ""; ?>
                                             <?php for ($i=0; $i < count($acta_nacimiento); $i++) { ?>
                                                 <?php if ($acta_nacimiento[$i] == "No") {
@@ -895,9 +919,12 @@
                                             <?php  } ?> 
                                             <div class="checkbox">
                                                 <label>
-                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="curp[]" type="checkbox" value="Sr">Sr
+                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="curp[]" type="checkbox" value="Sr" id="curpSr" onchange="javascript:showContent9()">Sr
                                                 </label>
                                             </div>
+                                            <div id="curpSr1" style="display: none;">
+                                                <input name="doc_curp1" type="file" accept="application/pdf">
+                                            </div> 
                                             <?php $checked = ""; ?>
                                             <?php for ($i=0; $i < count($curp); $i++) { ?>
                                                 <?php if ($curp[$i] == "Sra") {
@@ -906,9 +933,12 @@
                                             <?php  } ?> 
                                             <div class="checkbox">
                                                 <label>
-                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="curp[]" type="checkbox" value="Sra">Sra
+                                                    <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="curp[]" type="checkbox" value="Sra" id="curpSra" onchange="javascript:showContent10()">Sra
                                                 </label>
                                             </div>
+                                            <div id="curpSra1" style="display: none;">
+                                                <input name="doc_curp2" type="file" accept="application/pdf">
+                                            </div> 
                                             <?php $checked = ""; ?>
                                             <?php for ($i=0; $i < count($curp); $i++) { ?>
                                                 <?php if ($curp[$i] == "No") {
@@ -923,19 +953,25 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Escrituras de la Propiedad *</label>
-                                            <select name="escritura_propiedad" class="form-control" required>
+                                            <select id="escritura_propiedad" name="escritura_propiedad" class="form-control" required>
                                                 <option value="<?php echo $editPropieda->escritura_propiedad; ?>"><?php echo $editPropieda->escritura_propiedad; ?></option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
+                                            <div id="escritura_propiedad1" style="display: none;">
+                                                <input name="doc_escritura" type="file" accept="application/pdf">
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label>Titulo de Propiedad *</label>
-                                            <select name="titulo_propiedad" class="form-control" required>
+                                            <select id="titulo_propiedad" name="titulo_propiedad" class="form-control" required>
                                                 <option value="<?php echo $editPropieda->titulo_propiedad; ?>"><?php echo $editPropieda->titulo_propiedad; ?></option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
+                                            <div id="titulo_propiedad1" style="display: none;">
+                                                <input name="doc_titulo" type="file" accept="application/pdf">
+                                            </div>
                                         </div>
                                         
                                     </div>
@@ -950,75 +986,102 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Registro de Propiedad *</label>
-                                            <select name="registro_propiedad" class="form-control" required>
+                                            <select id="registro_propiedad" name="registro_propiedad" class="form-control" required>
                                                 <option value="<?php echo $editPropieda->registro_propiedad; ?>"><?php echo $editPropieda->registro_propiedad; ?></option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
+                                            <div id="registro_propiedad1" style="display: none;">
+                                                <input name="doc_registro" type="file" accept="application/pdf">
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label>Aviso de Privacidad *</label>
-                                            <select name="aviso_privacidad" class="form-control" required>
+                                            <select id="aviso_privacidad" name="aviso_privacidad" class="form-control" required>
                                                 <option value="<?php echo $editPropieda->aviso_privacidad; ?>"><?php echo $editPropieda->aviso_privacidad; ?></option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
+                                            <div id="aviso_privacidad1" style="display: none;">
+                                                <input name="doc_aviso" type="file" accept="application/pdf">
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label>Recibo de la Luz *</label>
-                                            <select name="recibo_luz" class="form-control" required>
+                                            <select id="recibo_luz" name="recibo_luz" class="form-control" required>
                                                 <option value="<?php echo $editPropieda->recibo_luz; ?>"><?php echo $editPropieda->recibo_luz; ?></option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
+                                            <div id="recibo_luz1" style="display: none;">
+                                                <input name="doc_recibo_luz" type="file" accept="application/pdf">
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label>Recibo del Agua *</label>
-                                            <select name="recibo_agua" class="form-control" required>
+                                            <select id="recibo_agua" name="recibo_agua" class="form-control" required>
                                                 <option value="<?php echo $editPropieda->recibo_agua; ?>"><?php echo $editPropieda->recibo_agua; ?></option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
+                                            <div id="recibo_agua1" style="display: none;">
+                                                <input name="doc_recibo_agua" type="file" accept="application/pdf">
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label>Predial *</label>
-                                            <select name="predial" class="form-control" required>
+                                            <select id="predial" name="predial" class="form-control" required>
                                                 <option value="<?php echo $editPropieda->predial; ?>"><?php echo $editPropieda->predial; ?></option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
+                                            <div id="predial1" style="display: none;">
+                                                <input name="doc_predial" type="file" accept="application/pdf">
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label>Planos *</label>
-                                            <select name="planos" class="form-control" required>
+                                            <select id="planos" name="planos" class="form-control" required>
                                                 <option value="<?php echo $editPropieda->planos; ?>"><?php echo $editPropieda->planos; ?></option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
+                                            <div id="planos1" style="display: none;">
+                                                <input name="doc_planos" type="file" accept="application/pdf">
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label>Regimen Matrimonial *</label>
-                                            <select name="regimen_matrimonial" class="form-control" required>
+                                            <select id="regimen_matrimonial" name="regimen_matrimonial" class="form-control" required>
                                                 <option value="<?php echo $editPropieda->regimen_matrimonial; ?>"><?php echo $editPropieda->regimen_matrimonial; ?></option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
+                                            <div id="regimen_matrimonial1" style="display: none;">
+                                                <input name="doc_regimen_matrimonial" type="file" accept="application/pdf">
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label>Acta de Matrimonio *</label>
-                                            <select name="acta_matrimonio" class="form-control" required>
+                                            <select id="acta_matrimonio" name="acta_matrimonio" class="form-control" required>
                                                 <option value="<?php echo $editPropieda->acta_matrimonio; ?>"><?php echo $editPropieda->acta_matrimonio; ?></option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
+                                            <div id="acta_matrimonio1" style="display: none;">
+                                                <input name="doc_acta_matrimonio" type="file" accept="application/pdf">
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label>Regimen de Propiedad de Condominio *</label>
-                                            <select name="regimen_propiedad_condo" class="form-control" required>
+                                            <select id="regimen_propiedad_condo" name="regimen_propiedad_condo" class="form-control" required>
                                                 <option value="<?php echo $editPropieda->regimen_propiedad_condo; ?>"><?php echo $editPropieda->regimen_propiedad_condo; ?></option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
+                                            <div id="regimen_propiedad_condo1" style="display: none;">
+                                                <input name="doc_regimen_propiedad_condo" type="file" accept="application/pdf">
+                                            </div>
                                         </div>
                                     </div>
                                 <!-- /.col-lg-6 (nested) -->
@@ -1383,6 +1446,52 @@
                     <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-12 -->
+            </div>
+            <div style="display: none;">
+
+                <input type="text" name="urlINE1" value="<?php echo $editPropieda->doc_ine1; ?>">
+                <input type="text" name="urlRFC1" value="<?php echo $editPropieda->doc_rfc1; ?>">
+                <input type="text" name="urlPersona1" value="<?php echo $editPropieda->doc_TipoPersona1; ?>">
+                <input type="text" name="urlActaNacimiento1" value="<?php echo $editPropieda->doc_ActaNacimiento1; ?>">
+                <input type="text" name="urlCURP1" value="<?php echo $editPropieda->doc_curp1; ?>">
+                <input type="text" name="urlINE2" value="<?php echo $editPropieda->doc_ine2; ?>">
+                <input type="text" name="urlRFC2" value="<?php echo $editPropieda->doc_rfc2; ?>">
+                <input type="text" name="urlPersona2" value="<?php echo $editPropieda->doc_TipoPersona2; ?>">
+                <input type="text" name="urlActaNacimiento2" value="<?php echo $editPropieda->doc_ActaNacimiento2; ?>">
+                <input type="text" name="urlCURP2" value="<?php echo $editPropieda->doc_curp2; ?>">
+                <input type="text" name="urlESCRITURA" value="<?php echo $editPropieda->doc_escritura; ?>">
+                <input type="text" name="urlTITULO" value="<?php echo $editPropieda->doc_titulo; ?>">
+                <input type="text" name="urlREGISTRO" value="<?php echo $editPropieda->doc_registro; ?>">
+                <input type="text" name="urlAVISO" value="<?php echo $editPropieda->doc_aviso; ?>">
+                <input type="text" name="urlReciboLuz" value="<?php echo $editPropieda->doc_recibo_luz; ?>">
+                <input type="text" name="urlReciboAgua" value="<?php echo $editPropieda->doc_recibo_agua; ?>">
+                <input type="text" name="urlPREDIAL" value="<?php echo $editPropieda->doc_predial; ?>">
+                <input type="text" name="urlPLANOS" value="<?php echo $editPropieda->doc_planos; ?>">
+                <input type="text" name="urlRegimenMatrimonial" value="<?php echo $editPropieda->doc_regimen_matrimonial; ?>">
+                <input type="text" name="urlActaMatrimonio" value="<?php echo $editPropieda->doc_acta_matrimonio; ?>">
+                <input type="text" name="urlRegimenCondo" value="<?php echo $editPropieda->doc_regimen_propiedad_condo; ?>">.
+                <input type="text" name="nombreINE1" value="<?php echo $editPropieda->nombre_doc_ine1; ?>">
+                <input type="text" name="nombreINE2" value="<?php echo $editPropieda->nombre_doc_ine2; ?>">
+                <input type="text" name="nombreRFC1" value="<?php echo $editPropieda->nombre_doc_rfc1; ?>">
+                <input type="text" name="nombreRFC2" value="<?php echo $editPropieda->nombre_doc_rfc2; ?>">
+                <input type="text" name="nombreTipoPersona1" value="<?php echo $editPropieda->nombre_doc_TipoPersona1; ?>">
+                <input type="text" name="nombreTipoPersona2" value="<?php echo $editPropieda->nombre_doc_TipoPersona2; ?>">
+                <input type="text" name="nombreActaNacimiento1" value="<?php echo $editPropieda->nombre_doc_ActaNacimiento1; ?>">
+                <input type="text" name="nombreActaNacimiento2" value="<?php echo $editPropieda->nombre_doc_ActaNacimiento2; ?>">
+                <input type="text" name="nombreCURP1" value="<?php echo $editPropieda->nombre_doc_curp1; ?>">
+                <input type="text" name="nombreCURP2" value="<?php echo $editPropieda->nombre_doc_curp2; ?>">
+                <input type="text" name="nombreESCRITURA" value="<?php echo $editPropieda->nombre_doc_escritura; ?>">
+                <input type="text" name="nombreTITULO" value="<?php echo $editPropieda->nombre_doc_titulo; ?>">
+                <input type="text" name="nombreREGISTRO" value="<?php echo $editPropieda->nombre_doc_registro; ?>">
+                <input type="text" name="nombreAVISO" value="<?php echo $editPropieda->nombre_doc_aviso; ?>">
+                <input type="text" name="nombreReciboluz" value="<?php echo $editPropieda->nombre_doc_recibo_luz; ?>">
+                <input type="text" name="nombreReciboAgua" value="<?php echo $editPropieda->nombre_doc_recibo_agua; ?>">
+                <input type="text" name="nombrePREDIAL" value="<?php echo $editPropieda->nombre_doc_predial; ?>">
+                <input type="text" name="nombrePLANOS" value="<?php echo $editPropieda->nombre_doc_planos; ?>">
+                <input type="text" name="nombreRegimenMatrimonial" value="<?php echo $editPropieda->nombre_doc_regimen_matrimonial; ?>">
+                <input type="text" name="nombreActaMatrimono" value="<?php echo $editPropieda->nombre_doc_acta_matrimonio; ?>">
+                <input type="text" name="nombreRegimenCondo" value="<?php echo $editPropieda->nombre_doc_regimen_propiedad_condo; ?>">
+                <input type="text" name="id_doc_property" value="<?php echo $editPropieda->id_doc_property; ?>">
             </div>
             <div>
                 <input style="display: none;" type="text" name="update_by" value="{{ Auth::user()->name }}">

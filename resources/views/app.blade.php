@@ -51,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Diamond</a>
+                <a class="navbar-brand" href="{{ url('/') }}">Diamond</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -108,10 +108,24 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-users fa-fw"></i> ADMINISTRADOR</a>
+                                <a href="#"><i class="fa fa-users fa-fw"></i> DATOS DE EMPLEADOS</a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="{{ url('/home/register_property') }}">Crear Usuario</a>
+                                        <a href="{{ url('home/register_users') }}">Crear Empleado</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('home/table_users') }}">Datos Empleado</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('home/table_users_delete') }}">Empleados Eliminados</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-keyboard-o fa-fw"></i> ADMINISTRADOR</a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="{{ url('home/admin_table_users') }}">Crear Cuenta</a>
                                     </li>
                                 </ul>
                             </li>
@@ -130,7 +144,7 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="{{ asset('/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('/vendor/newtable/jQuery-2.2.4/jquery-2.2.4.min.js') }}"></script>
     <script src="{{ asset('/vendor/jquery/jquery-ui.min.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -142,7 +156,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="{{ asset('/dist/js/sb-admin-2.js') }}"></script>
 
-    <script src="{{ asset('/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('/vendor/newtable/DataTables-1.10.15/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
     <script src="{{ asset('/vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
 
@@ -151,6 +165,10 @@
 
 
     <script type="text/javascript">
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+        });
+    });
      $(document).ready(function(){
         $("#btnHidde1").click(function () {
             $("#elementHidde1").each(function() {
@@ -347,7 +365,7 @@
              }
              else if(valorCambiado == '')
              {
-                 $('#escritura_propiedad1').css('display','none');
+                 $('#titulo_propiedad1').css('display','none');
              }
         });
         $("#registro_propiedad").change(function () {
@@ -361,35 +379,7 @@
              }
              else if(valorCambiado == '')
              {
-                 $('#escritura_propiedad1').css('display','none');
-             }
-        });
-        $("#escritura_propiedad").change(function () {
-                var valorCambiado =$(this).val();
-            if(valorCambiado == 'Si'){
-               $('#escritura_propiedad1').css('display','');
-             }
-             else if(valorCambiado == 'No')
-             {
-                $('#escritura_propiedad1').css('display','none');
-             }
-             else if(valorCambiado == '')
-             {
-                 $('#escritura_propiedad1').css('display','none');
-             }
-        });
-        $("#clave_castatral").change(function () {
-                var valorCambiado =$(this).val();
-            if(valorCambiado == 'Si'){
-               $('#clave_castatral1').css('display','');
-             }
-             else if(valorCambiado == 'No')
-             {
-                 $('#clave_castatral1').css('display','none');
-             }
-             else if(valorCambiado == '')
-             {
-                 $('#escritura_propiedad1').css('display','none');
+                 $('#registro_propiedad1').css('display','none');
              }
         });
         $("#aviso_privacidad").change(function () {
@@ -403,7 +393,7 @@
              }
              else if(valorCambiado == '')
              {
-                 $('#escritura_propiedad1').css('display','none');
+                 $('#aviso_privacidad1').css('display','none');
              }
         });
         $("#recibo_luz").change(function () {
@@ -412,6 +402,10 @@
                $('#recibo_luz1').css('display','');
              }
              else if(valorCambiado == 'No')
+             {
+                 $('#recibo_luz1').css('display','none');
+             }
+             else if(valorCambiado == '')
              {
                  $('#recibo_luz1').css('display','none');
              }
@@ -427,7 +421,7 @@
              }
              else if(valorCambiado == '')
              {
-                 $('#escritura_propiedad1').css('display','none');
+                 $('#recibo_agua1').css('display','none');
              }
         });
         $("#predial").change(function () {
@@ -441,7 +435,7 @@
              }
              else if(valorCambiado == '')
              {
-                 $('#escritura_propiedad1').css('display','none');
+                 $('#predial1').css('display','none');
              }
         });
         $("#planos").change(function () {
@@ -455,7 +449,7 @@
              }
              else if(valorCambiado == '')
              {
-                 $('#escritura_propiedad1').css('display','none');
+                 $('#planos1').css('display','none');
              }
         });
         $("#regimen_matrimonial").change(function () {
@@ -464,6 +458,10 @@
                $('#regimen_matrimonial1').css('display','');
              }
              else if(valorCambiado == 'No')
+             {
+                 $('#regimen_matrimonial1').css('display','none');
+             }
+             else if(valorCambiado == '')
              {
                  $('#regimen_matrimonial1').css('display','none');
              }
@@ -479,7 +477,7 @@
              }
              else if(valorCambiado == '')
              {
-                 $('#escritura_propiedad1').css('display','none');
+                 $('#acta_matrimonio1').css('display','none');
              }
         });
         $("#regimen_propiedad_condo").change(function () {
@@ -493,7 +491,7 @@
              }
              else if(valorCambiado == '')
              {
-                 $('#escritura_propiedad1').css('display','none');
+                 $('#regimen_propiedad_condo1').css('display','none');
              }
         });
     });
@@ -501,13 +499,19 @@
     </script>
     <script>
         $( function() {
-            $( "#date1" ).datepicker();
+            $( "#date1" ).datepicker({ dateFormat: 'dd-mm-yy' });
         } );
         $( function() {
-            $( "#date2" ).datepicker();
+            $( "#date2" ).datepicker({ dateFormat: 'dd-mm-yy' });
         } );
         $( function() {
-            $( "#date3" ).datepicker();
+            $( "#date3" ).datepicker({ dateFormat: 'dd-mm-yy' });
+        } );
+        $( function() {
+            $( "#date4" ).datepicker({ dateFormat: 'yy-mm-dd' });
+        } );
+        $( function() {
+            $( "#date5" ).datepicker({ dateFormat: 'yy-mm-dd' });
         } );
     </script>
 
@@ -616,6 +620,7 @@
     }
 
 </script>
+
 </body>
 
 </html>

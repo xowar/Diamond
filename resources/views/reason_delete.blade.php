@@ -13,7 +13,9 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+
         {!! Form::model($reason,['method' => 'PATCH','action'=>['RegisterPropertyController@destroy','id'=>$reason->id]]) !!}
+
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
@@ -29,7 +31,7 @@
                                             <select name="delete_reason" class="form-control" required>
                                                 <option value="">Selecciona una opción</option>
                                                 <?php foreach ($reason_to_delete as $allReason) { ?>
-                                                    <option value="<?php echo $allReason->id; ?>"><?php echo $allReason->reason; ?></option>
+                                                    <option value="<?php echo $allReason->id_reason; ?>"><?php echo $allReason->reason; ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>

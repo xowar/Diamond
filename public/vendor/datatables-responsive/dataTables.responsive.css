@@ -106,11 +106,20 @@ table.dataTable > tbody > tr.child span.dtr-title {
 }
 
 .table-scroll{
-  width: 1000%;
+  width: 3000%;
 }
 
 @media (max-width: 767px) {
   .table-scroll{
-    width: 3000%;
+    width: 7000%;
+  }
+}
+
+.table-scroll-users{
+  width: 250%;
+}
+@media (max-width: 767px) {
+  .table-scroll-users{
+    width: 800%;
   }
 }
