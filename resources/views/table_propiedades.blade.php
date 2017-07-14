@@ -13,6 +13,12 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                   <a class="btn btn-success" href="{{URL::to('home/table_propiedades/excel_propiedades')}}">Descargar Excel</a>
+                </div>
+            </div>
             <!-- /.row -->
             <div class="row" style="overflow-y:hidden;overflow-x:scroll;">
                 <div class="col-lg-12 table-scroll">
@@ -250,8 +256,8 @@
                                             <td><?php echo $propiedad->vista_marina; ?></td>
                                             <td><?php echo $propiedad->vista_panoramica; ?></td>
                                             <td><?php echo $propiedad->vista_campo_golf; ?></td>
-                                            <td><?php echo $propiedad->agua; ?></td>
-                                            <td><?php echo $propiedad->luz; ?></td>
+                                            <td><?php echo $propiedad->recibo_agua; ?></td>
+                                            <td><?php echo $propiedad->recibo_luz; ?></td>
                                             <td><?php echo $propiedad->drenaje; ?></td>
 
                                             <td><?php echo $propiedad->tiene_adeudo; ?></td>

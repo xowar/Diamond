@@ -853,7 +853,7 @@
                                             <label>Tipo de Persona *</label>
                                             <?php $checked = ""; ?>
                                             <?php for ($i=0; $i < count($tipo_persona); $i++) { ?>
-                                                <?php if ($rfc[$i] == "Sr") {
+                                                <?php if ($tipo_persona[$i] == "Sr") {
                                                     $checked = "true";
                                                 } ?>
                                             <?php  } ?> 
@@ -874,7 +874,7 @@
                                             </div>
                                             <?php $checked = ""; ?>
                                             <?php for ($i=0; $i < count($tipo_persona); $i++) { ?>
-                                                <?php if ($rfc[$i] == "Sra") {
+                                                <?php if ($tipo_persona[$i] == "Sra") {
                                                     $checked = "true";
                                                 } ?>
                                             <?php  } ?> 
@@ -895,7 +895,7 @@
                                             </div>
                                             <?php $checked = ""; ?>
                                             <?php for ($i=0; $i < count($tipo_persona); $i++) { ?>
-                                                <?php if ($rfc[$i] == "N/A") {
+                                                <?php if ($tipo_persona[$i] == "N/A") {
                                                     $checked = "true";
                                                 } ?>
                                             <?php  } ?> 
@@ -1244,6 +1244,14 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
+                                            <label>Estructura</label>
+                                            <select name="estructura" class="form-control" required>
+                                                <option value="<?php echo $editPropieda->estructura; ?>"><?php echo $editPropieda->estructura; ?></option>
+                                                <option value="Si">Si</option>
+                                                <option value="No">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <label>Tipo Anuncio</label>
                                             <select name="tipo_anuncio" class="form-control" required>
                                                 <option value="<?php echo $editPropieda->tipo_anuncio; ?>"><?php echo $editPropieda->tipo_anuncio; ?></option>
@@ -1461,7 +1469,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label>Responsable de llenado *</label>
+                                            <label>Responsable de Llenado *</label>
                                             <input value="<?php echo $editPropieda->responsable_llenado; ?>" name="responsable_llenado" class="form-control" required>
                                         </div>
                                     </div>
@@ -1477,6 +1485,56 @@
                                                 <option value="Pedro Juarez">Pedro Juarez</option>
                                                 <option value="Rodolfo Pardo">Rodolfo Pardo</option>
                                                 <option value="Meliton Osuna">Meliton Osuna</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" id="btnHidde9">
+                            <!-- Title-->
+                            Revisión
+                        </div>
+                        <div class="panel-body" id="elementHidde9" style="display: none;">
+                            <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Observaciones</label>
+                                            <textarea name="observaciones" value="<?php echo $editPropieda->observaciones; ?>" class="form-control" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Revision Auditoria</label>
+                                            <textarea name="revision_auditoria" value="<?php echo $editPropieda->revision_auditoria; ?>" class="form-control" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Estado del registro</label>
+                                            <select name="estado_registro" class="form-control" >
+                                                <option value="<?php echo $editPropieda->estado_registro; ?>"><?php echo $editPropieda->estado_registro; ?></option>
+                                                <option value="Completo">Completo</option>
+                                                <option value="Incompleto">Incompleto</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Status de la Propiedad</label>
+                                            <select name="status_propiedad" class="form-control" >
+                                                <option value="<?php echo $editPropieda->status_propiedad; ?>"><?php echo $editPropieda->status_propiedad; ?></option>
+                                                <option value="Apartado">Apartado</option>
+                                                <option value="Disponible">Disponible</option>
+                                                <option value="Fuera de Promoción">Fuera de Promoción</option>
+                                                <option value="Renovacion">Renovacion</option>
+                                                <option value="Rentado">Rentado</option>
+                                                <option value="Vencido">Vencido</option>
                                             </select>
                                         </div>
                                     </div>

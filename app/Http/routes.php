@@ -37,6 +37,8 @@ Route::get('home/table_propiedades/reason_delete/{id}', 'RegisterPropertyControl
 Route::match(['put', 'patch'], 'home/table_propiedades/destroy/{id}/','RegisterPropertyController@destroy');
 Route::get('home/table_propiedades/documentos/{id}', 'RegisterPropertyController@documentos');
 
+Route::get('home/table_propiedades/excel_propiedades', 'RegisterPropertyController@excel_propiedades');
+
 // personal -------------------------------
 
 Route::get('home/register_users', 'UserController@index');

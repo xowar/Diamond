@@ -289,6 +289,20 @@
                 }
             });
         });
+        $("#btnHidde9").click(function () {
+            $("#elementHidde9").each(function() {
+                displaying = $(this).css("display");
+                if(displaying == "block") {
+                    $(this).fadeOut('slow',function() {
+                        $(this).css("display","none");
+                    });
+                } else {
+                    $(this).fadeIn('slow',function() {
+                        $(this).css("display","block");
+                    });
+                }
+            });
+        });
 
         $("#save").click(function () {
             $("#elementHidde1").each(function() {
@@ -334,6 +348,12 @@
                 });
             });
             $("#elementHidde8").each(function() {
+                displaying = $(this).css("display");
+                $(this).fadeIn('slow',function() {
+                    $(this).css("display","block");
+                });
+            });
+            $("#elementHidde9").each(function() {
                 displaying = $(this).css("display");
                 $(this).fadeIn('slow',function() {
                     $(this).css("display","block");

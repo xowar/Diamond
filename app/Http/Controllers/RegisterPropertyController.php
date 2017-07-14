@@ -2,8 +2,8 @@
 
 use Illuminate\Http\Request;
 use DB;
-
 use App\Http\Requests;
+use Excel;
 use App\Http\Controllers\Controller;
 
 class RegisterPropertyController extends Controller
@@ -614,6 +614,7 @@ class RegisterPropertyController extends Controller
             'fotos'                     => $request['fotos'],
             'amueblada_renta_venta'     => $request['amueblada_renta_venta'],
             'tipo_anuncio'              => $request['tipo_anuncio'],
+            'estructura'                => $request['estructura'],
             
             'precio_venta'              => $request['precio_venta'],
             'precio_renta'              => $request['precio_renta'],
@@ -731,7 +732,6 @@ class RegisterPropertyController extends Controller
                     ->select('*')
                     ->where('id', '=', $id)
                     ->get();
-
 
 
         $colonies           = DB::table('colonies')->get();
@@ -1345,6 +1345,8 @@ class RegisterPropertyController extends Controller
                 'llaves'                    => $request['llaves'],
                 'fotos'                     => $request['fotos'],
                 'amueblada_renta_venta'     => $request['amueblada_renta_venta'],
+                'tipo_anuncio'              => $request['tipo_anuncio'],
+                'estructura'                => $request['estructura'],
                 
                 'precio_venta'              => $request['precio_venta'],
                 'precio_renta'              => $request['precio_renta'],
@@ -1358,6 +1360,11 @@ class RegisterPropertyController extends Controller
                 'restricciones_renta_venta' => $restricciones_renta_venta,
                 'defecto_estructural'       => $request['defecto_estructural'],
                 'defecto_especifico'        => $request['defecto_especifico'],
+
+                'observaciones'             => $request['observaciones'],
+                'revision_auditoria'        => $request['revision_auditoria'],
+                'estado_registro'           => $request['estado_registro'],
+                'status_propiedad'          => $request['status_propiedad'],
                 
                 'folio'                             => $request['folio'],
                 'expediente_completo'               => $request['expediente_completo'],
@@ -1507,5 +1514,112 @@ class RegisterPropertyController extends Controller
             ->paginate(15);
 
         return view('table_propiedades', ['registro_de_propiedad' => $registro_de_propiedad]);  
+    }
+
+    public function excel_propiedades(){
+
+        Excel::create('REGISTRO DE PROPIEDADES', function($excel) {
+            
+            $excel->sheet('Datos', function($sheet) {
+
+                //Header
+                $sheet->row(1, ['FOLIO', 
+                                'CODIGO', 
+                                'ESTATUS', 
+                                'ESTADO', 
+                                'PROPIEDAD', 
+                                'TITULO', 
+                                'ID', 
+                                'ASESOR', 
+                                'CONTRATO', 
+                                '%', 
+                                'AVISO DE PRIV.', 
+                                'INGRESO', 
+                                'VENCIMIENTO', 
+                                'NOMBRE CLIENTE', 
+                                'TELEFONO CLIENTE', 
+                                'CELULAR CLIENTE', 
+                                'REFERIDO', 
+                                'ESCRITURAS', 
+                                'TIT. DE PROP.', 
+                                'INE',
+                                'PREDIAL', 
+                                'RBO. LUZ', 
+                                'RBO. AGUA', 
+                                'ACTA MAT.', 
+                                'ACTA NAC.', 
+                                'RFC', 
+                                'CURP', 
+                                'PLANO', 
+                                'LIB. GRAVAMEN', 
+                                'CUOTA MANT.', 
+                                'REG. PROP', 
+                                'OBSERVACIÓN', 
+                                'LLAVE O CITA', 
+                                'PUBLICIDAD', 
+                                'ESTRUCTURA', 
+                                'REVISION AUDITORIA']);
+
+                $registro_de_propiedad = DB::table('registro_de_propiedad')
+                    ->leftJoin('commissions', 'registro_de_propiedad.id_comision', '=', 'commissions.id_commissions')
+                    ->leftJoin('type_propertys', 'registro_de_propiedad.id_tipo_propiedad', '=', 'type_propertys.id_type_propertys')
+                    ->leftJoin('colonies', 'registro_de_propiedad.id_colonia_dueno', '=', 'colonies.id_colonies')
+                    ->leftJoin('cities', 'registro_de_propiedad.id_ciudad_propiedad', '=', 'cities.id_cities')
+                    ->leftJoin('states', 'registro_de_propiedad.id_estado_propiedad', '=', 'states.id_state')
+                    ->leftJoin('prospector', 'registro_de_propiedad.id_prospectores', '=', 'prospector.id_prospectador')
+                    ->leftJoin('adviser', 'registro_de_propiedad.id_asesores', '=', 'adviser.id_asesor')
+                    ->leftJoin('documents_property', 'registro_de_propiedad.id_doc_propertys', '=', 'documents_property.id_doc_property')
+                    ->where('registro_de_propiedad.status', '=', 1)
+                    ->get();
+
+                    foreach ($registro_de_propiedad as $registro) {
+                        $row = [];
+
+                        $row[0] = $registro->id;
+                        $row[1] = $registro->codigo;
+                        $row[2] = $registro->status_propiedad;
+                        $row[3] = $registro->estado_registro;
+                        $row[4] = $registro->tipo_propiedad;
+                        $row[5] = $registro->colonia;
+                        $row[6] = $registro->id;
+                        $row[7] = $registro->nombre_asesor;
+                        $row[9] = $registro->tipo_contrato;
+                        $row[11] = $registro->comision;
+                        $row[12] = $registro->aviso_privacidad;
+                        $row[13] = $registro->fecha_inicio;
+                        $row[14] = $registro->fecha_termino;
+                        $row[15] = $registro->nombre_dueno;
+                        $row[16] = $registro->tel_casa;
+                        $row[17] = $registro->celular;
+                        $row[18] = $registro->referido;
+                        $row[19] = $registro->escritura_propiedad;
+                        $row[20] = $registro->titulo_propiedad;
+                        $row[21] = $registro->ine;
+                        $row[22] = $registro->predial;
+                        $row[23] = $registro->recibo_luz;
+                        $row[24] = $registro->recibo_agua;
+                        $row[25] = $registro->acta_matrimonio; 
+                        $row[26] = $registro->acta_nacimiento; 
+                        $row[27] = $registro->rfc;
+                        $row[28] = $registro->curp;
+                        $row[29] = $registro->planos;
+                        $row[30] = $registro->tiene_adeudo;
+                        $row[31] = $registro->cuota_mantenimiento;
+                        $row[32] = $registro->registro_propiedad;
+                        $row[33] = $registro->observaciones;
+                        $row[35] = $registro->llaves;
+                        $row[36] = $registro->tipo_anuncio;
+                        $row[37] = $registro->estructura;
+                        $row[38] = $registro->revision_auditoria;
+
+                         $sheet->appendRow($row);
+                        
+                    }
+
+
+                   
+            });
+
+        })->export('xls');
     }
 }

@@ -812,7 +812,7 @@
                                                 </label>
                                             </div>
                                             <div id="tipoSr2" style="display: none; margin-bottom: 10px;">
-                                                <select name="tipo_personaSr" class="form-control" required>
+                                                <select name="tipo_personaSr" class="form-control" >
                                                     <option value="">Selecciona una opción</option>
                                                     <option value="Moral">Moral</option>
                                                     <option value="Fisica">Fisica</option>
@@ -827,7 +827,7 @@
                                                 </label>
                                             </div>
                                             <div id="tipoSra2" style="display: none; margin-bottom: 10px;">
-                                                <select name="tipo_personaSra" class="form-control" required>
+                                                <select name="tipo_personaSra" class="form-control" >
                                                     <option value="">Selecciona una opción</option>
                                                     <option value="Moral">Moral</option>
                                                     <option value="Fisica">Fisica</option>
@@ -1144,6 +1144,14 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
+                                            <label>Estructura</label>
+                                            <select name="estructura" class="form-control" required>
+                                                <option value=""></option>
+                                                <option value="Si">Si</option>
+                                                <option value="No">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <label>Tipo Anuncio</label>
                                             <select name="tipo_anuncio" class="form-control" required>
                                                 <option value="">Selecciona una opción</option>
@@ -1319,7 +1327,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label>Responsable de llenado *</label>
+                                            <label>Responsable de Llenado *</label>
                                             <input name="responsable_llenado" class="form-control" required>
                                         </div>
                                     </div>
