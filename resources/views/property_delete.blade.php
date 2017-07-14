@@ -49,8 +49,9 @@
 
                                         <th>Frente</th>
                                         <th>Fondo</th>
-                                        <th>m2 del Terreno</th>
-                                        <th>m2 de la Construccion</th>
+                                        <th>Unidad de Medida</th>
+                                        <th>Medida del Terreno</th>
+                                        <th>Medida de la Construccion</th>
                                         <th>Recámaras</th>
                                         <th>Baños Completos</th>
                                         <th>Medios Baños</th>
@@ -60,6 +61,7 @@
                                         <th>Conservación</th>
                                         <th>Dueños Originales</th>
                                         <th>Vestidor</th>
+                                        <th>Closet</th>
                                         <th>Sala</th>
                                         <th>Comedor</th>
                                         <th>Cocina Integral</th>
@@ -78,6 +80,7 @@
                                         <th>Balcón</th>
                                         <th>Cuarto de Lavado</th>
                                         <th>Jacuzzi</th>
+                                        <th>Aljiber</th>
                                         <th>Casa Club</th>
                                         <th>Parrilla</th>
                                         <th>Elevador</th>
@@ -138,6 +141,7 @@
                                         <th>Llaves</th>
                                         <th>Fotos</th>
                                         <th>Amueblada a la renta o venta</th>
+                                        <th>Tipo de Anuncio</th>
 
                                         <th>Precio Venta</th>
                                         <th>Precio Renta</th>
@@ -193,6 +197,7 @@
 
                                             <td><?php echo $propiedad->frente; ?></td>
                                             <td><?php echo $propiedad->fondo; ?></td>
+                                            <td><?php echo $propiedad->unidad_medida; ?></td>
                                             <td><?php echo $propiedad->mcuadrado_terreno; ?></td>
                                             <td><?php echo $propiedad->mcuadrado_construccion; ?></td>
                                             <td><?php echo $propiedad->recamaras; ?></td>
@@ -204,6 +209,7 @@
                                             <td><?php echo $propiedad->conservacion; ?></td>
                                             <td><?php echo $propiedad->duenos_originales; ?></td>
                                             <td><?php echo $propiedad->vestidor; ?></td>
+                                            <td><?php echo $propiedad->closet; ?></td>
                                             <td><?php echo $propiedad->sala; ?></td>
                                             <td><?php echo $propiedad->comedor; ?></td>
                                             <td><?php echo $propiedad->cocina_integral; ?></td>
@@ -222,6 +228,7 @@
                                             <td><?php echo $propiedad->balcon; ?></td>
                                             <td><?php echo $propiedad->cuarto_lavado; ?></td>
                                             <td><?php echo $propiedad->jacuzzi; ?></td>
+                                            <td><?php echo $propiedad->aljiber; ?></td>
                                             <td><?php echo $propiedad->casa_club; ?></td>
                                             <td><?php echo $propiedad->parrilla; ?></td>
                                             <td><?php echo $propiedad->elevador; ?></td>
@@ -282,7 +289,7 @@
                                             <td><?php echo $propiedad->llaves; ?></td>
                                             <td><?php echo $propiedad->fotos; ?></td>
                                             <td><?php echo $propiedad->amueblada_renta_venta; ?></td>
-
+                                            <td><?php echo $propiedad->tipo_anuncio; ?></td>
 
 
                                             <td><?php echo $propiedad->precio_venta; ?></td>

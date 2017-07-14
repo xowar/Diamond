@@ -220,6 +220,14 @@
                                             <input value="<?php echo $editPropieda->fondo; ?>" name="fondo" class="form-control">
                                         </div>
                                         <div class="form-group">
+                                            <label>Unidad de Medida *</label>
+                                            <select name="unidad_medida" class="form-control" required>
+                                                <option value="<?php echo $editPropieda->unidad_medida; ?>"><?php echo $editPropieda->unidad_medida; ?></option>
+                                                <option value="ha2">ha2</option>
+                                                <option value="m2">m2</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <label>M2 de Terreno</label>
                                             <input value="<?php echo $editPropieda->mcuadrado_terreno; ?>" name="mcuadrado_terreno" class="form-control">
                                         </div>
@@ -323,6 +331,14 @@
                                             <label>Vestidor</label>
                                             <select name="vestidor" class="form-control">
                                                 <option value="<?php echo $editPropieda->vestidor; ?>"><?php echo $editPropieda->vestidor; ?></option>
+                                                <option value="No">No</option>
+                                                <option value="Si">Si</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Closet</label>
+                                            <select name="closet" class="form-control">
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -471,6 +487,14 @@
                                             <label>Jacuzzi</label>
                                             <select name="jacuzzi" class="form-control">
                                                 <option value="<?php echo $editPropieda->jacuzzi; ?>"><?php echo $editPropieda->jacuzzi; ?></option>
+                                                <option value="No">No</option>
+                                                <option value="Si">Si</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Aljiber</label>
+                                            <select name="aljiber" class="form-control">
+                                                <option value="<?php echo $editPropieda->aljiber; ?>"><?php echo $editPropieda->aljiber; ?></option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
@@ -838,6 +862,13 @@
                                                     <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="tipo_persona[]" type="checkbox" value="Sr" id="tipoSr" onchange="javascript:showContent5()">Sr
                                                 </label>
                                             </div>
+                                            <div id="tipoSr2" style="display: none; margin-bottom: 10px;">
+                                                <select name="tipo_personaSr" class="form-control" required>
+                                                    <option value="<?php echo $editPropieda->tipo_personaSr; ?>"><?php echo $editPropieda->tipo_personaSr; ?></option>
+                                                    <option value="Moral">Moral</option>
+                                                    <option value="Fisica">Fisica</option>
+                                                </select>
+                                            </div>
                                             <div id="tipoSr1" style="display: none;">
                                                 <input name="doc_TipoPersona1" type="file" accept="application/pdf">
                                             </div>
@@ -851,6 +882,13 @@
                                                 <label>
                                                     <input <?php if ($checked == "true") {echo 'checked="checked"';} ?> name="tipo_persona[]" type="checkbox" value="Sra" id="tipoSra" onchange="javascript:showContent6()">Sra
                                                 </label>
+                                            </div>
+                                            <div id="tipoSra2" style="display: none; margin-bottom: 10px;">
+                                                <select name="tipo_personaSra" class="form-control" required>
+                                                    <option value="<?php echo $editPropieda->tipo_personaSra; ?>"><?php echo $editPropieda->tipo_personaSra; ?></option>
+                                                    <option value="Moral">Moral</option>
+                                                    <option value="Fisica">Fisica</option>
+                                                </select>
                                             </div>
                                             <div id="tipoSra1" style="display: none;">
                                                 <input name="doc_TipoPersona2" type="file" accept="application/pdf">
@@ -963,11 +1001,13 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label>Titulo de Propiedad *</label>
+                                            <label>Documentos de Propiedad *</label>
                                             <select id="titulo_propiedad" name="titulo_propiedad" class="form-control" required>
                                                 <option value="<?php echo $editPropieda->titulo_propiedad; ?>"><?php echo $editPropieda->titulo_propiedad; ?></option>
-                                                <option value="Si">Si</option>
-                                                <option value="No">No</option>
+                                                <option value="Escrituras">Escrituras</option>
+                                                <option value="Titulo de Propiedad">Titulo de Propiedad</option>
+                                                <option value="Certificado Parcelario">Certificado Parcelario</option>
+                                                <option value="Contrato Privado de Compra-Venta">Contrato Privado de Compra-Venta</option>
                                             </select>
                                             <div id="titulo_propiedad1" style="display: none;">
                                                 <input name="doc_titulo" type="file" accept="application/pdf">
@@ -1117,7 +1157,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Prospectador *</label>
-                                                <select name="id_prospector" class="form-control" required>
+                                                <select name="id_prospector" class="form-control" >
                                                 <option value="<?php echo $editPropieda->id_prospectores; ?>"><?php echo $editPropieda->nombre_prospectador; ?></option>
                                                 <?php 
                                                 foreach ($prospector as $prospec) {?>
@@ -1176,11 +1216,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Referido *</label>
-                                            <select name="referido" class="form-control" required>
-                                                <option value="<?php echo $editPropieda->referido; ?>"><?php echo $editPropieda->referido; ?></option>
-                                                <option value="Si">Si</option>
-                                                <option value="No">No</option>
-                                            </select>
+                                            <input name="referido" value="<?php echo $editPropieda->referido; ?>" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Llaves *</label>
@@ -1207,7 +1243,14 @@
                                                 <option value="Cualquiera">Cualquiera</option>
                                             </select>
                                         </div>
-
+                                        <div class="form-group">
+                                            <label>Tipo Anuncio</label>
+                                            <select name="tipo_anuncio" class="form-control" required>
+                                                <option value="<?php echo $editPropieda->tipo_anuncio; ?>"><?php echo $editPropieda->tipo_anuncio; ?></option>
+                                                <option value="Lona">Lona</option>
+                                                <option value="Letrero">Letrero</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 <!-- /.col-lg-6 (nested) -->
                             </div>

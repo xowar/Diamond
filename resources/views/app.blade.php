@@ -356,14 +356,10 @@
         });
         $("#titulo_propiedad").change(function () {
                 var valorCambiado =$(this).val();
-            if(valorCambiado == 'Si'){
+            if(valorCambiado != ''){
                $('#titulo_propiedad1').css('display','');
              }
-             else if(valorCambiado == 'No')
-             {
-                 $('#titulo_propiedad1').css('display','none');
-             }
-             else if(valorCambiado == '')
+             else
              {
                  $('#titulo_propiedad1').css('display','none');
              }
@@ -560,22 +556,28 @@
     }
     function showContent5() {
         element = document.getElementById("tipoSr1");
+        element2 = document.getElementById("tipoSr2");
         check = document.getElementById("tipoSr");
         if (check.checked) {
             element.style.display='block';
+            element2.style.display='block';
         }
         else {
             element.style.display='none';
+            element2.style.display='none';
         }
     }
     function showContent6() {
         element = document.getElementById("tipoSra1");
+        element2 = document.getElementById("tipoSra2");
         check = document.getElementById("tipoSra");
         if (check.checked) {
             element.style.display='block';
+            element2.style.display='block';
         }
         else {
             element.style.display='none';
+            element2.style.display='none';
         }
     }
     function showContent7() {
