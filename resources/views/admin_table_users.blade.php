@@ -34,9 +34,7 @@
                                         <th>CURP</th>
                                         <th>Fecha de Nacimiento</th>
                                         <th>Email</th>
-                                        <th>Puesto</th>
                                         <th>Rol</th>
-                                        <th>Equipo</th>
                                         <th>Fecha de Ingreso</th>
                                         <th>Fecha de Salida</th>
                                     </tr>
@@ -46,10 +44,13 @@
                                         foreach ($users as $user) {?>
                                         <tr class="odd gradeX">
                                             <td>
-                                                <a class="btn btn-primary" href="{{URL::to('home/admin_create_acc', array($user->id_employees))}}">Agregar Cuenta</a>
+                                                <a class="btn btn-primary" style="<?php if ($user->id_user != "0") {
+                                                    echo "display: none;";
+                                                } ?>" href="{{URL::to('home/admin_create_acc', array(Auth::user()->puesto, $user->id_employees))}}">Agregar Cuenta</a>
+
                                                 <a class="btn btn-danger" style="<?php if ($user->id_user < "1") {
                                                     echo "display: none;";
-                                                } ?>" href="{{URL::to('home/admin_table_users/destroy_acc', array($user->id_employees))}}">Eliminar Cuenta</a>
+                                                } ?>" href="{{URL::to('home/admin_table_users/destroy_acc', array(Auth::user()->puesto, $user->id_employees))}}">Eliminar Cuenta</a>
                                             </td>
                                             <td><?php echo $user->name; ?></td>
                                             <td><?php echo $user->edad; ?></td>
@@ -59,9 +60,7 @@
                                             <td><?php echo $user->curp; ?></td>
                                             <td><?php echo $user->fecha_nacimiento; ?></td>
                                             <td><?php echo $user->email; ?></td>
-                                            <td><?php echo $user->puesto; ?></td>
-                                            <td><?php echo $user->id_roles; ?></td>
-                                            <td><?php echo $user->equipo; ?></td>
+                                            <td><?php echo $user->roles; ?></td>
                                             <td><?php echo $user->fecha_ingreso; ?></td> 
                                             <td><?php echo $user->fecha_salida; ?></td> 
                                         </tr>

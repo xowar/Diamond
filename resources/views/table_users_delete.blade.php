@@ -35,8 +35,7 @@
                                         <th>Fecha de Nacimiento</th>
                                         <th>Email</th>
                                         <th>Puesto</th>
-                                        <th>Rol</th>
-                                        <th>Equipo</th>
+                                        <th>Oficina</th>
                                         <th>Fecha de Ingreso</th>
                                         <th>Fecha de Salida</th>
                                     </tr>
@@ -46,7 +45,7 @@
                                         foreach ($users as $user) {?>
                                         <tr class="odd gradeX">
                                             <td>
-                                                <a class="btn btn-success" href="{{URL::to('home/table_users/restore', array($user->id_employees))}}">Restaurar</a>
+                                                <a class="btn btn-success" href="{{URL::to('home/table_users/restore', array(Auth::user()->puesto, $user->id_employees))}}">Restaurar</a>
                                             </td>
                                             <td><?php echo $user->name; ?></td>
                                             <td><?php echo $user->edad; ?></td>
@@ -56,9 +55,8 @@
                                             <td><?php echo $user->curp; ?></td>
                                             <td><?php echo $user->fecha_nacimiento; ?></td>
                                             <td><?php echo $user->email; ?></td>
-                                            <td><?php echo $user->puesto; ?></td>
-                                            <td><?php echo $user->id_roles; ?></td>
-                                            <td><?php echo $user->equipo; ?></td>
+                                            <td><?php echo $user->roles; ?></td>
+                                            <td><?php echo $user->oficina; ?></td>
                                             <td><?php echo $user->fecha_ingreso; ?></td> 
                                             <td><?php echo $user->fecha_salida; ?></td> 
                                         </tr>

@@ -18,16 +18,16 @@
                             <!-- Title-->
                             Datos del dueño y responsable
                         </div>
-                        <div class="panel-body" id="elementHidde1" style="display: none;">
+                        <div class="panel-body" id="elementHidde1" style="display: block;">
                             <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Nombre *</label>
-                                            <input name="nombre_dueno" class="form-control" required>
+                                            <input name="nombre_dueno" class="form-control" required maxlength="59">
                                         </div>
                                         <div class="form-group">
                                             <label>Dirección *</label>
-                                            <input name="direccion_dueno" class="form-control" required>
+                                            <input name="direccion_dueno" class="form-control" required maxlength="50">
                                         </div>
                                         <div class="form-group">
                                             <label>Colonia *</label>
@@ -42,17 +42,17 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Teléfono Casa</label>
-                                            <input name="tel_casa" class="form-control">
+                                            <input name="tel_casa" class="form-control" onkeypress="return only_num(event)" maxlength="20">
                                         </div>
                                         <div class="form-group">
                                             <label>Teléfono Oficina</label>
-                                            <input name="tel_oficina" class="form-control">
+                                            <input name="tel_oficina" class="form-control" onkeypress="return only_num(event)" maxlength="20">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Celular</label>
-                                            <input name="celular" class="form-control">
+                                            <input name="celular" class="form-control" onkeypress="return only_num(event)" maxlength="20">
                                         </div>
                                         <div class="form-group">
                                             <label>Estado Civil *</label>
@@ -67,7 +67,7 @@
                                             </select>
                                         </div>  
                                         <div class="form-group">
-                                            <label>Email</label>
+                                            <label>Email *</label>
                                             <input name="email" class="form-control" type="email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required>
                                         </div>  
                                         <div class="form-group">
@@ -80,7 +80,7 @@
                                         </div>    
                                         <div class="form-group">
                                             <label>Relación con el dueño de la propiedad</label>
-                                            <input name="relacion_con_dueno" class="form-control">
+                                            <input name="relacion_con_dueno" class="form-control" maxlength="29">
                                         </div>
                                     </div>
                                 <!-- /.col-lg-6 (nested) -->
@@ -101,20 +101,20 @@
                             <!-- Title-->
                             Datos propiedad
                         </div>
-                        <div class="panel-body" id="elementHidde2" style="display: none;">
+                        <div class="panel-body" id="elementHidde2" style="display: block;">
                             <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Calle *</label>
-                                            <input name="calle_propiedad" class="form-control" required>
+                                            <input name="calle_propiedad" class="form-control" required maxlength="29">
                                         </div>
                                         <div class="form-group">
                                             <label>Número Exterior</label>
-                                            <input name="numero_ext_propiedad" class="form-control">
+                                            <input name="numero_ext_propiedad" class="form-control" onkeypress="return only_num(event)" maxlength="6">
                                         </div>
                                         <div class="form-group">
                                             <label>Número Interior</label>
-                                            <input name="numero_int_propiedad" class="form-control">
+                                            <input name="numero_int_propiedad" class="form-control" onkeypress="return only_num(event)" maxlength="6">
                                         </div>
                                         <div class="form-group">
                                             <label>Colonia *</label>
@@ -151,7 +151,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Codigo Postal *</label>
-                                            <input name="codigo_postal_propiedad" class="form-control" required>
+                                            <input name="codigo_postal_propiedad" class="form-control" required onkeypress="return only_num(event)" maxlength="5">
                                         </div>
                                         <div class="form-group">
                                             <label>Uso de Suelo *</label>
@@ -181,16 +181,16 @@
                             <!-- Title-->
                             Descripción de la Propiedad
                         </div>
-                        <div class="panel-body" id="elementHidde3" style="display: none;">
+                        <div class="panel-body" id="elementHidde3" style="display: block;">
                             <div class="row">
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>Frente</label>
-                                            <input name="frente" class="form-control">
+                                            <input name="frente" class="form-control" onkeypress="return only_num(event)" maxlength="15">
                                         </div>
                                         <div class="form-group">
                                             <label>Fondo</label>
-                                            <input name="fondo" class="form-control">
+                                            <input name="fondo" class="form-control" onkeypress="return only_num(event)" maxlength="15">
                                         </div>
                                         <div class="form-group">
                                             <label>Unidad de Medida *</label>
@@ -202,11 +202,11 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Medida del Terreno</label>
-                                            <input name="mcuadrado_terreno" class="form-control">
+                                            <input name="mcuadrado_terreno" class="form-control" onkeypress="return only_num(event)" maxlength="15">
                                         </div>
                                         <div class="form-group">
                                             <label>Medida de la Construcción</label>
-                                            <input name="mcuadrado_construccion" class="form-control">
+                                            <input name="mcuadrado_construccion" class="form-control" onkeypress="return only_num(event)" maxlength="15">
                                         </div>
                                         <div class="form-group">
                                             <label>Recámaras *</label>
@@ -278,7 +278,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Piso Condo</label>
-                                            <input name="piso_condo" class="form-control">
+                                            <input name="piso_condo" class="form-control" onkeypress="return only_num(event)" maxlength="2">
                                         </div>
                                         <div class="form-group">
                                             <label>Conservación</label>
@@ -294,7 +294,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Dueños Originales *</label>
-                                            <select name="duenos_originales" class="form-control">
+                                            <select name="duenos_originales" class="form-control" required>
                                                 <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
@@ -307,7 +307,9 @@
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
                                             </select>
-                                        </div>
+                                        </div>                                        
+                                    </div>
+                                    <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>Closet</label>
                                             <select name="closet" class="form-control">
@@ -316,8 +318,6 @@
                                                 <option value="Si">Si</option>
                                             </select>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>Sala</label>
                                             <select name="sala" class="form-control">
@@ -362,7 +362,7 @@
                                             <label>Patio</label>
                                             <select name="patio" class="form-control">
                                                 <option value="">Selecciona una opción</option>
-                                                <option value="No">No</option>
+                                                <option value="No">No</option> 
                                                 <option value="Si">Si</option>
                                             </select>
                                         </div>
@@ -620,7 +620,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Agua *</label>
-                                            <select name="agua" class="form-control">
+                                            <select name="agua" class="form-control" required>
                                                 <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
@@ -636,7 +636,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Drenaje *</label>
-                                            <select name="drenaje" class="form-control">
+                                            <select name="drenaje" class="form-control" required>
                                                 <option value="">Selecciona una opción</option>
                                                 <option value="No">No</option>
                                                 <option value="Si">Si</option>
@@ -661,7 +661,7 @@
                             <!-- Title-->
                             Financiamiento
                         </div>
-                        <div class="panel-body" id="elementHidde4" style="display: none;">
+                        <div class="panel-body" id="elementHidde4" style="display: block;">
                             <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
@@ -674,7 +674,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Si, ¿Cuanto?</label>
-                                            <input name="cuanto_adeudo" class="form-control">
+                                            <input name="cuanto_adeudo" class="form-control" onkeypress="return only_num(event)">
                                         </div>
                                         <div class="form-group">
                                             <label>¿Qué tipo de adeudo?</label>
@@ -752,7 +752,7 @@
                             <!-- Title-->
                             Documentación
                         </div>
-                        <div class="panel-body" id="elementHidde5" style="display: none;">
+                        <div class="panel-body" id="elementHidde5" style="display: block;">
                             <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
@@ -766,7 +766,7 @@
                                                 <option value="Otro">Otro</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
+                                        <!--<div class="form-group">
                                             <label>INE *</label>
                                             <div class="checkbox">
                                                 <label>
@@ -889,6 +889,95 @@
                                                     <input name="curp[]" type="checkbox" value="No">No
                                                 </label>
                                             </div>
+                                        </div>-->
+                                        <div class="form-group">
+                                            <label>INE *</label>
+                                            <select id="ine" name="ine" class="form-control" required>
+                                                <option value="">Selecciona una opcion</option>
+                                                <option value="Sr">Sr</option>
+                                                <option value="Sra">Sra</option>
+                                                <option value="Sr, Sra">Sr, Sra</option>
+                                            </select>
+                                            <div id="ine1" style="display: none;">
+                                                <input id="doc_ine1" name="doc_ine1" type="file" accept="application/pdf">
+                                            </div>
+                                            <div id="ine2" style="display: none;">
+                                                <input id="doc_ine2" name="doc_ine2" type="file" accept="application/pdf">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>RFC *</label>
+                                            <select id="rfc" name="rfc" class="form-control" required>
+                                                <option value="">Selecciona una opcion</option>
+                                                <option value="Sr">Sr</option>
+                                                <option value="Sra">Sra</option>
+                                                <option value="Sr, Sra">Sr, Sra</option>
+                                            </select>
+                                            <div id="rfc1" style="display: none;">
+                                                <input id="doc_rfc1" name="doc_rfc1" type="file" accept="application/pdf">
+                                            </div>
+                                            <div id="rfc2" style="display: none;">
+                                                <input id="doc_rfc2" name="doc_rfc2" type="file" accept="application/pdf">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tipo de Persona *</label>
+                                            <select id="tipo_persona" name="tipo_persona" class="form-control">
+                                                <option value="">Selecciona una opcion</option>
+                                                <option value="Sr">Sr</option>
+                                                <option value="Sra">Sra</option>
+                                                <option value="Sr, Sra">Sr, Sra</option>
+                                            </select>
+                                            <div id="tipoSr1" style="display: none; margin-bottom: 10px; margin-top: 10px;">
+                                                <select name="tipo_personaSr" class="form-control" required>
+                                                    <option value="">Selecciona una opción</option>
+                                                    <option value="Moral">Moral</option>
+                                                    <option value="Fisica">Fisica</option>
+                                                </select>
+                                            </div>
+                                            <div id="tipo_persona1" style="display: none;">
+                                                <input id="doc_tipo_persona1" name="doc_tipo_persona1" type="file" accept="application/pdf">
+                                            </div>
+                                            <div id="tipoSra1" style="display: none; margin-bottom: 10px; margin-top: 10px;">
+                                                <select name="tipo_personaSra" class="form-control" required>
+                                                    <option value="">Selecciona una opción</option>
+                                                    <option value="Moral">Moral</option>
+                                                    <option value="Fisica">Fisica</option>
+                                                </select>
+                                            </div>
+                                            <div id="tipo_persona2" style="display: none;">
+                                                <input id="doc_tipo_persona2" name="doc_tipo_persona2" type="file" accept="application/pdf">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Acta de Nacimiento *</label>
+                                            <select id="acta_nacimiento" name="acta_nacimiento" class="form-control">
+                                                <option value="">Selecciona una opcion</option>
+                                                <option value="Sr">Sr</option>
+                                                <option value="Sra">Sra</option>
+                                                <option value="Sr, Sra">Sr, Sra</option>
+                                            </select>
+                                            <div id="acta_nacimiento1" style="display: none;">
+                                                <input id="doc_acta_nacimiento1" name="doc_acta_nacimiento1" type="file" accept="application/pdf">
+                                            </div>
+                                            <div id="acta_nacimiento2" style="display: none;">
+                                                <input id="doc_acta_nacimiento2" name="doc_acta_nacimiento2" type="file" accept="application/pdf">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>CURP *</label>
+                                            <select id="curp" name="curp" class="form-control" required>
+                                                <option value="">Selecciona una opcion</option>
+                                                <option value="Sr">Sr</option>
+                                                <option value="Sra">Sra</option>
+                                                <option value="Sr, Sra">Sr, Sra</option>
+                                            </select>
+                                            <div id="curp1" style="display: none;">
+                                                <input id="doc_curp1" name="doc_curp1" type="file" accept="application/pdf">
+                                            </div>
+                                            <div id="curp2" style="display: none;">
+                                                <input id="doc_curp2" name="doc_curp2" type="file" accept="application/pdf">
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label>Escrituras de la Propiedad *</label>
@@ -898,7 +987,7 @@
                                                 <option value="No">No</option>
                                             </select>
                                             <div id="escritura_propiedad1" style="display: none;">
-                                                <input name="doc_escritura" type="file" accept="application/pdf">
+                                                <input id="doc_escritura" name="doc_escritura" type="file" accept="application/pdf">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -911,7 +1000,7 @@
                                                 <option value="Contrato Privado de Compra-Venta">Contrato Privado de Compra-Venta</option>
                                             </select>
                                             <div id="titulo_propiedad1" style="display: none;">
-                                                <input name="doc_titulo" type="file" accept="application/pdf">
+                                                <input id="doc_titulo" name="doc_titulo" type="file" accept="application/pdf">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -922,18 +1011,18 @@
                                                 <option value="No">No</option>
                                             </select>
                                             <div id="registro_propiedad1" style="display: none;">
-                                                <input name="doc_registro" type="file" accept="application/pdf">
+                                                <input id="doc_registro" name="doc_registro" type="file" accept="application/pdf">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Clave Castatral *</label>
-                                            <input name="clave_castatral" class="form-control" required>
+                                            <input name="clave_castatral" class="form-control" required maxlength="23">
                                         </div>
                                         <div class="form-group">
                                             <label>Valor Castatral *</label>
-                                            <input name="valor_castatral" class="form-control" required>
+                                            <input name="valor_castatral" class="form-control" required onkeypress="return only_num(event)">
                                         </div>
                                         <div class="form-group">
                                             <label>Aviso de Privacidad *</label>
@@ -943,7 +1032,7 @@
                                                 <option value="No">No</option>
                                             </select>
                                             <div id="aviso_privacidad1" style="display: none;">
-                                                <input name="doc_aviso" type="file" accept="application/pdf">
+                                                <input id="doc_aviso" name="doc_aviso" type="file" accept="application/pdf">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -954,7 +1043,7 @@
                                                 <option value="No">No</option>
                                             </select>
                                             <div id="recibo_luz1" style="display: none;">
-                                                <input name="doc_recibo_luz" type="file" accept="application/pdf">
+                                                <input id="doc_recibo_luz" name="doc_recibo_luz" type="file" accept="application/pdf" >
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -965,7 +1054,7 @@
                                                 <option value="No">No</option>
                                             </select>
                                             <div id="recibo_agua1" style="display: none;">
-                                                <input name="doc_recibo_agua" type="file" accept="application/pdf">
+                                                <input id="doc_recibo_agua" name="doc_recibo_agua" type="file" accept="application/pdf" >
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -976,7 +1065,7 @@
                                                 <option value="No">No</option>
                                             </select>
                                             <div id="predial1" style="display: none;">
-                                                <input name="doc_predial" type="file" accept="application/pdf">
+                                                <input id="doc_predial" name="doc_predial" type="file" accept="application/pdf">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -987,7 +1076,7 @@
                                                 <option value="No">No</option>
                                             </select>
                                             <div id="planos1" style="display: none;">
-                                                <input name="doc_planos" type="file" accept="application/pdf">
+                                                <input id="doc_planos" name="doc_planos" type="file" accept="application/pdf">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -998,7 +1087,7 @@
                                                 <option value="No">No</option>
                                             </select>
                                             <div id="regimen_matrimonial1" style="display: none;">
-                                                <input name="doc_regimen_matrimonial" type="file" accept="application/pdf">
+                                                <input id="doc_regimen_matrimonial" name="doc_regimen_matrimonial" type="file" accept="application/pdf">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -1009,7 +1098,7 @@
                                                 <option value="No">No</option>
                                             </select>
                                             <div id="acta_matrimonio1" style="display: none;">
-                                                <input name="doc_acta_matrimonio" type="file" accept="application/pdf">
+                                                <input id="doc_acta_matrimonio" name="doc_acta_matrimonio" type="file" accept="application/pdf">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -1020,7 +1109,7 @@
                                                 <option value="No">No</option>
                                             </select>
                                             <div id="regimen_propiedad_condo1" style="display: none;">
-                                                <input name="doc_regimen_propiedad_condo" type="file" accept="application/pdf">
+                                                <input id="doc_regimen_propiedad_condo" name="doc_regimen_propiedad_condo" type="file" accept="application/pdf">
                                             </div>
                                         </div>
                                     </div>
@@ -1042,16 +1131,16 @@
                             <!-- Title-->
                             Asesor Diamond
                         </div>
-                        <div class="panel-body" id="elementHidde6" style="display: none;">
+                        <div class="panel-body" id="elementHidde6" style="display: block;">
                             <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Asesor *</label>
-                                            <select name="id_asesor" class="form-control" required>
+                                            <select name="id_asesor" class="form-control selectpicker">
                                                 <option>Selecciona una opción</option>
                                                 <?php 
-                                                foreach ($adviser as $asesor) {?>
-                                                    <option value="<?php echo $asesor->id_asesor; ?>"><?php echo $asesor->nombre_asesor; ?></option>
+                                                foreach ($employees_adviser as $asesor) {?>
+                                                    <option value="<?php echo $asesor->name; ?>"><?php echo $asesor->name; ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -1060,8 +1149,8 @@
                                                 <select name="id_prospector" class="form-control">
                                                 <option>Selecciona una opción</option>
                                                 <?php 
-                                                foreach ($prospector as $prospec) {?>
-                                                    <option value="<?php echo $prospec->id_prospectador; ?>"><?php echo $prospec->nombre_prospectador; ?></option>
+                                                foreach ($employees_prospector as $prospec) {?>
+                                                    <option value="<?php echo $prospec->name; ?>"><?php echo $prospec->name; ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -1146,7 +1235,7 @@
                                         <div class="form-group">
                                             <label>Estructura</label>
                                             <select name="estructura" class="form-control" required>
-                                                <option value=""></option>
+                                                <option value="">Selecciona una opción</option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
                                             </select>
@@ -1178,20 +1267,20 @@
                             <!-- Title-->
                             Precio de Promoción
                         </div>
-                        <div class="panel-body" id="elementHidde7" style="display: none;">
+                        <div class="panel-body" id="elementHidde7" style="display: block;">
                             <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Precio Venta</label>
-                                            <input name="precio_venta" class="form-control">
+                                            <label>Precio de Venta</label>
+                                            <input name="precio_venta" class="form-control" onkeypress="return only_num(event)">
                                         </div>
                                         <div class="form-group">
-                                            <label>Precio Renta</label>
-                                            <input name="precio_renta" class="form-control">
+                                            <label>Precio de Renta</label>
+                                            <input name="precio_renta" class="form-control" onkeypress="return only_num(event)">
                                         </div>
                                         <div class="form-group">
                                             <label>Precio Mínimo</label>
-                                            <input name="precio_minimo" class="form-control">
+                                            <input name="precio_minimo" class="form-control" onkeypress="return only_num(event)">
                                         </div>
                                         <div class="form-group">
                                             <label>Tipo de Moneda *</label>
@@ -1203,7 +1292,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Cuota de Mantenimiento</label>
-                                            <input name="cuota_mantenimiento" class="form-control">
+                                            <input name="cuota_mantenimiento" class="form-control" onkeypress="return only_num(event)">
                                         </div>
                                         <div class="form-group">
                                             <label>Incluye Cuota de Mantenimiento</label>
@@ -1215,7 +1304,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Precio M2</label>
-                                            <input name="precio_mcuadrado" class="form-control">
+                                            <input name="precio_mcuadrado" class="form-control" onkeypress="return only_num(event)">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -1311,13 +1400,13 @@
                             <!-- Title-->
                             Realización y Autorización
                         </div>
-                        <div class="panel-body" id="elementHidde8" style="display: none;">
+                        <div class="panel-body" id="elementHidde8" style="display: block;">
                             <div class="row">
                                     <div class="col-lg-6">
-                                        <div class="form-group">
+                                        <!--<div class="form-group">
                                             <label>Folio</label>
                                             <input name="folio" class="form-control">
-                                        </div>
+                                        </div>-->
                                         <div class="form-group">
                                             <label>Esta completo el expediente *</label>
                                             <select name="expediente_completo" class="form-control" required>
@@ -1340,10 +1429,15 @@
                                             <label>Director que aprobó listing y comisión *</label>
                                             <select name="director_aprobo_listing_comision" class="form-control" required>
                                                 <option value="">Selecciona una opción</option>
-                                                <option value="Pedro Juarez">Pedro Juarez</option>
-                                                <option value="Rodolfo Pardo">Rodolfo Pardo</option>
-                                                <option value="Meliton Osuna">Meliton Osuna</option>
+                                                <?php 
+                                                foreach ($employees_director as $director) {?>
+                                                    <option value="<?php echo $director->name; ?>"><?php echo $director->name; ?></option>
+                                                <?php } ?>
                                             </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ID de la popiedad *</label>
+                                            <input name="id_propiedad" class="form-control" required>
                                         </div>
                                     </div>
                                 <!-- /.col-lg-6 (nested) -->

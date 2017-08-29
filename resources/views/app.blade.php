@@ -94,38 +94,94 @@
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
                             <li>
-                                <a href="#"><i class="fa fa-home fa-fw"></i> DATOS DE PROPIEDAD</a>
+                                <a href="{{ url('/') }}"><i class="fa fa-laptop fa-fw"></i> HOME </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-home fa-fw"></i> PROPIEDADES <span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="{{ url('/home/register_property') }}">Registro de Propiedades</a>
+                                        <a href="{{URL::to('home/register_property', array(Auth::user()->puesto))}}">Registro de Propiedades </a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('/home/table_propiedades') }}">Datos de Propiedades</a>
+                                        <a href="{{URL::to('/home/table_propiedades', array(Auth::user()->puesto))}}">Datos de Propiedades </a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('/home/property_delete') }}">Propiedades Eliminadas</a>
+                                        <a href="{{URL::to('/home/property_delete', array(Auth::user()->puesto))}}">Propiedades Eliminadas</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{URL::to('/home/table_renovar_propiedad', array(Auth::user()->puesto))}}">Renovar Propiedades</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-users fa-fw"></i> DATOS DE EMPLEADOS</a>
+                                <a href="#"><i class="fa fa-users fa-fw"></i> RECURSOS HUMANOS <span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="{{ url('home/register_users') }}">Crear Empleado</a>
+                                        <a href="{{ URL::to('home/register_users', array(Auth::user()->puesto)) }}">Crear Empleado</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('home/table_users') }}">Datos Empleado</a>
+                                        <a href="{{ URL::to('home/table_users', array(Auth::user()->puesto)) }}">Datos Empleado</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('home/table_users_delete') }}">Empleados Eliminados</a>
+                                        <a href="{{ URL::to('home/table_users_delete', array(Auth::user()->puesto)) }}">Empleados Eliminados</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ URL::to('home/table_users_renew', array(Auth::user()->puesto)) }}">Renovación de documentos</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-keyboard-o fa-fw"></i> ADMINISTRADOR</a>
+                                <a href="#"><i class="fa fa-keyboard-o fa-fw"></i> ADMINISTRADOR <span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="{{ url('home/admin_table_users') }}">Crear Cuenta</a>
+                                        <a href="{{ URL::to('home/admin_table_users', array(Auth::user()->puesto)) }}">Crear Cuenta</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ URL::to('home/agregar_info', array(Auth::user()->puesto)) }}">Agregar Información</a>
+                                    </li>
+                                </ul>
+                            </li>
+                             <li>
+                                <a href="#"><i class="fa fa-money fa-fw"></i> VENTAS <span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="{{ URL::to('home/filtro_propiedad_venta', array(Auth::user()->puesto)) }}">Filtrar Propiedades</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-institution fa-fw"></i> MODULOS <span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="{{ URL::to('home/modulos/prospecto', array(Auth::user()->puesto)) }}">Prospectos</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ URL::to('home/modulos/visitas', array(Auth::user()->puesto)) }}">Visitas</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ URL::to('home/modulos/table_prospecto', array(Auth::user()->id)) }}">Datos de Prospecto</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-legal fa-fw"></i> MKT <span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="{{ URL::to('home/mkt/agregar_proyecto')}}">Agregar Proyecto</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ URL::to('home/mkt/agregar_negocio')}}">Agregar Negocio</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ URL::to('home/mkt/registro_articulo')}}">Agregar Articulo</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-file-text-o fa-fw"></i> REPORTES EXCEL <span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="{{ URL::to('home/reportes_excel') }}">Descargas</a>
                                     </li>
                                 </ul>
                             </li>
@@ -360,154 +416,344 @@
                 });
             });
         });
+        $("#ine").change(function () {
+                var valorCambiado =$(this).val();
+            if(valorCambiado == 'Sr'){
+               $('#ine1').css('display','');
+               $('#ine2').css('display','none');
+               document.getElementById("doc_ine1").required  = true;
+               document.getElementById("doc_ine2").required = false;
+             }
+             else if(valorCambiado == 'Sra')
+             {
+                 $('#ine1').css('display','none');
+                 $('#ine2').css('display','');
+                document.getElementById("doc_ine1").required = false;
+                document.getElementById("doc_ine2").required = true;
+             }
+             else if(valorCambiado == 'Sr, Sra')
+             {
+                 $('#ine1').css('display','');
+                 $('#ine2').css('display','');
+                document.getElementById("doc_ine1").required = true;
+                document.getElementById("doc_ine2").required = true;
+             }
+             else if(valorCambiado == '')
+             {
+                 $('#ine1').css('display','none');
+                 $('#ine2').css('display','none');
+                document.getElementById("doc_ine1").required = false;
+                document.getElementById("doc_ine2").required = false;
+             }
+        });
+        $("#rfc").change(function () {
+                var valorCambiado =$(this).val();
+            if(valorCambiado == 'Sr'){
+               $('#rfc1').css('display','');
+               $('#rfc2').css('display','none');
+               document.getElementById("doc_rfc1").required  = true;
+               document.getElementById("doc_rfc2").required = false;
+             }
+             else if(valorCambiado == 'Sra')
+             {
+                 $('#rfc1').css('display','none');
+                 $('#rfc2').css('display','');
+                 document.getElementById("doc_rfc1").required  = false;
+                document.getElementById("doc_rfc2").required = true;
+             }
+             else if(valorCambiado == 'Sr, Sra')
+             {
+                 $('#rfc1').css('display','');
+                 $('#rfc2').css('display','');
+                 document.getElementById("doc_rfc1").required  = true;
+                document.getElementById("doc_rfc2").required = true;
+             }
+             else if(valorCambiado == '')
+             {
+                 $('#rfc1').css('display','none');
+                 $('#rfc2').css('display','none');
+                 document.getElementById("doc_rfc1").required  = false;
+                document.getElementById("doc_rfc2").required = false;
+             }
+        });
+        $("#tipo_persona").change(function () {
+                var valorCambiado =$(this).val();
+            if(valorCambiado == 'Sr'){
+               $('#tipo_persona1').css('display','');
+               $('#tipo_persona2').css('display','none');
+               $('#tipoSr1').css('display','');
+               $('#tipoSra1').css('display','none');
+               document.getElementById("doc_tipo_persona1").required  = true;
+               document.getElementById("doc_tipo_persona2").required = false;
+             }
+             else if(valorCambiado == 'Sra')
+             {
+                 $('#tipo_persona1').css('display','none');
+                 $('#tipo_persona2').css('display','');
+                 $('#tipoSr1').css('display','none');
+                 $('#tipoSra1').css('display','');
+                 document.getElementById("doc_tipo_persona1").required  = false;
+                document.getElementById("doc_tipo_persona2").required = true;
+             }
+             else if(valorCambiado == 'Sr, Sra')
+             {
+                 $('#tipo_persona1').css('display','');
+                 $('#tipo_persona2').css('display','');
+                 $('#tipoSr1').css('display','');
+                 $('#tipoSra1').css('display','');
+                 document.getElementById("doc_tipo_persona1").required  = true;
+               document.getElementById("doc_tipo_persona2").required = true;
+             }
+             else if(valorCambiado == '')
+             {
+                 $('#tipo_persona1').css('display','none');
+                 $('#tipo_persona2').css('display','none');
+                 $('#tipoSr1').css('display','none');
+                 $('#tipoSra1').css('display','none');
+                 document.getElementById("doc_tipo_persona1").required  = false;
+                document.getElementById("doc_tipo_persona2").required = false;
+             }
+        });
+        $("#acta_nacimiento").change(function () {
+                var valorCambiado =$(this).val();
+            if(valorCambiado == 'Sr'){
+               $('#acta_nacimiento1').css('display','');
+               $('#acta_nacimiento2').css('display','none');
+               document.getElementById("doc_acta_nacimiento1").required  = true;
+               document.getElementById("doc_acta_nacimiento2").required = false;
+             }
+             else if(valorCambiado == 'Sra')
+             {
+                 $('#acta_nacimiento1').css('display','none');
+                 $('#acta_nacimiento2').css('display','');
+                 document.getElementById("doc_acta_nacimiento1").required  = false;
+                document.getElementById("doc_acta_nacimiento2").required = true;
+             }
+             else if(valorCambiado == 'Sr, Sra')
+             {
+                 $('#acta_nacimiento1').css('display','');
+                 $('#acta_nacimiento2').css('display','');
+                 document.getElementById("doc_acta_nacimiento1").required  = true;
+                document.getElementById("doc_acta_nacimiento2").required = true;
+             }
+             else if(valorCambiado == '')
+             {
+                 $('#acta_nacimiento1').css('display','none');
+                 $('#acta_nacimiento2').css('display','none');
+                document.getElementById("doc_acta_nacimiento1").required  = false;
+                document.getElementById("doc_acta_nacimiento2").required = false;
+             }
+        });
+        $("#curp").change(function () {
+                var valorCambiado =$(this).val();
+            if(valorCambiado == 'Sr'){
+               $('#curp1').css('display','');
+               $('#curp2').css('display','none');
+               document.getElementById("doc_curp1").required  = true;
+               document.getElementById("doc_curp2").required = false;
+             }
+             else if(valorCambiado == 'Sra')
+             {
+                 $('#curp1').css('display','none');
+                 $('#curp2').css('display','');
+                 document.getElementById("doc_curp1").required  = false;
+                document.getElementById("doc_curp2").required = true;
+             }
+             else if(valorCambiado == 'Sr, Sra')
+             {
+                 $('#curp1').css('display','');
+                 $('#curp2').css('display','');
+                 document.getElementById("doc_curp1").required  = true;
+                document.getElementById("doc_curp2").required = true;
+             }
+             else if(valorCambiado == '')
+             {
+                 $('#curp1').css('display','none');
+                 $('#curp2').css('display','none');
+                 document.getElementById("doc_curp1").required  = false;
+                document.getElementById("doc_curp2").required = false;
+             }
+        });
         $("#escritura_propiedad").change(function () {
                 var valorCambiado =$(this).val();
             if(valorCambiado == 'Si'){
                $('#escritura_propiedad1').css('display','');
+               document.getElementById("doc_escritura").required = true;
              }
              else if(valorCambiado == 'No')
              {
                  $('#escritura_propiedad1').css('display','none');
+                 document.getElementById("doc_escritura").required = false;
              }
              else if(valorCambiado == '')
              {
                  $('#escritura_propiedad1').css('display','none');
+                 document.getElementById("doc_escritura").required = false;
              }
         });
         $("#titulo_propiedad").change(function () {
                 var valorCambiado =$(this).val();
             if(valorCambiado != ''){
                $('#titulo_propiedad1').css('display','');
+               document.getElementById("doc_titulo").required = true;
              }
              else
              {
                  $('#titulo_propiedad1').css('display','none');
+                 document.getElementById("doc_titulo").required = false;
              }
         });
         $("#registro_propiedad").change(function () {
                 var valorCambiado =$(this).val();
             if(valorCambiado == 'Si'){
                 $('#registro_propiedad1').css('display','');
+                document.getElementById("doc_registro").required = true;
              }
              else if(valorCambiado == 'No')
              {
                 $('#registro_propiedad1').css('display','none');
+                document.getElementById("doc_registro").required = false;
              }
              else if(valorCambiado == '')
              {
                  $('#registro_propiedad1').css('display','none');
+                 document.getElementById("doc_registro").required = false;
              }
         });
         $("#aviso_privacidad").change(function () {
                 var valorCambiado =$(this).val();
             if(valorCambiado == 'Si'){
                $('#aviso_privacidad1').css('display','');
+               document.getElementById("doc_aviso").required = true;
              }
              else if(valorCambiado == 'No')
              {
                  $('#aviso_privacidad1').css('display','none');
+                 document.getElementById("doc_aviso").required = false;
              }
              else if(valorCambiado == '')
              {
                  $('#aviso_privacidad1').css('display','none');
+                 document.getElementById("doc_aviso").required = false;
              }
         });
         $("#recibo_luz").change(function () {
                 var valorCambiado =$(this).val();
             if(valorCambiado == 'Si'){
                $('#recibo_luz1').css('display','');
+               document.getElementById("doc_recibo_luz").required = true;
              }
              else if(valorCambiado == 'No')
              {
                  $('#recibo_luz1').css('display','none');
+                 document.getElementById("doc_recibo_luz").required = false;
              }
              else if(valorCambiado == '')
              {
                  $('#recibo_luz1').css('display','none');
+                 document.getElementById("doc_recibo_luz").required = false;
              }
         });
         $("#recibo_agua").change(function () {
                 var valorCambiado =$(this).val();
             if(valorCambiado == 'Si'){
                $('#recibo_agua1').css('display','');
+               document.getElementById("doc_recibo_agua").required = true;
              }
              else if(valorCambiado == 'No')
              {
                  $('#recibo_agua1').css('display','none');
+                 document.getElementById("doc_recibo_agua").required = false;
              }
              else if(valorCambiado == '')
              {
                  $('#recibo_agua1').css('display','none');
+                 document.getElementById("doc_recibo_agua").required = false;
              }
         });
         $("#predial").change(function () {
                 var valorCambiado =$(this).val();
             if(valorCambiado == 'Si'){
                $('#predial1').css('display','');
+               document.getElementById("doc_predial").required = true;
              }
              else if(valorCambiado == 'No')
              {
                  $('#predial1').css('display','none');
+                 document.getElementById("doc_predial").required = false;
              }
              else if(valorCambiado == '')
              {
                  $('#predial1').css('display','none');
+                 document.getElementById("doc_predial").required = false;
              }
         });
         $("#planos").change(function () {
                 var valorCambiado =$(this).val();
             if(valorCambiado == 'Si'){
                $('#planos1').css('display','');
+               document.getElementById("doc_planos").required = true;
              }
              else if(valorCambiado == 'No')
              {
                  $('#planos1').css('display','none');
+                 document.getElementById("doc_planos").required = false;
              }
              else if(valorCambiado == '')
              {
                  $('#planos1').css('display','none');
+                 document.getElementById("doc_planos").required = false;
              }
         });
         $("#regimen_matrimonial").change(function () {
                 var valorCambiado =$(this).val();
             if(valorCambiado == 'Si'){
                $('#regimen_matrimonial1').css('display','');
+               document.getElementById("doc_regimen_matrimonial").required = true;
              }
              else if(valorCambiado == 'No')
              {
                  $('#regimen_matrimonial1').css('display','none');
+                 document.getElementById("doc_regimen_matrimonial").required = false;
              }
              else if(valorCambiado == '')
              {
                  $('#regimen_matrimonial1').css('display','none');
+                 document.getElementById("doc_regimen_matrimonial").required = false;
              }
         });
         $("#acta_matrimonio").change(function () {
                 var valorCambiado =$(this).val();
             if(valorCambiado == 'Si'){
                $('#acta_matrimonio1').css('display','');
+               document.getElementById("doc_acta_matrimonio").required = true;
              }
              else if(valorCambiado == 'No')
              {
                  $('#acta_matrimonio1').css('display','none');
+                 document.getElementById("doc_acta_matrimonio").required = false;
              }
              else if(valorCambiado == '')
              {
                  $('#acta_matrimonio1').css('display','none');
+                 document.getElementById("doc_acta_matrimonio").required = false;
              }
         });
         $("#regimen_propiedad_condo").change(function () {
                 var valorCambiado =$(this).val();
             if(valorCambiado == 'Si'){
                $('#regimen_propiedad_condo1').css('display','');
+               document.getElementById("doc_regimen_propiedad_condo").required = true;
              }
              else if(valorCambiado == 'No')
              {
                  $('#regimen_propiedad_condo1').css('display','none');
+                 document.getElementById("doc_regimen_propiedad_condo").required = false;
              }
              else if(valorCambiado == '')
              {
                  $('#regimen_propiedad_condo1').css('display','none');
+                 document.getElementById("doc_regimen_propiedad_condo").required = false;
              }
         });
     });
@@ -640,6 +886,127 @@
             element.style.display='none';
         }
     }
+    function limpiar() {
+        document.getElementById("resultado").value = "";
+    }
+
+    function only_num(e){
+        tecla = (document.all) ? e.keyCode : e.which;
+
+        //Tecla de retroceso para borrar, siempre la permite
+        if (tecla==8){
+            return true;
+        }
+            
+        // Patron de entrada, en este caso solo acepta numeros
+        patron =/[0-9]/;
+        tecla_final = String.fromCharCode(tecla);
+        return patron.test(tecla_final);
+    }
+    function validarFecha(obj) {
+        patron = /^\d{2}\-\d{2}\-\d{4}$/
+            if (!patron.test(obj.value)) {
+                document.getElementById("fecha_nacimiento").value = "DD-MM-YYYY";
+                alert('Error: Formato incorrecto');
+        } 
+    }
+
+    function soloLetras(e){
+         key = e.keyCode || e.which;
+         tecla = String.fromCharCode(key).toLowerCase();
+         letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+         especiales = [8,37,39,46];
+
+         tecla_especial = false
+         for(var i in especiales){
+             if(key == especiales[i]){
+          tecla_especial = true;
+          break;
+                    } 
+         }
+         
+        if(letras.indexOf(tecla)==-1 && !tecla_especial)
+             return false;
+        }
+</script>
+
+<script language="JavaScript">
+<!--
+/* Determinamos el tiempo total en segundos */
+var totalTiempo=1800;
+
+var timestampStart = new Date().getTime();
+var endTime=timestampStart+(totalTiempo*1000);
+var timestampEnd=endTime-new Date().getTime();
+
+/* Variable que contiene el tiempo restante */
+var tiempRestante=totalTiempo;
+
+/* Ejecutamos la funcion updateReloj() al cargar la pagina */
+//updateReloj();
+
+function updateReloj() {
+    var Seconds=tiempRestante;
+    
+    var Days = Math.floor(Seconds / 86400);
+    Seconds -= Days * 86400;
+
+    var Hours = Math.floor(Seconds / 3600);
+    Seconds -= Hours * (3600);
+
+    var Minutes = Math.floor(Seconds / 60);
+    Seconds -= Minutes * (60);
+
+    var TimeStr = ((Days > 0) ? Days + " dias " : "") + LeadingZero(Hours) + ":" + LeadingZero(Minutes) + ":" + LeadingZero(Seconds);
+    /* Este muestra el total de hora, aunque sea superior a 24 horas */
+    //var TimeStr = LeadingZero(Hours+(Days*24)) + ":" + LeadingZero(Minutes) + ":" + LeadingZero(Seconds);
+
+    document.getElementById('CuentaAtras').innerHTML = TimeStr;
+
+    if(endTime <=new Date().getTime())
+    {
+        document.getElementById('CuentaAtras').innerHTML = "00:00:00";
+        setTimeout(function(){mostrarAviso()},1000);
+    }else{
+        /* Restamos un segundo al tiempo restante */
+        tiempRestante-=1;
+        /* Ejecutamos nuevamente la función al pasar 1000 milisegundos (1 segundo) */
+        setTimeout("updateReloj()",1000);
+    }
+
+}
+function mostrarAviso(){  
+    alert("HAN PASADO LOS 30 MINUTOS");
+}
+
+/* Funcion que pone un 0 delante de un valor si es necesario */
+function LeadingZero(Time) {
+    return (Time < 10) ? "0" + Time : + Time;
+}
+//-->
+
+
+    function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+
+
+    
 
 </script>
 

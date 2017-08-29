@@ -432,3 +432,68 @@ table.dataTable thead .sorting:after {
     border-left-width: 0;
   }
 }
+
+.examen_buttom_1{
+  background-color: #da426b;
+    color: #da426b;
+    height: 280px;
+    width: 200px;
+    border-color: #da426b;
+    border-radius: 7%;
+}
+.examen_buttom_2{
+  background-color: #316396;
+    color: #316396;
+    height: 280px;
+    width: 200px;
+    border-color: #316396;
+    border-radius: 7%;
+}
+.examen_buttom_3{
+  background-color: #20a06c;
+    color: #20a06c;
+    height: 280px;
+    width: 200px;
+    border-color: #20a06c;
+    border-radius: 7%;
+}
+.examen_buttom_4{
+  background-color: #f7cd00;
+    color: #f7cd00;
+    height: 280px;
+    width: 200px;
+    border-color: #f7cd00;
+    border-radius: 7%;
+}
+.examen_buttom_5{
+  background-color: #e4d3b9;
+    color: #e4d3b9;
+    height: 280px;
+    width: 200px;
+    border-color: #e4d3b9;
+    border-radius: 7%;
+}
+.examen_buttom_6{
+  background-color: #e84000;
+    color: #e84000;
+    height: 280px;
+    width: 200px;
+    border-color: #e84000;
+    border-radius: 7%;
+}
+.examen_buttom_7{
+  background-color: #4c2d00;
+    color: #4c2d00;
+    height: 280px;
+    width: 200px;
+    border-color: #4c2d00;
+    border-radius: 7%;
+}
+.examen_buttom_8{
+  background-color: #131313;
+    color: #131313;
+    height: 280px;
+    width: 200px;
+    border-color: #131313;
+    border-radius: 7%;
+}

@@ -5,6 +5,10 @@ use DB;
 use App\Http\Requests;
 use Excel;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use DateTime;
+
 
 class RegisterPropertyController extends Controller
 {
@@ -25,20 +29,30 @@ class RegisterPropertyController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
-    public function register_property()
+    public function register_property($puesto)
     {
-        $colonies           = DB::table('colonies')->get();
-        $cities             = DB::table('cities')->get();
-        $states             = DB::table('states')->get();
-        $commissions        = DB::table('commissions')->get();
-        $type_propertys     = DB::table('type_propertys')->get();
-        $prospector         = DB::table('prospector')->get();
-        $adviser            = DB::table('adviser')->get();
+        $permisos           = DB::table('roles')->where('rol', "=", $puesto)->get();
+        $permisos = (array)$permisos[0];
 
-        return view('register_property', ['colonies' => $colonies, 'cities' => $cities, 'states' => $states, 'commissions' => $commissions, 'type_propertys' => $type_propertys, 'prospector' => $prospector, 'adviser' => $adviser]);  
+        if (Auth::user()->puesto == $permisos['rol'] & $permisos['registro_propiedad'] == "1") {
+            $colonies           = DB::table('colonies')->get();
+            $cities             = DB::table('cities')->get();
+            $states             = DB::table('states')->get();
+            $commissions        = DB::table('commissions')->get();
+            $type_propertys     = DB::table('type_propertys')->get();
+            $employees_adviser  = DB::table('employees')->where('roles','Asesor')->get();
+            $employees_prospector = DB::table('employees')->where('roles','Prospectador')->get();
+            $employees_director = DB::table('employees')->where('roles','Director')->get();
+
+
+            return view('register_property', ['colonies' => $colonies, 'cities' => $cities, 'states' => $states, 'commissions' => $commissions, 'type_propertys' => $type_propertys, 'employees_adviser' => $employees_adviser, 'employees_prospector' => $employees_prospector, 'employees_director' => $employees_director]); 
+            
+        }else{
+            return redirect('home');
+        }
     }
 
     public function store(Request $request)
@@ -84,7 +98,7 @@ class RegisterPropertyController extends Controller
             $fileTipoPersona1 = $request->file('doc_TipoPersona1');
             //obtenemos el nombre del archivo
             $nombreTipoPersona1 = $fileTipoPersona1->getClientOriginalName();
-            $nombreTipoPersona1 = 'TipoPersona-'.$random.$fileTipoPersona1->getClientOriginalName();
+            $nombreTipoPersona1 = 'TIPODEPERSONA-'.$random.$fileTipoPersona1->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombreTipoPersona1,  \File::get($fileTipoPersona1));
             //obtenemos la url
@@ -455,7 +469,7 @@ class RegisterPropertyController extends Controller
         }else{
             $tipo_credito = "";
         }  
-        if (!empty($request['ine'])) {
+        /*if (!empty($request['ine'])) {
             $array_ine = $request['ine'];
             $ine = implode(", ", $array_ine);
         }else{
@@ -484,7 +498,7 @@ class RegisterPropertyController extends Controller
             $curp = implode(", ", $array_curp);
         }else{
             $curp = "";
-        }
+        }*/
        
         if (!empty($request['restricciones_renta_venta'])) {
             $array_restricciones_renta_venta = $request['restricciones_renta_venta'];
@@ -581,13 +595,13 @@ class RegisterPropertyController extends Controller
             'tipo_credito'              => $tipo_credito,
 
             'tipo_contrato'             => $request['tipo_contrato'],
-            'ine'                       => $ine,
-            'rfc'                       => $rfc,
-            'tipo_persona'              => $tipo_persona,
+            'ine'                       => $request['ine'],
+            'rfc'                       => $request['rfc'],
+            'tipo_persona'              => $request['tipo_persona'],
             'tipo_personaSr'            => $request['tipo_personaSr'],
             'tipo_personaSra'           => $request['tipo_personaSra'],
-            'acta_nacimiento'           => $acta_nacimiento,
-            'curp'                      => $curp,
+            'acta_nacimiento'           => $request['acta_nacimiento'],
+            'curp'                      => $request['curp'],
             'escritura_propiedad'       => $request['escritura_propiedad'],
             'titulo_propiedad'          => $request['titulo_propiedad'],
             'registro_propiedad'        => $request['registro_propiedad'],
@@ -688,47 +702,64 @@ class RegisterPropertyController extends Controller
         ]);
 
         return redirect('home'); 
-
-       /* $colonies           = DB::table('colonies')->get();
-        $cities             = DB::table('cities')->get();
-        $states             = DB::table('states')->get();
-        $commissions        = DB::table('commissions')->get();
-        $type_propertys     = DB::table('type_propertys')->get();
-        $prospector         = DB::table('prospector')->get();
-        $adviser            = DB::table('adviser')->get();*/
-
-        //return view('register_property', ['colonies' => $colonies, 'cities' => $cities, 'states' => $states, 'commissions' => $commissions, 'type_propertys' => $type_propertys, 'prospector' => $prospector, 'adviser' => $adviser]);  
     }
 
-    public function table_propiedades()
+    public function table_propiedades($puesto)
     {
-        $registro_de_propiedad = DB::table('registro_de_propiedad')
-            ->leftJoin('commissions', 'registro_de_propiedad.id_comision', '=', 'commissions.id_commissions')
-            ->leftJoin('type_propertys', 'registro_de_propiedad.id_tipo_propiedad', '=', 'type_propertys.id_type_propertys')
-            ->leftJoin('colonies', 'registro_de_propiedad.id_colonia_dueno', '=', 'colonies.id_colonies')
-            ->leftJoin('cities', 'registro_de_propiedad.id_ciudad_propiedad', '=', 'cities.id_cities')
-            ->leftJoin('states', 'registro_de_propiedad.id_estado_propiedad', '=', 'states.id_state')
-            ->leftJoin('prospector', 'registro_de_propiedad.id_prospectores', '=', 'prospector.id_prospectador')
-            ->leftJoin('adviser', 'registro_de_propiedad.id_asesores', '=', 'adviser.id_asesor')
-            ->leftJoin('documents_property', 'registro_de_propiedad.id_doc_propertys', '=', 'documents_property.id_doc_property')
-            ->where('registro_de_propiedad.status', '=', 1)
-            ->paginate(15);
+        $permisos = DB::table('roles')->where('rol', "=", $puesto)->get();
+        $permisos = (array)$permisos[0];
 
-        return view('table_propiedades', ['registro_de_propiedad' => $registro_de_propiedad]);  
+            if (Auth::user()->puesto == $permisos['rol'] & $permisos['datos_propiedad'] == "1") {
+
+            $registro_de_propiedad = DB::table('registro_de_propiedad')
+                ->leftJoin('commissions', 'registro_de_propiedad.id_comision', '=', 'commissions.id_commissions')
+                ->leftJoin('type_propertys', 'registro_de_propiedad.id_tipo_propiedad', '=', 'type_propertys.id_type_propertys')
+                ->leftJoin('colonies', 'registro_de_propiedad.id_colonia_dueno', '=', 'colonies.id_colonies')
+                ->leftJoin('cities', 'registro_de_propiedad.id_ciudad_propiedad', '=', 'cities.id_cities')
+                ->leftJoin('states', 'registro_de_propiedad.id_estado_propiedad', '=', 'states.id_state')
+                //->leftJoin('prospector', 'registro_de_propiedad.id_prospectores', '=', 'prospector.id_prospectador')
+                //->leftJoin('adviser', 'registro_de_propiedad.id_asesores', '=', 'adviser.id_asesor')
+                ->leftJoin('employees', 'registro_de_propiedad.id_asesores', '=', 'employees.id_employees')
+                ->leftJoin('documents_property', 'registro_de_propiedad.id_doc_propertys', '=', 'documents_property.id_doc_property')
+                ->where('registro_de_propiedad.status', '=', 1)
+                ->paginate(15);
+
+            return view('table_propiedades', ['registro_de_propiedad' => $registro_de_propiedad]);  
+        }else{
+            return redirect('home');
+        }
+
     }
 
 
-    public function editar_propiedades($id)
+    public function editar_propiedades($puesto, $id)
     {
-        $editPropiedades = DB::table('registro_de_propiedad')
+        $permisos           = DB::table('roles')->where('rol', "=", $puesto)->get();
+        $permisos = (array)$permisos[0];
+
+        if (Auth::user()->puesto == $permisos['rol'] & $permisos['editar_propiedad'] == "1") {
+            $editPropiedades = DB::table('registro_de_propiedad')
                     ->leftJoin('commissions', 'registro_de_propiedad.id_comision', '=', 'commissions.id_commissions')
                     ->leftJoin('type_propertys', 'registro_de_propiedad.id_tipo_propiedad', '=', 'type_propertys.id_type_propertys')
                     ->leftJoin('colonies', 'registro_de_propiedad.id_colonia_dueno', '=', 'colonies.id_colonies')
                     ->leftJoin('cities', 'registro_de_propiedad.id_ciudad_propiedad', '=', 'cities.id_cities')
                     ->leftJoin('states', 'registro_de_propiedad.id_estado_propiedad', '=', 'states.id_state')
-                    ->leftJoin('prospector', 'registro_de_propiedad.id_prospectores', '=', 'prospector.id_prospectador')
-                    ->leftJoin('adviser', 'registro_de_propiedad.id_asesores', '=', 'adviser.id_asesor')
+                    //->leftJoin('prospector', 'registro_de_propiedad.id_prospectores', '=', 'prospector.id_prospectador')
+                    //->leftJoin('adviser', 'registro_de_propiedad.id_asesores', '=', 'adviser.id_asesor')
+                    
                     ->leftJoin('documents_property', 'registro_de_propiedad.id_doc_propertys', '=', 'documents_property.id_doc_property')
+                    ->select('*')
+                    ->where('id', '=', $id)
+                    ->get();
+
+        $editAsesores = DB::table('registro_de_propiedad')
+                    ->leftJoin('employees', 'registro_de_propiedad.id_asesores', '=', 'employees.name')
+                    ->select('*')
+                    ->where('id', '=', $id)
+                    ->get();
+
+        $editProspectores = DB::table('registro_de_propiedad')
+                    ->leftJoin('employees', 'registro_de_propiedad.id_prospectores', '=', 'employees.name')
                     ->select('*')
                     ->where('id', '=', $id)
                     ->get();
@@ -740,11 +771,19 @@ class RegisterPropertyController extends Controller
         $credits            = DB::table('credits')->get();
         $commissions        = DB::table('commissions')->get();
         $type_propertys     = DB::table('type_propertys')->get();
-        $prospector         = DB::table('prospector')->get();
-        $adviser            = DB::table('adviser')->get();
+        //$prospector         = DB::table('prospector')->get();
+        //$adviser            = DB::table('adviser')->get();
         $documents_property            = DB::table('documents_property')->get();
+        $employees_adviser  = DB::table('employees')->where('roles','Asesor')->get();
+        $employees_prospector = DB::table('employees')->where('roles','Prospectador')->get();
+        $employees_director = DB::table('employees')->where('roles','Director')->get();
 
-        return view('editar_propiedad', ['editPropiedades' => $editPropiedades, 'colonies' => $colonies, 'cities' => $cities, 'states' => $states, 'credits' => $credits, 'commissions' => $commissions, 'type_propertys' => $type_propertys, 'prospector' => $prospector, 'adviser' => $adviser, 'documents_property' => $documents_property]);  
+        return view('editar_propiedad', ['editPropiedades' => $editPropiedades, 'colonies' => $colonies, 'cities' => $cities, 'states' => $states, 'credits' => $credits, 'commissions' => $commissions, 'type_propertys' => $type_propertys, 'documents_property' => $documents_property, 'employees_adviser' => $employees_adviser, 'employees_prospector' => $employees_prospector, 'employees_director' => $employees_director, 'editAsesores' => $editAsesores, 'editProspectores' => $editProspectores]);  
+            
+        }else{
+            return redirect('home');
+        }
+        
     }
 
     public function documentos($id)
@@ -788,6 +827,14 @@ class RegisterPropertyController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if (is_null($request['fecha_revicion'])) {
+            $request['fecha_revicion'] = $request['fecha_revicion']." ".date("H:i:s");
+        }else if (!empty($request['fecha_revicion'])) {
+             $request['fecha_revicion'];
+        }else{
+            $request['fecha_revicion'];
+        }
+
         $random = str_random(7);
 
         if (!empty($request->file('doc_ine1'))) {
@@ -1086,7 +1133,7 @@ class RegisterPropertyController extends Controller
             $nombreRegimenMatrimonial = $fileRegimenMatrimonial->getClientOriginalName();
             $nombreRegimenMatrimonial = 'RegimenMatrimonial-'.$random.$fileRegimenMatrimonial->getClientOriginalName();
             //indicamos que queremos guardar un nuevo archivo en el disco local
-            \Storage::disk('local')->put($nombrePLANOS,  \File::get($fileRegimenMatrimonial));
+            \Storage::disk('local')->put($nombreRegimenMatrimonial,  \File::get($fileRegimenMatrimonial));
             //obtenemos la url
             $public_pathRegimenMatrimonial = public_path();
             $urlRegimenMatrimonial = '/documents/'.$nombreRegimenMatrimonial;
@@ -1187,7 +1234,7 @@ class RegisterPropertyController extends Controller
         }else{
             $tipo_credito = "";
         }  
-        if (!empty($request['ine'])) {
+        /*if (!empty($request['ine'])) {
             $array_ine = $request['ine'];
             $ine = implode(", ", $array_ine);
         }else{
@@ -1216,7 +1263,7 @@ class RegisterPropertyController extends Controller
             $curp = implode(", ", $array_curp);
         }else{
             $curp = "";
-        }
+        }*/
        
         if (!empty($request['restricciones_renta_venta'])) {
             $array_restricciones_renta_venta = $request['restricciones_renta_venta'];
@@ -1228,7 +1275,7 @@ class RegisterPropertyController extends Controller
         $update_at = date("Y-m-d H:i:s"); 
 
         DB::table('registro_de_propiedad')
-            ->where('id', $id)
+            ->where('id', '=', $id)
             ->update([
                 'nombre_dueno'              => $request['nombre_dueno'],
                 'direccion_dueno'           => $request['direccion_dueno'],
@@ -1252,6 +1299,8 @@ class RegisterPropertyController extends Controller
 
                 'frente'                    => $request['frente'],
                 'fondo'                     => $request['fondo'],
+                'unidad_medida'             => $request['unidad_medida'],
+                'mcuadrado_terreno'         => $request['mcuadrado_terreno'],
                 'mcuadrado_terreno'         => $request['mcuadrado_terreno'],
                 'mcuadrado_construccion'    => $request['mcuadrado_construccion'],
                 'recamaras'                 => $request['recamaras'],
@@ -1313,13 +1362,13 @@ class RegisterPropertyController extends Controller
                 'tipo_credito'              => $tipo_credito,
 
                 'tipo_contrato'             => $request['tipo_contrato'],
-                'ine'                       => $ine,
-                'rfc'                       => $rfc,
-                'tipo_persona'              => $tipo_persona,
+                'ine'                       => $request['ine'],
+                'rfc'                       => $request['rfc'],
+                'tipo_persona'              => $request['tipo_persona'],
                 'tipo_personaSr'            => $request['tipo_personaSr'],
                 'tipo_personaSra'           => $request['tipo_personaSra'],
-                'acta_nacimiento'           => $acta_nacimiento,
-                'curp'                      => $curp,
+                'acta_nacimiento'           => $request['acta_nacimiento'],
+                'curp'                      => $request['curp'],
                 'escritura_propiedad'       => $request['escritura_propiedad'],
                 'titulo_propiedad'          => $request['titulo_propiedad'],
                 'registro_propiedad'        => $request['registro_propiedad'],
@@ -1366,15 +1415,16 @@ class RegisterPropertyController extends Controller
                 'estado_registro'           => $request['estado_registro'],
                 'status_propiedad'          => $request['status_propiedad'],
                 
-                'folio'                             => $request['folio'],
+                /*'folio'                             => $request['folio'],*/
                 'expediente_completo'               => $request['expediente_completo'],
                 'responsable_llenado'               => $request['responsable_llenado'],
                 'responsable_revision'              => $request['responsable_revision'],
                 'director_aprobo_listing_comision'  => $request['director_aprobo_listing_comision'],
-                'codigo'                            => $codigo,
+                'id'                                => $request['id_propiedad'],
 
                 'update_at'                         => $update_at,
                 'update_by'                         => $request['update_by'],
+                'fecha_revicion'                    => $request['fecha_revicion'],
             ]);
 
 
@@ -1430,27 +1480,37 @@ class RegisterPropertyController extends Controller
 
 
 
-    public function property_delete()
+    public function property_delete($puesto)
     {
-        $registro_de_propiedad = DB::table('registro_de_propiedad')
-            ->leftJoin('commissions', 'registro_de_propiedad.id_comision', '=', 'commissions.id_commissions')
-            ->leftJoin('type_propertys', 'registro_de_propiedad.id_tipo_propiedad', '=', 'type_propertys.id_type_propertys')
-            ->leftJoin('colonies', 'registro_de_propiedad.id_colonia_dueno', '=', 'colonies.id_colonies')
-            ->leftJoin('cities', 'registro_de_propiedad.id_ciudad_propiedad', '=', 'cities.id_cities')
-            ->leftJoin('states', 'registro_de_propiedad.id_estado_propiedad', '=', 'states.id_state')
-            ->leftJoin('prospector', 'registro_de_propiedad.id_prospectores', '=', 'prospector.id_prospectador')
-            ->leftJoin('adviser', 'registro_de_propiedad.id_asesores', '=', 'adviser.id_asesor')
-            ->leftJoin('reason_to_delete', 'registro_de_propiedad.delete_reason', '=', 'reason_to_delete.id_reason')
-            ->where('registro_de_propiedad.status', '=', 0)
-            ->paginate(15);
+        $permisos           = DB::table('roles')->where('rol', "=", $puesto)->get();
+        $permisos = (array)$permisos[0];
 
+        if (Auth::user()->puesto == $permisos['rol'] & $permisos['propiedades_eliminadas'] == "1") {
+            $registro_de_propiedad = DB::table('registro_de_propiedad')
+                ->leftJoin('commissions', 'registro_de_propiedad.id_comision', '=', 'commissions.id_commissions')
+                ->leftJoin('type_propertys', 'registro_de_propiedad.id_tipo_propiedad', '=', 'type_propertys.id_type_propertys')
+                ->leftJoin('colonies', 'registro_de_propiedad.id_colonia_dueno', '=', 'colonies.id_colonies')
+                ->leftJoin('cities', 'registro_de_propiedad.id_ciudad_propiedad', '=', 'cities.id_cities')
+                ->leftJoin('states', 'registro_de_propiedad.id_estado_propiedad', '=', 'states.id_state')
+                ->leftJoin('prospector', 'registro_de_propiedad.id_prospectores', '=', 'prospector.id_prospectador')
+                ->leftJoin('adviser', 'registro_de_propiedad.id_asesores', '=', 'adviser.id_asesor')
+                ->leftJoin('reason_to_delete', 'registro_de_propiedad.delete_reason', '=', 'reason_to_delete.id_reason')
+                ->where('registro_de_propiedad.status', '=', 0)
+                ->paginate(15);
 
-        return view('property_delete', ['registro_de_propiedad' => $registro_de_propiedad]);  
+            return view('property_delete', ['registro_de_propiedad' => $registro_de_propiedad]);  
+        }else{
+            return redirect('home');
+        }
     }
 
-    public function restore($id)
+    public function restore($puesto, $id)
     {
-            DB::table('registro_de_propiedad')
+        $permisos = DB::table('roles')->where('rol', "=", $puesto)->get();
+        $permisos = (array)$permisos[0];
+
+        if (Auth::user()->puesto == $permisos['rol'] & $permisos['restaurar_propiedad'] == "1") {
+                        DB::table('registro_de_propiedad')
             ->where('id', $id)
             ->update(['status' => 1]);
 
@@ -1467,11 +1527,17 @@ class RegisterPropertyController extends Controller
             ->paginate(15);
 
         return view('property_delete', ['registro_de_propiedad' => $registro_de_propiedad]);  
-
+        }else{
+            return redirect('home');
+        }
     }
 
-    public function reason_delete($id)
+    public function reason_delete($puesto, $id)
     {
+        $permisos           = DB::table('roles')->where('rol', "=", $puesto)->get();
+        $permisos = (array)$permisos[0];
+
+        if (Auth::user()->puesto == $permisos['rol'] & $permisos['eliminar_propiedad'] == "1") {
         $reasonDelete = DB::table('registro_de_propiedad')
                      ->select('*')
                      ->where('id', '=', $id)
@@ -1480,6 +1546,11 @@ class RegisterPropertyController extends Controller
         $reason_to_delete         = DB::table('reason_to_delete')->get();
 
         return view('reason_delete', ['reasonDelete' => $reasonDelete, 'reason_to_delete' => $reason_to_delete]);  
+            
+        }else{
+            return redirect('home');
+        }
+        
     }
 
     /**
@@ -1516,110 +1587,58 @@ class RegisterPropertyController extends Controller
         return view('table_propiedades', ['registro_de_propiedad' => $registro_de_propiedad]);  
     }
 
-    public function excel_propiedades(){
 
-        Excel::create('REGISTRO DE PROPIEDADES', function($excel) {
-            
-            $excel->sheet('Datos', function($sheet) {
+    public function table_renovar_propiedad($puesto)
+    {
+        $permisos = DB::table('roles')->where('rol', "=", $puesto)->get();
+        $permisos = (array)$permisos[0];
 
-                //Header
-                $sheet->row(1, ['FOLIO', 
-                                'CODIGO', 
-                                'ESTATUS', 
-                                'ESTADO', 
-                                'PROPIEDAD', 
-                                'TITULO', 
-                                'ID', 
-                                'ASESOR', 
-                                'CONTRATO', 
-                                '%', 
-                                'AVISO DE PRIV.', 
-                                'INGRESO', 
-                                'VENCIMIENTO', 
-                                'NOMBRE CLIENTE', 
-                                'TELEFONO CLIENTE', 
-                                'CELULAR CLIENTE', 
-                                'REFERIDO', 
-                                'ESCRITURAS', 
-                                'TIT. DE PROP.', 
-                                'INE',
-                                'PREDIAL', 
-                                'RBO. LUZ', 
-                                'RBO. AGUA', 
-                                'ACTA MAT.', 
-                                'ACTA NAC.', 
-                                'RFC', 
-                                'CURP', 
-                                'PLANO', 
-                                'LIB. GRAVAMEN', 
-                                'CUOTA MANT.', 
-                                'REG. PROP', 
-                                'OBSERVACIÓN', 
-                                'LLAVE O CITA', 
-                                'PUBLICIDAD', 
-                                'ESTRUCTURA', 
-                                'REVISION AUDITORIA']);
+        if (Auth::user()->puesto == $permisos['rol'] & $permisos['datos_propiedad'] == "1") {
+            $delete_at = date("Y-m-d H:i:s");
 
-                $registro_de_propiedad = DB::table('registro_de_propiedad')
-                    ->leftJoin('commissions', 'registro_de_propiedad.id_comision', '=', 'commissions.id_commissions')
-                    ->leftJoin('type_propertys', 'registro_de_propiedad.id_tipo_propiedad', '=', 'type_propertys.id_type_propertys')
-                    ->leftJoin('colonies', 'registro_de_propiedad.id_colonia_dueno', '=', 'colonies.id_colonies')
-                    ->leftJoin('cities', 'registro_de_propiedad.id_ciudad_propiedad', '=', 'cities.id_cities')
-                    ->leftJoin('states', 'registro_de_propiedad.id_estado_propiedad', '=', 'states.id_state')
-                    ->leftJoin('prospector', 'registro_de_propiedad.id_prospectores', '=', 'prospector.id_prospectador')
-                    ->leftJoin('adviser', 'registro_de_propiedad.id_asesores', '=', 'adviser.id_asesor')
-                    ->leftJoin('documents_property', 'registro_de_propiedad.id_doc_propertys', '=', 'documents_property.id_doc_property')
-                    ->where('registro_de_propiedad.status', '=', 1)
-                    ->get();
+            $registro_de_propiedad = DB::table('registro_de_propiedad')
+                ->leftJoin('commissions', 'registro_de_propiedad.id_comision', '=', 'commissions.id_commissions')
+                ->leftJoin('type_propertys', 'registro_de_propiedad.id_tipo_propiedad', '=', 'type_propertys.id_type_propertys')
+                ->leftJoin('colonies', 'registro_de_propiedad.id_colonia_dueno', '=', 'colonies.id_colonies')
+                ->leftJoin('cities', 'registro_de_propiedad.id_ciudad_propiedad', '=', 'cities.id_cities')
+                ->leftJoin('states', 'registro_de_propiedad.id_estado_propiedad', '=', 'states.id_state')
+                //->leftJoin('prospector', 'registro_de_propiedad.id_prospectores', '=', 'prospector.id_prospectador')
+                //->leftJoin('adviser', 'registro_de_propiedad.id_asesores', '=', 'adviser.id_asesor')
+                ->leftJoin('employees', 'registro_de_propiedad.id_asesores', '=', 'employees.id_employees')
+                //->leftJoin('employees', 'registro_de_propiedad.id_prospectores', '=', 'employees.id_employees')
+                ->leftJoin('documents_property', 'registro_de_propiedad.id_doc_propertys', '=', 'documents_property.id_doc_property')
+                ->where('registro_de_propiedad.status', '=', 1)
+                ->paginate(15);
 
-                    foreach ($registro_de_propiedad as $registro) {
-                        $row = [];
+                foreach ($registro_de_propiedad as $key) {
+                    $fechaActual = date("Y/m/d");
 
-                        $row[0] = $registro->id;
-                        $row[1] = $registro->codigo;
-                        $row[2] = $registro->status_propiedad;
-                        $row[3] = $registro->estado_registro;
-                        $row[4] = $registro->tipo_propiedad;
-                        $row[5] = $registro->colonia;
-                        $row[6] = $registro->id;
-                        $row[7] = $registro->nombre_asesor;
-                        $row[9] = $registro->tipo_contrato;
-                        $row[11] = $registro->comision;
-                        $row[12] = $registro->aviso_privacidad;
-                        $row[13] = $registro->fecha_inicio;
-                        $row[14] = $registro->fecha_termino;
-                        $row[15] = $registro->nombre_dueno;
-                        $row[16] = $registro->tel_casa;
-                        $row[17] = $registro->celular;
-                        $row[18] = $registro->referido;
-                        $row[19] = $registro->escritura_propiedad;
-                        $row[20] = $registro->titulo_propiedad;
-                        $row[21] = $registro->ine;
-                        $row[22] = $registro->predial;
-                        $row[23] = $registro->recibo_luz;
-                        $row[24] = $registro->recibo_agua;
-                        $row[25] = $registro->acta_matrimonio; 
-                        $row[26] = $registro->acta_nacimiento; 
-                        $row[27] = $registro->rfc;
-                        $row[28] = $registro->curp;
-                        $row[29] = $registro->planos;
-                        $row[30] = $registro->tiene_adeudo;
-                        $row[31] = $registro->cuota_mantenimiento;
-                        $row[32] = $registro->registro_propiedad;
-                        $row[33] = $registro->observaciones;
-                        $row[35] = $registro->llaves;
-                        $row[36] = $registro->tipo_anuncio;
-                        $row[37] = $registro->estructura;
-                        $row[38] = $registro->revision_auditoria;
+                    $fecha1 = new DateTime($key->fecha_termino);
 
-                         $sheet->appendRow($row);
-                        
+                    $fecha2 = new DateTime($fechaActual);
+
+                    $fecha = $fecha1->diff($fecha2);
+
+
+                    $diasRestantes = $fecha->format('%a');
+                        if ($diasRestantes == 0) {
+                            DB::table('registro_de_propiedad')
+                            ->where('id', "=", $key->id)
+                            ->update(['status'                      => 0,
+                                      'delete_reason'               => 2,
+                                      'delete_by'                   => "Sistema",
+                                      'delete_at'                   => $delete_at,
+                        ]);
                     }
+                }
 
+            return view('table_renovar_propiedad', ['registro_de_propiedad' => $registro_de_propiedad]);
+        }else{
+            return redirect('home');
+        }
 
-                   
-            });
-
-        })->export('xls');
     }
+
+
+
 }

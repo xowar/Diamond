@@ -29,11 +29,18 @@
                                             <label>Nombre *</label>
                                             <input type="text" class="form-control" name="name" value="<?php echo $user->name; ?>">
                                         </div>
+                                        <div class="form-group" style="display: none;">
+                                            <label>Puesto *</label>
+                                            <input type="text" class="form-control" name="roles" value="<?php echo $user->roles; ?>">
+                                        </div>
+                                        <div class="form-group" style="display: none;">
+                                            <label>Oficina *</label>
+                                            <input type="text" class="form-control" name="oficina" value="<?php echo $user->oficina; ?>">
+                                        </div>
                                         <div class="form-group">
                                             <label>Email</label>
                                             <input value="<?php echo $user->email; ?>" name="email" class="form-control" type="email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
                                         </div>
-
                                         <div class="form-group">
                                             <label>Contraseña</label>
                                             <input type="" class="form-control" name="password" value="<?php echo str_random(8); ?>">

@@ -173,7 +173,7 @@
                                         foreach ($registro_de_propiedad as $propiedad) {?>
                                         <tr class="odd gradeX">
                                             <td>
-                                                <a class="btn btn-success" href="{{URL::to('home/property_delete/restore', array($propiedad->id))}}">Restaurar</a>
+                                                <a class="btn btn-success" href="{{URL::to('home/property_delete/restore', array(Auth::user()->puesto, $propiedad->id))}}">Restaurar</a>
                                             </td>
                                             <td><?php echo $propiedad->nombre_dueno; ?></td>
                                             <td><?php echo $propiedad->direccion_dueno; ?></td>

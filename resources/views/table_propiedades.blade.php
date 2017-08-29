@@ -14,11 +14,11 @@
                 <!-- /.col-lg-12 -->
             </div>
 
-            <div class="row">
+            <!--<div class="row">
                 <div class="col-lg-6">
                    <a class="btn btn-success" href="{{URL::to('home/table_propiedades/excel_propiedades')}}">Descargar Excel</a>
                 </div>
-            </div>
+            </div>-->
             <!-- /.row -->
             <div class="row" style="overflow-y:hidden;overflow-x:scroll;">
                 <div class="col-lg-12 table-scroll">
@@ -180,9 +180,9 @@
                                         foreach ($registro_de_propiedad as $propiedad) {?>
                                         <tr class="odd gradeX">
                                             <td>
-                                                <a class="btn btn-primary" href="{{URL::to('home/table_propiedades/editar_propiedades', array($propiedad->id))}}">Editar</a>
+                                                <a class="btn btn-primary" href="{{URL::to('home/table_propiedades/editar_propiedades', array(Auth::user()->puesto, $propiedad->id))}}">Editar</a>
                                                 <!--<a class="btn btn-danger" href="{{URL::to('home/table_propiedades/destroy', array($propiedad->id, Auth::user()->id))}}">Eliminar</a>-->
-                                                <a class="btn btn-danger" href="{{URL::to('home/table_propiedades/reason_delete', array($propiedad->id))}}">Eliminar</a>
+                                                <a class="btn btn-danger" href="{{URL::to('home/table_propiedades/reason_delete', array(Auth::user()->puesto, $propiedad->id))}}">Eliminar</a>
                                             </td>
                                             <td><?php echo $propiedad->nombre_dueno; ?></td>
                                             <td><?php echo $propiedad->direccion_dueno; ?></td>
@@ -287,8 +287,8 @@
                                             <td><?php echo $propiedad->acta_matrimonio; ?></td>
                                             <td><?php echo $propiedad->regimen_propiedad_condo; ?></td>
 
-                                            <td><?php echo $propiedad->nombre_asesor; ?></td>
-                                            <td><?php echo $propiedad->nombre_prospectador; ?></td>
+                                            <td><?php echo $propiedad->id_asesores; ?></td>
+                                            <td><?php echo $propiedad->id_prospectores; ?></td>
                                             <td><?php echo $propiedad->fecha_asesor; ?></td>
                                             <td><?php echo $propiedad->exclusiva; ?></td>
                                             <td><?php echo $propiedad->tipo_convenio; ?></td>
