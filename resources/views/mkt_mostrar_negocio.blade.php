@@ -56,7 +56,7 @@
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label>Solicito *</label>
-                                            <input name="solicitado" class="form-control" value="<?php echo $articulo->solicitado; ?>">
+                                        <input name="solicitado" class="form-control" value="<?php echo $articulo->solicitado; ?>">
                                     </div>
                                 </div>
                             </div>

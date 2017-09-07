@@ -123,8 +123,6 @@ Route::post('home/mkt/buscar_por_proyecto/por_autorizar_guardar', 'MktController
 Route::get('home/mkt/buscar_por_proyecto/mostrar/{id_articulo}','MktController@mostrar');
 Route::get('home/mkt/buscar_por_proyecto/eliminar_articulo/{id_articulos}/{id_proyectos}','MktController@eliminar_articulo');
 
-
-
 Route::post('home/mkt/buscar_por_id', 'MktController@buscar_por_id');
 Route::post('home/mkt/buscar_por_propiedad/save_articulo_propiedades', 'MktController@save_articulo_propiedades');
 Route::get('home/mkt/buscar_por_propiedad/proceso_propiedades/{id_articulo}/{id_propiedad}','MktController@proceso_propiedades');
@@ -146,3 +144,13 @@ Route::post('home/mkt/buscar_por_negocios/por_autorizar_guardar_negocio', 'MktCo
 Route::get('home/mkt/buscar_por_negocios/mostrar_negocios/{id_articulo}','MktController@mostrar_negocios');
 Route::match(['put', 'patch'], 'home/table_users/mkt_update_negocio/{id}','MktController@mkt_update_negocio');
 Route::get('home/mkt/buscar_por_negocios/eliminar_negocios/{id_articulos}/{id_negocios}','MktController@eliminar_negocios');
+
+Route::get('home/mkt/table_proyectos', 'MktController@table_proyectos');
+Route::get('home/mkt/table_proyectos/mostrar_proyecto/{id}', 'MktController@mostrar_proyecto');
+Route::get('home/mkt/table_proyectos/delete_proyecto/{id}', 'MktController@delete_proyecto');
+Route::match(['put', 'patch'], 'home/mkt/table_proyectos/mostrar_proyecto/editar_proyecto/{id}','MktController@editar_proyecto');
+
+Route::get('home/mkt/table_negocios', 'MktController@table_negocios');
+Route::get('home/mkt/table_negocios/mostrar_negocio/{id}', 'MktController@mostrar_negocio');
+Route::get('home/mkt/table_proyectos/delete_negocio/{id}', 'MktController@delete_negocio');
+Route::match(['put', 'patch'], 'home/mkt/table_negocios/mostrar_negocio/editar_negocio/{id}','MktController@editar_negocio');

@@ -26,10 +26,11 @@ class ModulosController extends Controller
         if (Auth::user()->puesto == $permisos['rol'] & $permisos['pre_cliente'] == "1") {
 
             $states             = DB::table('states')->get();
-            $credits             = DB::table('credits')->get();
-            $offices             = DB::table('offices')->get();
+            $credits            = DB::table('credits')->get();
+            $offices            = DB::table('offices')->get();
+            $type_propertys     = DB::table('type_propertys')->get();
             $employees          = DB::table('employees')->where('roles', '=', 'Asesor')->get();
-            return view('register_prospecto', ['states' => $states, 'employees' => $employees, 'credits' => $credits, 'offices' => $offices]); 
+            return view('register_prospecto', ['states' => $states, 'employees' => $employees, 'credits' => $credits, 'offices' => $offices, 'type_propertys' => $type_propertys]); 
             
         }else{
             return redirect('home');
@@ -46,7 +47,8 @@ class ModulosController extends Controller
                 'telefono'                  => $request['telefono'],
                 'celular'                   => $request['celular'],
                 'presupuesto'               => $request['presupuesto'],
-                'referido'                  => $request['referido'],
+                'referido_online'           => $request['referido_online'],
+                'referido_offline'          => $request['referido_offline'],
                 'tipo_cliente'              => $request['tipo_cliente'],
                 'tipo_credito'              => $request['tipo_credito'],
                 'ubicacion_propiedad'       => $request['ubicacion_propiedad'],
@@ -54,6 +56,10 @@ class ModulosController extends Controller
                 'modulo'                    => $request['sucursal'],
                 'asesor'                    => $request['asesor'],
                 'requisitos_propiedad'      => $request['requisitos_propiedad'],
+                'name_proyecto'             => $request['name_proyecto'],
+                'id_employee'               => $request['id'],
+                'tipo_pago'                 => $request['tipo_pago'],
+                'candidato'                 => $request['tipo_candidato'],
             ]);
 
             return redirect('home');        
@@ -107,13 +113,14 @@ class ModulosController extends Controller
     public function table_prospecto($id)
     {
             $employees = DB::table('employees')
-            ->where('id_user', '=', $id)
+            ->where('id_employees', '=', $id)
             ->get();
 
-            
+
             $clients = DB::table('client')
             ->where('client.id_employee', '=', $employees[0]->id_employees)
             ->get();
+
 
             return view('table_prospectos', ['clients' => $clients]);
     }
@@ -131,7 +138,13 @@ class ModulosController extends Controller
             ->where('seguimiento.id_cliente', '=', $id)
             ->get();
 
-            return view('seguimiento', ['clients' => $clients, 'seguimientos' => $seguimientos]);
+            $states             = DB::table('states')->get();
+            $credits            = DB::table('credits')->get();
+            $offices            = DB::table('offices')->get();
+            $type_propertys     = DB::table('type_propertys')->get();
+            $employees          = DB::table('employees')->where('roles', '=', 'Asesor')->get();
+
+            return view('seguimiento', ['clients' => $clients, 'seguimientos' => $seguimientos, 'states' => $states, 'credits' => $credits, 'offices' => $offices, 'type_propertys' => $type_propertys, 'employees' => $employees]);
     }
 
 
@@ -160,9 +173,12 @@ class ModulosController extends Controller
             return back()->withInput();  
     }
 
-        public function editar_prospecto(Request $request)
+    public function editar_prospecto(Request $request)
     {
 
+        if ($request['tipo_pago'] == "Efectivo") {
+            $request['tipo_credito'] = "";
+        }
         DB::table('client')
             ->where('client.id_client', $request['id_cliente'])
             ->update(
@@ -176,11 +192,14 @@ class ModulosController extends Controller
                 'tipo_credito'          => $request['tipo_credito'],
                 'necesidad_cliente'     => $request['necesidad_cliente'],
                 'tipo_cliente'          => $request['tipo_cliente'],
-                'referido'              => $request['referido'],
+                'referido_online'       => $request['referido_online'],
+                'referido_offline'      => $request['referido_offline'],
                 'modulo'                => $request['modulo'],
                 'asesor'                => $request['asesor'],
                 'ubicacion_propiedad'   => $request['ubicacion_propiedad'],
                 'requisitos_propiedad'  => $request['requisitos_propiedad'],
+                'name_proyecto'         => $request['nombre_proyecto'],
+                'tipo_pago'             => $request['tipo_pago'],
 
             ]);
 

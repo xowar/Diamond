@@ -1182,8 +1182,111 @@ class MktController extends Controller
        
     }
 
+    public function table_proyectos()
+    {
+        $proyectos = DB::table('proyectos')->where('status', '=', 1)
+            ->paginate(15);
+
+        return view('table_proyectos', ['proyectos' => $proyectos]);  
+    }
+
+    public function mostrar_proyecto($id)
+    {
+        $proyectos = DB::table('proyectos')->where('id_proyecto', '=', $id)->get();
+
+        $employees = DB::table('employees')->where('roles', '=', 'Asesor')->get();
 
 
+        return view('mkt_mostrar_proyecto_edit', ['proyectos' => $proyectos, 'employees' => $employees]);  
+    }
+
+    public function editar_proyecto(Request $request, $id)
+    {
+        DB::table('proyectos')
+            ->where('proyectos.id_proyecto', '=', $id)
+            ->update(
+            [
+                'lider_proyecto'            => $request['lider_proyecto'],
+                'sub1'                      => $request['sub1'],
+                'sub2'                      => $request['sub2'],
+                'sub3'                      => $request['sub3'],
+                'sub4'                      => $request['sub4'],
+                'latitud'                   => $request['latitud'],
+                'longitud'                  => $request['longitud'],
+                'renders'                   => $request['renders'],
+                'medidas'                   => $request['medidas'],
+                'precio_min'                => $request['precio_min'],
+                'precio_max'                => $request['precio_max'],
+                'caracteristicas'           => $request['caracteristicas'],
+                'nombre_inicial'            => $request['nombre_inicial'],
+            ]);
+
+
+        return redirect('home');  
+    }
+
+    public function delete_proyecto($id)
+    {
+        DB::table('proyectos')
+            ->where('proyectos.id_proyecto', '=', $id)
+            ->update(
+            [
+                'status'            => 2,
+            ]);
+
+
+        return redirect('home');  
+    }
+
+
+    public function table_negocios()
+    {
+        $negocios = DB::table('negocios')->where('status', '=', 1)
+            ->paginate(15);
+
+        return view('table_negocios', ['negocios' => $negocios]);  
+    }
+
+    public function mostrar_negocio($id)
+    {
+        $negocios = DB::table('negocios')->where('id_negocio', '=', $id)->get();
+
+        $employees = DB::table('employees')->where('roles', '=', 'Asesor')->get();
+
+        return view('mkt_mostrar_negocio_edit', ['negocios' => $negocios, 'employees' => $employees]);  
+    }
+
+
+    public function editar_negocio(Request $request, $id)
+    {
+        DB::table('negocios')
+            ->where('id_negocio', '=',  $id)
+            ->update(
+            [
+                'lider_proyecto'            => $request['lider_proyecto'],
+                'sub1'                      => $request['sub1'],
+                'sub2'                      => $request['sub2'],
+                'sub3'                      => $request['sub3'],
+                'nombre_negocio'            => $request['nombre_negocio'],
+            ]);
+
+
+        return redirect('home');  
+    }
+
+
+    public function delete_negocio($id)
+    {
+        DB::table('negocios')
+            ->where('id_negocio', '=',  $id)
+            ->update(
+            [
+                'status'            => 2,
+            ]);
+
+
+        return redirect('home');  
+    }
     /**
      * Show the form for creating a new resource.
      *

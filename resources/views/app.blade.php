@@ -59,8 +59,8 @@
 
             <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
-                        <li><a href="{{ url('/auth/login') }}">Login</a></li>
-                        <li><a href="{{ url('/auth/register') }}">Register</a></li>
+                        <!--<li><a href="{{ url('/auth/login') }}">Login</a></li>
+                        <li><a href="{{ url('/auth/register') }}">Register</a></li>-->
                     @else
                         <!--<li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
@@ -174,6 +174,12 @@
                                     </li>
                                     <li>
                                         <a href="{{ URL::to('home/mkt/registro_articulo')}}">Agregar Articulo</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ URL::to('home/mkt/table_proyectos')}}">Datos Proyectos</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ URL::to('home/mkt/table_negocios')}}">Datos Negocios</a>
                                     </li>
                                 </ul>
                             </li>
@@ -754,6 +760,51 @@
              {
                  $('#regimen_propiedad_condo1').css('display','none');
                  document.getElementById("doc_regimen_propiedad_condo").required = false;
+             }
+        });
+
+        $("#ref_info").change(function () {
+                var valorCambiado =$(this).val();
+            if(valorCambiado == 'Online')
+            {
+               $('#online').css('display','');
+               document.getElementById("online").required = true;
+               $('#offline').css('display','none');
+                 document.getElementById("offline").required = false;
+             }
+             else if(valorCambiado == 'Offline')
+             {
+                 $('#online').css('display','none');
+                 document.getElementById("online").required = false;
+                  $('#offline').css('display','');
+                document.getElementById("offline").required = true;
+             }
+             else if(valorCambiado == '')
+             {
+                 $('#online').css('display','none');
+                 document.getElementById("online").required = false;
+                 $('#offline').css('display','none');
+                 document.getElementById("offline").required = false;
+             }
+        });
+
+
+         $("#tipo_pago").change(function () {
+                var valorCambiado =$(this).val();
+            if(valorCambiado == 'Credito')
+            {
+               $('#tipo_credito').css('display','');
+               document.getElementById("tipo_credito").required = true;
+             }
+             else if(valorCambiado == 'Efectivo')
+             {
+                 $('#tipo_credito').css('display','none');
+                 document.getElementById("tipo_credito").required = false;
+             }
+             else if(valorCambiado == '')
+             {
+                 $('#tipo_credito').css('display','none');
+                 document.getElementById("tipo_credito").required = false;
              }
         });
     });

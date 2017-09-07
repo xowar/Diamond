@@ -47,7 +47,7 @@
                                             <td><?php echo $client->email; ?></td>
                                             <td><?php echo $client->telefono; ?></td>
                                             <td><?php echo $client->celular; ?></td>
-                                            <td><?php echo $client->tipo_cliente; ?></td> 
+                                            <td><?php echo $client->candidato; ?></td> 
                                             <td><?php echo $client->modulo; ?></td> 
                                             <td><?php echo $client->asesor; ?></td> 
                                             <td><?php echo $client->requisitos_propiedad; ?></td> 

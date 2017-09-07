@@ -82,12 +82,13 @@
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label>Solicito *</label>
-                                        <select name="solicitado" class="form-control" required>
+                                        <input name="solicitado" class="form-control" required>
+                                        <!--<select name="solicitado" class="form-control" required>
                                             <option value="">Selecciona una opción</option>
                                             <?php foreach ($employees as $employee) {?>
                                                 <option value="<?php echo $employee->name; ?>"><?php echo $employee->name; ?></option>
                                             <?php } ?>
-                                        </select>
+                                        </select>-->
                                     </div>
                                 </div>
                                 <div class="col-lg-2">

@@ -96,9 +96,9 @@ class UserController extends Controller
             $urlCURP = "";
             $nombreCURP = "";
         }
-        if (!empty($request->file('comprobante_domicilio'))) {
+        if (!empty($request->file('doc_comprobante_domicilio'))) {
             //obtenemos el campo file definido en el formulario
-            $fileComprobante_Domicilio = $request->file('comprobante_domicilio');
+            $fileComprobante_Domicilio = $request->file('doc_comprobante_domicilio');
             //obtenemos el nombre del archivo
             $nombreComprobante_Domicilio = $fileComprobante_Domicilio->getClientOriginalName();
             $nombreComprobante_Domicilio = 'COMPROBANTE_DE_DOMICILIO-Empleado-'.$random.$fileComprobante_Domicilio->getClientOriginalName();
@@ -396,9 +396,9 @@ class UserController extends Controller
             $urlActa_Nacimiento = $request['urlActa_Nacimiento'];
             $nombreActa_Nacimiento = $request['nombreActa_Nacimiento'];
         }
-        if (!empty($request->file('comprobante_domicilio'))) {
+        if (!empty($request->file('doc_comprobante_domicilio'))) {
             //obtenemos el campo file definido en el formulario
-            $fileComprobante_Domicilio = $request->file('comprobante_domicilio');
+            $fileComprobante_Domicilio = $request->file('doc_comprobante_domicilio');
             //obtenemos el nombre del archivo
             $nombreComprobante_Domicilio = $fileComprobante_Domicilio->getClientOriginalName();
             $nombreComprobante_Domicilio = 'COMPROBANTE_DE_DOMICILIO-Empleado-'.$random.$fileComprobante_Domicilio->getClientOriginalName();

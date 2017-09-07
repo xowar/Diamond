@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
-                                        <label>Autorizado *</label>
+                                        <label>Autorizado</label>
                                         <select name="autorizado" class="form-control">
                                             <option value="">Selecciona una opción</option>
                                             <?php foreach ($employees as $employee) {?>
@@ -82,12 +82,7 @@
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label>Solicito *</label>
-                                        <select name="solicitado" class="form-control" required>
-                                            <option value="">Selecciona una opción</option>
-                                            <?php foreach ($employees as $employee) {?>
-                                                <option value="<?php echo $employee->name; ?>"><?php echo $employee->name; ?></option>
-                                            <?php } ?>
-                                        </select>
+                                        <input name="solicitado" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-2">

@@ -158,7 +158,7 @@
                                             <label>Comprobante de Domicilo *</label>
                                             <div>
                                                 <input name="doc_comprobante_domicilio" type="file" accept="application/pdf" class=" form-group" required>
-                                                <input class="form-control" type="" name="comprobante_domicilio" placeholder="FECHA DE CADUCIDAD COMPROBANTE" id="date5">
+                                                <input class="form-control" type="" name="fecha_comprobante" placeholder="FECHA DE CADUCIDAD COMPROBANTE" id="date5">
                                             </div>
                                         </div>
                                         <div class="form-group">
